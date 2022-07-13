@@ -1,0 +1,52 @@
+\begin{defBox}*{Topology}[def:12_topology]
+    A \textbf{topology} on a set \( X \) is a collection \( \mathcal{T} \) of 
+    subsets of \( X \) having the following properties:
+    \begin{enumerate}
+        \item \( \emptyset \) and \( X \) are in \( \mathcal{T} \).
+        \item The union of the elements of \textit{any} subcollection of 
+            \( \mathcal{T} \) is in \( \mathcal{T} \); i.e.,
+            \( \mathcal{T} \) is closed under arbitrary unions.
+            \begin{enumerate}
+                \item More precisely, given a collection of sets 
+                    \( \{ U_{ i } \}_{ i \in I } \), where \( I \) is
+                    some index set and \( U_{ i } \in \mathcal{T} \), we have
+                    that 
+                    \( \bigcup_{ i \in I } U_{ i } \in \mathcal{T} \).
+            \end{enumerate}
+        \item The intersection of the elements of any \textit{finite} 
+            subcollection of \( \mathcal{T} \)
+            is in \( \mathcal{T} \); i.e., \( \mathcal{T} \) is closed under 
+            finite intersections.
+            \begin{enumerate}
+                \item More precisely, given any finite number of sets 
+                    \( U_{ 1 }, \ldots, U_{ n } \in \mathcal{T} \), we have
+                    that \( U_{ 1 } \cap \ldots \cap U_{ n } \in \mathcal{T} \).
+            \end{enumerate}
+    \end{enumerate}
+    A set \( X \) for which a topology \( \mathcal{T} \) has been specified is 
+    called a \textbf{topological space}.
+\end{defBox}
+
+\begin{defBox}{Open Set}[def:12_openset]
+    If \( X \) is a topological space with topology \( \mathcal{T} \), we say 
+    that a subset \( U \) of \( X \) is an
+    \textbf{open set} of \( X \) if \( U \) belongs to the collection 
+    \( \mathcal{T} \).
+\end{defBox}
+
+\begin{defBox}{Finer and Coarser Topologies}[def:12_fine_coarse]
+    Suppose that \( \mathcal{T} \) and \( \mathcal{T}' \) are two topologies on a given set \( X \). If
+    \( \mathcal{T}' \supset \mathcal{T} \), we say that \( \mathcal{T}' \) is \textbf{finer} than \( \mathcal{T} \); if
+    \( \mathcal{T}' \) \textit{properly} contains \( \mathcal{T} \), then we say that \( \mathcal{T}' \) is
+    \textbf{strictly finer} than \( \mathcal{T} \).
+
+    \baseSkip
+
+    We also say that \( \mathcal{T} \) is \textbf{coarser} than \( \mathcal{T}' \), or \textbf{strictly coarser},
+    in these two respective situations.
+
+    \baseSkip
+
+    Finally, we say that \( \mathcal{T} \) is \textbf{comparable} with \( \mathcal{T}' \) if either
+    \( \mathcal{T}' \supset \mathcal{T} \) or \( \mathcal{T} \supset \mathcal{T}' \).
+\end{defBox}

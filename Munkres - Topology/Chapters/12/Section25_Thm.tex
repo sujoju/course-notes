@@ -1,0 +1,312 @@
+\begin{thmBox}{25.1}[thm:25.1]
+    The components of \( X \) are connected disjoint subspaces of \( X \) whose
+    union is \( X \), such that each nonempty connected subspace of \( X \) 
+    intersects only one of them.
+
+    \baseRule
+
+    \begin{proofBox}
+        Since we know that the components of \( X \) are equivalence classes,
+        it follows that these components are disjoint and their union is \( X \)
+        by construction.
+        Furthermore, we see that each connected subspace \( A \) of \( X \) 
+        intersects with only one of these components: if \( A \) 
+        intersects the components \( C_{ 1 } \) and \( C_{ 2 } \) of 
+        \( X \), say in points \( x_{ 1 } \) and \( x_{ 2 } \), respectively, 
+        then it follows that \( x_{ 1 } \sim x_{ 2 } \) by definition as they
+        are both contained in the connected subspace \( A \); by the 
+        transitivity property of our equivalence relation, we see that 
+        all the points in \( C_{ 1 } \) are equivalent to \( C_{ 2 } \), which
+        means that \( C_{ 1 } = C_{ 2 } \).
+
+        \baseSkip 
+
+        The proof for why components are connected is as follows: for each 
+        point \( q \) of \( C ( p ) \), we know that \( p \sim q \).
+        Thus, there is a connected subspace \( A_{ q } \) containing 
+        both \( p \) and \( q \). 
+        By the result that we just proved, it follows that 
+        \( A_{ q } \subset C ( p ) \).
+        Thus, it follows that 
+        \begin{equation*}
+            \bigcup_{ q \in C ( p ) } A_{ q }
+            \subset 
+            C ( p )
+        \end{equation*}
+        However, we know that for any point \( x \in C ( p ) \), it must be the 
+        case that there exists at least one \( q \in C ( p ) \) such that 
+        \( x \in A_{ q } \); thus, we have that
+        \begin{equation*}
+            C ( p )
+            \subset
+            \bigcup_{ q \in C ( p ) } A_{ q }
+        \end{equation*}
+        Hence, we see that 
+        \begin{equation*}
+            C ( p )
+            =
+            \bigcup_{ q \in C ( p ) } A_{ q }
+        \end{equation*}
+        and since the subspaces \( A_{ q } \) are connected and have the point
+        \( p \) in common, we get that their union (i.e. \( C ( p ) \)) is 
+        connected.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{25.2}[thm:25.2]
+    The path components of \( X \) are path-connected disjoint subspaces of
+    \( X \) whose union is \( X \), such that each nonempty path-connected
+    subspace of \( X \) intersects only one of them.
+
+    \baseRule
+
+    \begin{proofBox}
+        The proof for this theorem is almost the exact same as the proof given
+        in [\hyperlink{thm:25.1}{Theorem 25.1}] -- just replace "component" with
+        "path-component" and "connected" with "path-connected".
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{25.3}[thm:25.3]
+    A space \( X \) is locally connected if and only if for every open set 
+    \( U \) of \( X \), each component of \( U \) is open in \( X \).
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( X \) be locally connected and \( U \subset X \) be open.
+        Let \( p \in U \) be given.
+        Our goal is to show that \( C ( p ) \) is open in \( X \), where
+        \( C ( p ) \) is the connected component of \( U \) containing \( p \).
+        This amounts to showing that for all \( q \in C ( p ) \), we have 
+        some open neighborhood of \( q \) that is contained in \( C ( p ) \).
+
+        \baseSkip 
+
+        Let \( q \in C ( p ) \) be given.
+        Because \( X \) is locally connected, we see that there exists a 
+        connected open neighborhood \( V \) of \( q \) such that 
+        \( V \subset U \).
+        By [\hyperlink{thm:25.1}{Theorem 25.1}], we see that \( V \) being 
+        connected and containing \( q \) means that \( V \) is entirely
+        contained in \( C ( p ) \); that is, \( V \) is in the union of all 
+        connected subspaces of \( U \) that contain \( p \).
+        Thus, \( V \subset C ( p ) \).
+        Notice that another argument we can make is by looking at 
+        \( C ( p ) \cup V \); this is a union of two connected spaces -- 
+        both of which contains \( q \).
+        Thus, by [\hyperlink{thm:23.3}{Theorem 23.3}], we see that 
+        \( C ( p ) \cup V \) is also a connected subspace of \( U \) containing
+        \( p \).
+        By maximality, we see that \( V \subset C ( p ) \).
+        Either way, we see that \( C ( p ) \) is open.
+
+        \baseSkip
+
+        Conversely, let's suppose that components of open sets in \( X \) are 
+        open.
+        Given a point \( x \) of \( X \) and a neighborhood \( U \) of \( x \),
+        we let \( C \) to be the component of \( U \) containing \( x \).
+        Since every component is connected, we have that \( C \) is a connected
+        open neighborhood of \( x \) that is contained in \( U \).
+        Hence, \( X \) is locally connected.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{25.4}[thm:25.4]
+    A space \( X \) is locally path-connected if and only if for every open set
+    \( U \) of \( X \), each path component of \( U \) is open in \( X \).
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( X \) be locally path-connected and \( U \subset X \) be open.
+        Let \( p \in U \) be given.
+        For the sake of this proof, we shall denote \( C ( p ) \) to be the
+        path-component of \( U \) containing \( p \).
+        Our goal is to show that \( C ( p ) \) is open in \( X \).
+        This amounts to showing that for all \( q \in C ( p ) \), we have 
+        some open neighborhood of \( q \) that is contained in \( C ( p ) \).
+
+        \baseSkip 
+
+        Let \( q \in C ( p ) \) be given.
+        Because \( X \) is locally path-connected, we see that there exists a 
+        path-connected open neighborhood \( V \) of \( q \) such that 
+        \( V \subset U \).
+        By [\hyperlink{thm:25.2}{Theorem 25.2}], we see that \( V \) being 
+        path-connected and containing \( q \) means that \( V \) is entirely
+        contained in \( C ( p ) \); that is, \( V \) is in the union of all 
+        connected subspaces of \( U \) that contain \( p \).
+        Thus, \( V \subset C ( p ) \).
+
+        \baseSkip
+
+        Conversely, let's suppose that path-components of open sets in \( X \) 
+        are open.
+        Given a point \( x \) of \( X \) and a neighborhood \( U \) of \( x \),
+        we let \( C \) to be the path-component of \( U \) containing \( x \).
+        Since every path-component is path-connected, we have that \( C \) is a 
+        connected open neighborhood of \( x \) that is contained in \( U \).
+        Hence, \( X \) is locally connected.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{25.5}[thm:25.5]
+    If \( X \) is a topological space, each path component of \( X \) lies in a
+    component of \( X \).
+    If \( X \) is locally path-connected, then the components and the 
+    path-components of \( X \) are the same.
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( C \) be a component of \( X \); let \( x \) be a point of 
+        \( C \); let \( P \) be the path component of \( X \) containing
+        \( x \).
+        Since all path components are path-connected, and path connected sets
+        are connected, it follows that \( P \) must be connected;
+        thus, it follows that \( P \) is in the union of connected components
+        of \( X \) that contain \( x \) -- that is, \( P \subset C \).
+        Our goal is to show that if \( X \) is locally path-connected, then 
+        \( P = C \).
+
+        \baseSkip 
+
+        Towards a contradiction, let's suppose that \( P \subsetneq C \)
+        (i.e., \( P \) is a proper subset of \( C \)).
+        This means that there exists path components of \( X \) that are
+        different from \( P \) and intersect \( C \); let \( Q \) denote
+        the union of all such path components.
+        Using a similar argument that we did with \( P \), we see that 
+        each of the path components that make up \( Q \) all are contained
+        in \( C \).
+        Thus, we see that 
+        \begin{equation*}
+            C = P \cup Q
+        \end{equation*}
+        Now, because \( X \) is locally path-connected, each path component of
+        \( X \) is open in \( X \).
+        Thus, we see that both \( P \) (which is a path-component) and \( Q \)
+        (which is a union of path-components) are open in \( X \).
+        As a result, we see that \( P \) and \( Q \) constitute a separation of
+        \( C \), which contradicts the fact that \( C \) is connected.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Connected Components}[thm:25.6]
+    \begin{enumerate}[label = (\alph*)]
+        \item Connected components are connected.
+        \item Every connected component of \( X \) is closed in \( X \).
+        \item Any pair of connected components must either be equal \textbf{or}
+            disjoint.
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{a}
+
+        This is easily proved using [\hyperlink{thm:23.3}{Theorem 23.3}];
+        since a connected component \( C ( p ) \) of \( X \) containing \( p \) 
+        is the union of all connected subspaces of \( X \) that contain \( p \),
+        we have that all of the connected subspaces in this union to contain the
+        common point \( p \). 
+        Thus, by [\hyperlink{thm:23.3}{Theorem 23.3}], we have that their union
+        must also be connected.
+
+        \baseSkip 
+        \wrapBox{b}
+
+        In general, we know that any set is contained in its closure; that is,
+        \begin{equation*}
+            C ( p ) \subset \overline{ C ( p ) }
+        \end{equation*}
+        Now, because \( C ( p ) \) is connected, we have that its closure 
+        \( \overline{ C ( p ) } \) must be connected as well by 
+        [\hyperlink{thm:23.4}{Theorem 23.4}].
+
+        \baseSkip 
+
+        Notice that \( \overline{ C ( p ) } \) is connected and contains the 
+        point \( p \); thus, it follows by definition that
+        \begin{equation*}
+            \overline{ C ( p ) } \subset C ( p )
+        \end{equation*}
+        Hence, we get that \( C ( p ) = \overline{ C ( p ) } \), which results
+        in \( C ( p ) \) to be closed.
+
+        \baseSkip
+        \wrapBox{c}
+
+        It suffices to prove that if two connected components share a point in
+        common, then the two connected components must be equal (else, they
+        have no other choice but to be disjoint from each other).
+
+        \baseSkip
+
+        Let's say that we have two connected components \( C ( p ) \) and 
+        \( C ( q ) \) that share a common point, say \( r \).
+        It follows by [\hyperlink{thm:23.3}{Theorem 23.3}] that their union
+        must be connected as well.
+        Since \( C ( q ) \cup C ( p ) \) contains both \( p \) and \( q \), 
+        it follows by the definition of a connected component that 
+        \begin{equation*}
+            C ( p ) \cup C ( q )
+            \subset
+            C ( p )
+            \quad \mathrm{and} \quad 
+            C ( p ) \cup C ( q )
+            \subset
+            C ( q )
+        \end{equation*}
+        This results in the following
+        \begin{equation*}
+            C ( p ) \cup C ( q )
+            \subset 
+            C ( p ) \cap C ( q )
+            \implies 
+            C ( p ) = C ( q )
+        \end{equation*}
+        Hence, we find that two connected components that share a common point
+        must be equal.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{}[thm:25_homeomorphism_invariant]
+    The number of connected components is a homeomorphism invariant.
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( X \) be a topological space.
+        We have shown in [\hyperlink{thm:25.1}{Theorem 25.1}] that the set of 
+        all components of \( X \) is equivalent to the set of all equivalence 
+        classes under the following equivalence relation: \( x \sim y \) if
+        there is a connected subspace of \( X \) containing both \( x \) and
+        \( y \).
+        Thus, we have that the number of connected components is equivalent to
+        the number of equivalence classes of \( X \).
+        
+        \baseSkip
+
+        Now, let \( X \) be homeomorphic to \( Y \).
+        This means that there exists a homeomorphism \( f: X \rightarrow Y \).
+        Furthermore, we see that there exists a reduced homeomorphism 
+        \( g: X^{ * } \rightarrow Y^{ * } \), where \( X^{ * } \) and 
+        \( Y^{ * } \) correspond to the set of equivalence classes of \( X \) 
+        and \( Y \) under the equivalence relation mentioned earlier;
+        we indeed get a homeomorphism since restricting the domain/codomain
+        of a continuous function still remains continuous.
+
+        \baseSkip
+
+        Now since \( g \) is a homeomorphism, it follows that it is bijective.
+        Thus, we get that \( X^{ * } \) and \( Y^{ * } \) must have the 
+        same cardinality: injective implies that \( \lvert X^{ * } \rvert \leq 
+        \lvert Y^{ * } \rvert \), and surjective implies that 
+        \( \lvert X^{ * } \rvert \geq \lvert Y^{ * } \rvert \).
+        I.e., we see that the number of equivalence classes (equivalently, 
+        the number of connected components) for both spaces must be the same.
+    \end{proofBox}
+\end{thmBox}

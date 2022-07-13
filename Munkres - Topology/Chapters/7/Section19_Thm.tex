@@ -1,0 +1,294 @@
+\begin{thmBox}{Comparison of the Box and Product Topologies}[thm:19.1]
+    Let \( \{ X_{ i } \}_{ i \in I } \) be an indexed set of topological spaces
+    and \( X = \prod_{ i \in I } X_{ i } \).
+    The box topology on \( X \) has as basis all sets of the form 
+    \( \prod_{ i \in I } U_{ i } \), where \( U_{ i } \) is open in 
+    \( X_{ i } \) for each \( i \in I \).
+    The product topology on \( X \) has as basis all sets of the form 
+    \( \prod_{ i \in I } U_{ i } \), where \( U_{ i } \) is open in 
+    \( X_{ i } \) for each \( i \in I \) \textit{and} \( U_{ i } = X_{ i } \)
+    except for finitely many values of \( i \in I \).
+
+    \baseRule
+
+    \begin{proofBox}
+        To compare the box and product topologies (using the alternative 
+        definition), we consider the basis \( \mathcal{B} \) that 
+        \( \mathcal{S} \) generates.
+        Using what we found in [\hyperlink{thm:15.2}{Theorem 15.2}], we can 
+        gather that the collection \( \mathcal{B} \) consist of all finite 
+        intersections of elements of \( \mathcal{S} \).
+        If we intersect elements belonging to the same one of the sets 
+        \( \mathcal{S}_{ i } \), we do not get anything new, because 
+        \begin{equation*}
+            \mathrm{proj}_{ i }^{ -1 } ( U_{ i } )
+            \cap 
+            \mathrm{proj}_{ i }^{ -1 } ( V_{ i } )
+            =
+            \mathrm{proj}_{ i }^{ -1 } ( U_{ i } \cap V_{ i } )
+        \end{equation*}
+        that is, the intersection of two elements of \( \mathcal{S}_{ i } \), 
+        or of finitely many such elements, is again an element of 
+        \( \mathcal{S}_{ i } \).
+
+        \baseSkip 
+
+        We get something new only when we intersect elements from 
+        \textit{different} sets \( \mathcal{S}_{ i } \).
+        The typical element of the basis \( \mathcal{B} \) can thus be 
+        described as follows: Let \( i_{ 1 } , \ldots , i_{ n } \) be a finite
+        set of distinct indices from the index set \( I \), and let 
+        \( U_{ i_{ j } } \) be an open set in \( X_{ i_{ j } } \) for 
+        \( j = 1 , \ldots , n \).
+        Then 
+        \begin{equation*}
+            B
+            =
+            \mathrm{proj}_{ i_{ 1 } }^{ -1 } ( U_{ i_{ 1 } } )
+            \cap 
+            \mathrm{proj}_{ i_{ 2 } }^{ -1 } ( U_{ i_{ 2 } } )
+            \cap \ldots \cap 
+            \mathrm{proj}_{ i_{ n } }^{ -1 } ( U_{ i_{ n } } )
+        \end{equation*}
+        is the typical element of \( \mathcal{B} \).
+
+        \baseSkip
+
+        Now a point \( \mathbf{x} = ( x_{ i } )_{ i \in I } \) is in \( B \)
+        if and only if its \( i_{ 1 } \)th coordinate is in \( U_{ i_{ 1 } } \),
+        its \( i_{ 2 } \)th coordinate is in \( U_{ i_{ 2 } } \), and so on.
+        There is no restriction whatever on the \( ith \) coordinate of 
+        \( \mathbf{x} \) it \( i \) is not one of the indices \( i_{ 1 }
+        , \ldots , i_{ n } \). 
+        As a result, we can write \( B \) as the product where \( U_{ i } \)
+        denotes the entire space \( X_{ i } \) if \( i \neq i_{ 1 } , \ldots , 
+        i_{ n } \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{19.2}[thm:19.2]
+    Suppose the topology on each space \( X_{ i } \) is given by a basis 
+    \( \mathcal{B}_{ i } \).
+    The collection of all sets of the form 
+    \begin{equation*}
+        \prod_{ i \in I } B_{ i }
+    \end{equation*}
+    where \( B_{ i } \in \mathcal{B}_{ i } \) for each \( i \in I \), will 
+    serve as a basis for the box topology on \( \prod_{ i \in I } X_{ i } \).
+
+    \baseSkip 
+
+    The collection of all sets of the same form, where \( B_{ i } \in 
+    \mathcal{B}_{ i } \) for finitely many indices \( i \) and \( B_{ i } = 
+    X_{ i } \) for the remaining indices, will serve as a basis for the 
+    product topology on \( \prod_{ i \in I } X_{ i } \).
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{19.3}[thm:19.3]
+    Let \( A_{ i } \) be a subspace of \( X_{ i } \), for each \( i \in I \).
+    Then \( \prod_{ i \in I } A_{ i } \) is a subspace of \( \prod_{ i \in I }
+    X_{ i } \) if both products are given in the box topology, or if both
+    products are given in the product topology.
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{19.4}[thm:19.4]
+    If each space \( X_{ i } \) is Hausdorff, then \( \prod_{ i \in I } 
+    X_{ i } \) is a Hausdorff space in both the box and product topologies.
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{19.5}[thm:19.5]
+    Let \( \{ X_{ i } \}_{ i \in I } \) be an indexed set of topological spaces
+    and \( X = \prod_{ i \in I } X_{ i } \).
+    Let \( A_{ i } \subset X_{ i } \) for each \( i \in I \).
+    If \( X \) is given either the product or the box topology, then 
+    \begin{equation*}
+        \prod_{ i \in I } \overline{ A }_{ i }
+        =
+        \overline{ \prod_{ i \in I } A_{ i } }
+    \end{equation*}
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{19.6}[thm:19.6]
+    Let \( f: A \rightarrow \prod_{ i \in I } X_{ i } \) be given by the 
+    equation
+    \begin{equation*}
+        f ( a ) 
+        =
+        ( f_{ i } ( a ) )_{ i \in I }
+    \end{equation*}
+    where \( f_{ i }: A \rightarrow X_{ i } \) for each \( i \).
+    Let \( X = \prod_{ i \in I } X_{ i } \) have the product topology.
+    Then the function \( f \) is continuous if and only if each function
+    \( f_{ i } \) is continuous.
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Inverse Image Under a Projection}[thm:19_inv_img]
+    Let \( \{ X_{ i } \}_{ i \in I } \) be an indexed set of topological spaces
+    and \( X = \prod_{ i \in I } X_{ i } \).
+    The inverse image of an open subset of \( X_{ k } \) under 
+    \( \mathrm{proj}_{ k } \) is open in the product topology (and therefore
+    also in the at least as fine box topology).
+
+    \baseRule
+
+    \begin{proofBox}
+        Let us start by fixing \( k \in I \) and having \( U_{ k } \subset 
+        X_{ k } \) be an open subset.
+        The inverse image of \( U_{ k } \) under \( \mathrm{proj}_{ k } \)
+        is defined to be the set of all point in the domain \( X \) whose 
+        output lies in \( U_{ k } \); i.e., it is the set of all points 
+        whose \( k \)th coordinate is in \( U_{ k } \).
+        We can write this as follows:
+        \begin{equation*}
+            \mathrm{proj}_{ k }^{ -1 } ( U_{ k } )
+            =
+            \prod_{ i \in I } U_{ i }
+            \quad \mathrm{where} \quad 
+            U_{ i } = X_{ i }
+            \text{ when }
+            i \neq k    
+        \end{equation*}
+        For \( i = k \), we already have that \( U_{ k } \subset X_{ k } \).
+
+        \baseSkip
+
+        Notice that \( \mathrm{proj}_{ k }^{ -1 } ( U_{ k } ) \) is an arbitrary
+        product of open sets where \( U_{ i } = X_{ i } \) for all but 
+        \( i = k \). 
+        Thus, \( \mathrm{proj}_{ k }^{ -1 } ( U_{ k } ) \) is a basic open set
+        in the product topology (for arbitrary products), which means that it 
+        is open.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Convergence of Sequences in Products}[thm:19_convergence_product]
+    Let \( \{ X_{ i } \}_{ i \in I } \) be an indexed set of topological spaces
+    and \( X = \prod_{ i \in I } X_{ i } \).
+    Consider a sequence 
+    \begin{equation*}
+        \mathbf{x}^{ 0 } = ( x_{ i }^{ 0 } )_{ i \in I }
+        \quad 
+        \mathbf{x}^{ 1 } = ( x_{ i }^{ 1 } )_{ i \in I }
+        \quad 
+        \mathbf{x}^{ 2 } = ( x_{ i }^{ 2 } )_{ i \in I }
+        \quad 
+        \ldots
+    \end{equation*}
+    and a point \( \mathbf{x} = ( x_{ i } )_{ i \in I } \) to which we would
+    like to determine whether the sequence converges.
+    
+    \baseSkip 
+
+    Then \( \mathbf{x}^{ n } \rightarrow \mathbf{x} \) in the product topology
+    if and only if \( x_{ i }^{ n } \rightarrow x_{ i } \) for each index 
+    \( i \in I \).
+
+    \baseSkip
+
+    Note that this theorem holds for when \( I \) is a finite indexing set.
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{\( \implies \)}
+        Let \( \mathbf{x}^{ n } \rightarrow \mathbf{x} \) in the product 
+        topology.
+        Let \( i \in I \) be given, and also let an open neighborhood 
+        \( U_{ i } \subset X_{ i } \) of \( x_{ i } \) be given.
+        Our goal is to show that \( x_{ i }^{ n } \rightarrow x_{ i } \).
+
+        \baseSkip 
+
+        In order for our sequence to converge to \( x_{ i } \), it follows by 
+        definition that 
+        there exists some positive integer \( N \) such that \( x_{ i }^{ n } 
+        \in U_{ i } \) for all \( n \geq N \).
+        From here, we note that the [\hyperlink{thm:15_inv_img}{inverse image}] 
+        of \( U_{ i } \) under \( \mathrm{proj}_{ i } \), i.e.
+        \( \mathrm{proj}_{ i }^{ -1 } ( U_{ i } ) \), is open in \( X \).
+        Further note that \( \mathrm{proj}_{ i }^{ -1 } ( U_{ i } ) \) 
+        consists of all points in \( X \) such that their \( i \)th coordinate
+        is in \( U_{ i } \). 
+        Since \( U_{ i } \) was given to be an open neighborhood of 
+        \( x_{ i } \), we see that \( x_{ i } \in U_{ i } \) by construction.
+        Thus, we end up getting that \( \mathbf{x} \in 
+        \mathrm{proj}_{ i }^{ -1 } ( U_{ i } ) \) -- that is, 
+        \( \mathrm{proj}_{ i }^{ -1 } ( U_{ i } ) \) is an open neighborhood 
+        of \( \mathbf{x} \).
+
+        \baseSkip 
+
+        Now because we were given \( \mathbf{x}^{ n } \rightarrow \mathbf{x} \),
+        it follows that there exists some positive integer \( N \) such that 
+        \( \mathbf{x}^{ n } \in \mathrm{proj}_{ i }^{ -1 } ( U_{ i } ) \) for 
+        all \( n \geq N \).
+        Notice that this implies that \( x_{ i }^{ n } \in U_{ i } \) for all 
+        \( n \geq N \), which means that \( x_{ i }^{ n } \rightarrow 
+        x_{ i } \).
+
+        \baseSkip
+
+        \wrapBox{\( \impliedby \)}
+        Now let's assume that \( x_{ i }^{ n } \rightarrow x_{ i } \) for all 
+        \( i \in I \).
+        Our goal is to show that \( \mathbf{x}^{ n } \rightarrow \mathbf{x} \).
+
+        \baseSkip
+
+        Let us start by letting \( U = \prod_{ i \in I } U_{ i } \) be a 
+        basic open neighborhood of \( \mathbf{x} \) -- always note that we 
+        can interchange "open" and "basic".
+        Because \( U_{ i } \) is an open neighborhood of \( x_{ i } \) and 
+        because \( x_{ i }^{ n } \rightarrow x_{ i } \), we have that for all
+        \( i \in I \), there exists \( N_{ i } \) so \( x_{ i }^{ n } \in 
+        U_{ i } \) for all \( n \geq N_{ i } \).
+        This is a little worrisome since we eventually want to take the maximum
+        of all these \( N_{ i } \) so that we can use it for \( U \); if there 
+        are infinitely many \( N_{ i } \), then we might not have a maximum!
+
+        \baseSkip
+
+        Thankfully, we have by definition of the product topology that 
+        there only exists a finite amount of situations where \( U_{ i } \neq 
+        X_{ i } \).
+        In the case that \( U_{ i } = X_{ i } \), we can take \( N_{ i } = 0 \)
+        since any sequence \( x_{ i }^{ n } \) is contained in \( X_{ i } \).
+        Thus, we can pick \( N_{ i } = 0 \) 
+        for all but finitely many \( i \) (those \( i \) where \( U_{ i } \neq
+        X_{ i } \)).
+        We can then set \( N = \max \{ \text{remaining } N_{ i } \} \), which
+        results in us having that \( \mathbf{x}^{ n } \in U \) for all
+        \( n \geq N \).
+        Hence, we get that \( \mathbf{x}^{ n } \rightarrow \mathbf{x} \).
+    \end{proofBox}
+\end{thmBox}

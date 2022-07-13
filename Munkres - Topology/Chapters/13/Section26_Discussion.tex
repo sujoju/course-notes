@@ -1,0 +1,106 @@
+\begin{remarkBox}{[\hyperlink{lem:26.1}{Lemma 26.1}]}
+    This lemma states \( A \) being compact in \( X \) means that \( A \) is 
+    also compact in the subspace topology.
+\end{remarkBox}
+
+\begin{remarkBox}{Cofinite Topology}
+    This topology is not Hausdorff, and we see that there are sets that are
+    not closed, but compact.
+\end{remarkBox}
+
+\begin{remarkBox}{[\hyperlink{lem:26.4}{Lemma 26.4}]}
+    This lemma tells us that Hausdorffness automatically gives us a stronger
+    condition: we can separate points from compact sets.
+    In fact, this lemma can be extended (as we did with 
+    [\hyperlink{thm:26.4}{Theorem 26.4}]) to say that disjoint subsets of 
+    a compact set can be separated.
+\end{remarkBox}
+
+\begin{remarkBox}{[\hyperlink{thm:26.7}{Theorem 26.7}]}
+    We note that both spaces being compact was important: \( X \) being compact
+    allowed for us to find an open tubular neighborhood around each slice
+    \( X \times \{ y \} \) for all \( y \in Y \) via
+    [\hyperlink{lem:26.8}{Lemma 26.8}].
+    Notice that each of these tubular neighborhoods can be covered by a finite
+    subcollection of \( \mathcal{A} \).
+    Why does compactness of \( Y \) matter then?
+    Notice that we have an infinite amount of tubular neighborhoods, and an
+    infinite union of finite sets may not be finite.
+    Thus, \( Y \) being compact allows for us to see that there are only a 
+    finite amount of tubular neighborhoods needed to cover \( Y \) (really,
+    \( X \times Y \)); these tubular neighborhoods are each covered by a finite
+    subcollection of \( \mathcal{A} \), and a finite union of finite sets will
+    remain finite.
+    Hence, we are left with a finite subcollection of \( \mathcal{A} \) that
+    also covers \( X \times Y \).
+
+    \baseRule
+    
+    We have shown in this theorem that the product of finitely many compact 
+    spaces is compact.
+    It can be shown as well that arbitrary products of compact spaces are
+    compact as well; however, the proof is much more difficult and has its 
+    own name -- \textit{Tychonoff's Theorem}.
+\end{remarkBox}
+
+\begin{remarkBox}{[\hyperlink{thm:26.9}{Theorem 26.9}]}
+    A special case of this theorem occurs when we have a \textbf{nested
+    sequence}
+    \begin{equation*}
+        C_{ 1 } \supset C_{ 2 } \supset \ldots \supset 
+        C_{ n } \supset C_{ n + 1 } \supset \ldots
+    \end{equation*}
+    of closed sets in a compact space \( X \).
+    If each of the sets \( C_{ n } \) is nonempty, then the collection 
+    \( \mathcal{C} = \{ C_{ n } \}_{ n \in \mathbb{Z}_{ + } } \) automatically
+    has the finite intersection property.
+    Then the intersection
+    \begin{equation*}
+        \bigcap_{ n \in \mathbb{Z}_{ + } } C_{ n }
+    \end{equation*}
+    is nonempty.
+\end{remarkBox}
+
+\begin{remarkBox}{Compactness in a Space vs. Period}
+    If \( A \) is a subset of a topological space \( X \), then there are two
+    ways we have talked about \( A \) being compact.
+
+    \baseSkip
+
+    \wrapBox{First}
+    We can talk about \( A \) being \textit{compact in} \( X \).
+    This has to do with open covers involving subsets open in \( X \).
+
+    \baseSkip 
+    \wrapBox{Second} 
+    We can talk about \( A \) being \textit{compact as a topological space} in
+    its own right equipped with the subspace topology.
+    This has to do with open covers involving subsets open in \( A \).
+
+    \baseSkip
+
+    Importantly, these two notions are the \textit{same} (as shown in 
+    [\hyperlink{lem:26.1}{Lemma 26.1}])!
+    So, when we say that "\( A \) is compact in \( X \)", we might as well say
+    that "\( A \) is compact with its subspace topology".
+    The point is that the containing \( X \) does not really matter beyond the 
+    subspace topology that it gives.
+
+    \baseSkip
+
+    However, the property of being closed \textit{does} depend on the containing
+    space. For example, let's compare:
+    the interval \( ( 0, 1 ) \) is closed in \( ( 0, 1 ) \), but it is 
+    \textit{not} closed in \( \mathbb{R} \).
+    Closedness in \( ( 0, 1 ) \) does not guarantee closedness in 
+    \( \mathbb{R} \).
+    The interval \( [ \frac{ 1 }{ 3 }, \frac{ 2 }{ 3 } ] \) is compact in 
+    \( ( 0, 1 ) \), so it \textit{must} also be compact in \( \mathbb{R} \).
+    Why? Because compactness is an \textit{inherent} property of 
+    \( [ \frac{ 1 }{ 3 }, \frac{ 2 }{ 3 } ] \). 
+    This is what makes compactness so special.
+\end{remarkBox}
+
+\begin{remarkBox}{More Examples}
+    More examples can be found in \S 26 of Munkres.
+\end{remarkBox}

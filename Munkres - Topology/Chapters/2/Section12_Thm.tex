@@ -1,0 +1,88 @@
+\begin{thmBox}{deMorgan's Laws}[thm:12_deMorgan]
+    deMorgan's law essentially states that complements transform unions into 
+    intersections and vice-versa. Putting it in a more mathematical statement, 
+    we see: 
+    \begin{equation*}
+        X \setminus \bigcap_{ i \in I } A_{ i }
+        =
+        \bigcup_{ i \in I } ( X \setminus A_{ i } )
+        \quad \mathrm{and} \quad
+        X \setminus \bigcup_{ i \in I } A_{ i }
+        =
+        \bigcap_{ i \in I } ( X \setminus A_{ i } )
+    \end{equation*}
+
+    \baseRule
+
+    \begin{proofBox}
+        We find that both statements are merely statements of logic. 
+
+        \baseSkip 
+
+        For the first statement, let's say that 
+        \( x \in X \setminus \bigcap_{ i \in I } A_{ i } \).
+        Notice that this just means that 
+        \( x \notin \bigcap_{ i \in I } A_{ i } \), which further means 
+        that there exists at least one \( i \in I \) such that 
+        \( x \notin A_{ i } \). 
+        I.e., we see that there exists at least one \( i \in I \) such that 
+        \( x \in X \setminus A_{ i } \), which means that 
+        \( x \in \bigcup_{ i \in I } ( X \setminus A_{ i } ) \).
+        Therefore we have that 
+        \begin{equation*}
+            X \setminus \bigcap_{ i \in I } A_{ i }
+            \subseteq
+            \bigcup_{ i \in I } ( X \setminus A_{ i } )
+        \end{equation*}
+        Now let's say that 
+        \( x \in \bigcup_{ i \in I } ( X \setminus A_{ i } ) \). 
+        This means that there exists at least one \( i \in I \) such that 
+        \( x \in X \setminus A_{ i } \), or equivalently, such that 
+        \( x \notin A_{ i } \). 
+        As a result, it must be the case, then, that 
+        \( x \notin \bigcap_{ i \in I } A_{ i } \), which is equivalent to 
+        \( x \in X \setminus \bigcap_{ i \in I } A_{ i } \)
+        Therefore we have that 
+        \begin{equation*}
+            \bigcup_{ i \in I } ( X \setminus A_{ i } )
+            \subseteq
+            X \setminus \bigcap_{ i \in I } A_{ i }
+        \end{equation*}
+        Combining both inclusions results in the equality that we were after.
+
+        \baseSkip
+
+        For the second statement, let's say that 
+        \( x \in X \setminus \bigcup_{ i \in I } A_{ i } \).
+        Again, this just means that 
+        \( x \notin \bigcup_{ i \in I } A_{ i } \), which further means that 
+        that for all \( i \in I \), we must have \( x \notin A_{ i } \). 
+        I.e., we see that for all \( i \in I \), we must have  
+        \( x \in X \setminus A_{ i } \), which means that 
+        \( x \in \bigcap_{ i \in I } ( X \setminus A_{ i } ) \).
+        Therefore we have that 
+        \begin{equation*}
+            X \setminus \bigcup_{ i \in I } A_{ i }
+            \subseteq
+            \bigcap_{ i \in I } ( X \setminus A_{ i } )
+        \end{equation*}
+
+        \pagebreak
+
+        Now let's say that 
+        \( x \in \bigcap_{ i \in I } ( X \setminus A_{ i } ) \). 
+        This means that for all \( i \in I \), we have
+        \( x \in X \setminus A_{ i } \), or equivalently, such that 
+        \( x \notin A_{ i } \). 
+        As a result, it must be the case, then, that 
+        \( x \notin \bigcup_{ i \in I } A_{ i } \), which is equivalent to 
+        \( x \in X \setminus \bigcup_{ i \in I } A_{ i } \)
+        Therefore we have that 
+        \begin{equation*}
+            \bigcap_{ i \in I } ( X \setminus A_{ i } )
+            \subseteq
+            X \setminus \bigcup_{ i \in I } A_{ i }
+        \end{equation*}
+        Combining both inclusions results in the equality that we were after.
+    \end{proofBox}
+\end{thmBox}

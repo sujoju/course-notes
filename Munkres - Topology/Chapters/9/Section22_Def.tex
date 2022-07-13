@@ -1,0 +1,76 @@
+\begin{defBox}{Equivalence Relation}[def:22_equivalence_relation]
+    Given a set \( X \), an \textbf{equivalence relation} on \( X \) is a way of
+    declaring when pairs \( x \) and \( y \) are \textit{equivalent} to one 
+    another, denoted by \( x \sim y \), so that the following conditions are 
+    satisfied.
+    \begin{itemize}
+        \item \textbf{Reflexivity}: \( x \sim x \) for all \( x \).
+        \item \textbf{Symmetry}: If \( x \sim y \), then \( y \sim x \).
+        \item \textbf{Transitivity}: If \( x \sim y \) and \( y \sim z \), then
+            \( x \sim z \).
+    \end{itemize}
+\end{defBox}
+
+\begin{defBox}{Equivalence Classes}[def:22_equivalence_classes]
+    Given an equivalence relation on a set, we can partition that set into
+    what we call \textbf{equivalence classes}, which are maximal subsets
+    consisting of elements that are all equivalent to one another.
+    If \( x \) is an element, then we use \( [ x ] \) to denote the equivalence
+    class containing \( x \).
+\end{defBox}
+
+\begin{defBox}{Saturated Sets}[def:22_saturated_sets]
+    We say that a 
+    subset \( C \) of \( X \) is \textbf{saturated} (with respect to the
+    surjective map \( p: X \rightarrow Y \)) if \( C \) contains every set 
+    \( p^{ -1 } ( \{ y \} ) \) that it intersects.
+    Thus, \( C \) is saturated if it equals the complete inverse image of a 
+    subset of \( Y \).
+\end{defBox}
+
+\begin{defBox}{Quotient Map}[def:22_quotient_map]
+    Let \( X \) and \( Y \) be topological spaces.
+    Let \( p: X \rightarrow Y \) be a \textit{surjective} map.
+    The map \( p \) is said to be a \textbf{quotient map} provided a subset
+    \( U \) of \( Y \) is open in \( Y \) if and only if \( p^{ -1 } ( U ) \)
+    is open in \( X \).
+
+    \baseSkip
+
+    In other words, \( p \) is a quotient map provided that it is 
+    \textit{continuous} and, for each \( U \subset Y \), if \( p^{ -1 } ( U ) \)
+    is open in \( X \), then \( U \) must be open in \( Y \).
+
+    \baseSkip
+
+    Furthermore, we can equivalently say \( p \) is a quotient map if \( Y \) 
+    is the quotient space corresponding to \( p \).
+
+    \baseRule
+
+    To say that \( p \) is a quotient map is equivalent to saying that \( p \)
+    is continuous and \( p \) maps \textit{saturated} open sets of \( X \) to
+    open sets of \( Y \) (or saturated closed sets of \( X \) to closed sets
+    of \( Y \)).
+\end{defBox}
+
+\begin{defBox}{Quotient Topology}[def:22_quotient_top]
+    Let \( X \) be a toplogical space and \( Y \) a \textit{set}.
+    Let \( p: X \rightarrow Y \) be a surjective map.
+    The \textbf{quotient topology} induced by \( p \) on the codomain
+    \( Y \) is the \textit{finest} topology on \( Y \) so that \( p \) is 
+    continuous, in the sense that the quotient topology contains every other topology on \( Y \) that makes \( p \) continuous.
+
+    \baseSkip 
+
+    In other words, there exists exactly one topology 
+    \( \mathcal{T} \) on \( Y \) relative to which \( p \) is a quotient 
+    map; it is called the \textbf{quotient topology} induced by \( p \)
+\end{defBox}
+
+\begin{defBox}{Quotient Space}[def:quotient_space]
+    Let \( X \) be a toplogical space and \( Y \) a \textit{set}.
+    Let \( p: X \rightarrow Y \) be a surjective map.
+    When the codomain \( Y \) is equipped with the quotient topology, then it
+    is called the \textbf{quotient space} corresponding to \( p \).
+\end{defBox}

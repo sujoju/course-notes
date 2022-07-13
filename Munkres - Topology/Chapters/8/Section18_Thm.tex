@@ -1,0 +1,677 @@
+\begin{thmBox}{Invertible Functions}[thm:18.0-1]
+    Let \( f: X \rightarrow Y \) be a function between two sets.
+    We say that \( f \) is a bijection if and only if it is invertible,
+    meaning that it has an inverse.
+
+    \baseRule
+
+    \begin{proofBox}
+        We shall prove this by first showing that \( f \) is injective if and 
+        only if \( f \) admits a left inverse \( g: Y \rightarrow X \) where
+        \( g \circ f = i_{ X } \). 
+
+        \baseSkip
+
+        Recall that \( f \) being injective tells us that we have for all 
+        \( x, y \in X \)
+        \begin{equation*}
+            f ( x ) = f ( y ) \implies x = y
+        \end{equation*}
+        If \( g \) is the left inverse of \( f \), then we have that
+        \begin{equation*}
+            g ( f ( x ) ) = x
+            \quad 
+            \forall x \in X   
+        \end{equation*}
+        If we assume that \( f \) is injective, then we want to show that 
+        \( g \) is indeed the left inverse of \( f \).
+        To do so, it just amounts to showing that \( g \) is indeed a 
+        well-defined function.
+        We see that 
+        \begin{equation*}
+            f ( x_{ 1 } ) = f ( x_{ 2 } )
+            \implies
+            x_{ 1 } = x_{ 2 }
+            \iff
+            g ( f ( x_{ 1 } ) ) = g ( f ( x_{ 2 } ) )
+        \end{equation*}
+        meaning that \( g \) is indeed a left inverse of \( f \),
+        given that \( f \) is injective.
+
+        \baseSkip
+
+        Now, if \( g \) is the left inverse of \( f \), then we want to show
+        that \( f \) is injective.
+        Since \( g \) is well defined, we see that
+        \begin{equation*}
+            f ( x_{ 1 } ) = f ( x_{ 2 } )
+            \implies
+            g ( f ( x_{ 1 } ) ) = g ( f ( x_{ 2 } ) )
+            \iff 
+            x_{ 1 } = x_{ 2 }
+        \end{equation*}
+        which tells us that \( f \) is indeed injective.
+
+        \baseSkip
+
+        We shall now prove that \( f \) is surjective if and 
+        only if \( f \) admits a right inverse \( g: Y \rightarrow X \) where
+        \( f \circ g = i_{ Y } \). 
+
+        \baseSkip
+
+        Recall that \( f \) being surjective tells us that we have for all 
+        \( y \in Y \), there exists some \( x \in X \) such that
+        \( f ( x ) = y \).
+        Let us define \( g: Y \rightarrow X \) to be the function which maps
+        each \( y \in Y \) to such \( x \in X \); if there is more than one
+        \( x \), then the function \( g \) maps \( y \) to one of them
+        chosen in an arbitrary way -- this excludes the possibility that 
+        \( g \) maps \( y \) to two distinct values, in which it wouldn't be
+        a function.
+        It follows that
+        \begin{equation*}
+            f ( g ( y ) ) = f ( x ) = y
+            \quad 
+            \forall y \in Y   
+        \end{equation*}
+        which tells us that \( g \) is indeed the right inverse of \( f \).
+
+        \baseSkip
+
+        Now, if \( g \) is the right inverse of \( f \), then we want to show
+        that \( f \) is surjective.
+        Let \( y \in Y \) be given.
+        We want to show that there exists some \( x \in X \) such that 
+        \( y = f ( x ) \).
+        Since \( g \) is well defined, we see that \( g ( y ) = x \) for some
+        \( x \in X \).
+        Furthermore, since \( g \) is the right inverse of \( f \), we have that
+        \begin{equation*}
+            y = f ( g ( y ) ) = f ( x )
+        \end{equation*}
+        which tells us that \( f \) is indeed surjective.
+
+        \baseSkip
+
+        Putting everything together, we see that \( f \) is bijective if and 
+        only if \( f \) has both a left and right inverse -- that is, \( f \)
+        is bijective if and only if \( f \) has an inverse.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Equivalent Definition of Continuity}[thm:18.0-2]
+    Let \( f: X \rightarrow Y \) be a function between topological spaces. 
+    Then the following definitions are equivalent.
+    When either definition is satisfied, we simply say that \( f \) is 
+    \textbf{continuous}.
+    \begin{enumerate}[label = (\alph*)]
+        \item at each point: \( f \) is continuous at each point \( x \) in its 
+            domain
+        \item inverse images of open sets: \( f^{ -1 } ( V ) \) is open in 
+            \( X \) whenever \( V \) is open in \( Y \).
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{(a) \( \implies \) (b)}
+
+        Let \( f \) be continuous at each \( x \in X \).
+        Let \( V \subset Y \) be open.
+        Our goal is to show that \( f^{ -1 } ( V ) \) is open in \( X \).
+        This means that for each \( x \in f^{ -1 } ( V ) \), we can to find some open neighborhood \( U \) of \( x \) so that 
+        \( U \subset f^{ -1 } ( V ) \).
+        
+        \baseSkip
+
+        Let \( x \in f^{ -1 } ( V ) \) be given.
+        Because we know that \( V \) is an open neighborhood of \( f ( x ) \) 
+        and \( f \) is continuous at \( x \), there exists an open neighborhood 
+        \( U \) so that \( f ( U ) \subset V \).
+        By definition, we have that for all \( x \in U \), we get 
+        \( f ( x ) \in V \).
+        Notice that 
+        \begin{equation*}
+            f^{ -1 } ( V )
+            =
+            \{ x \in X \mid f ( x ) \in V \}
+        \end{equation*}
+        which tells us that all of \( U \) is included in \( f^{ -1 } ( V ) \)
+        -- that is, we have that \( U \subset f^{ -1 } ( V ) \).
+        This completes this direction.
+
+        \baseSkip
+
+        \wrapBox{(b) \( \implies \) (a)}
+
+        Now, let \( f^{ -1 } ( V ) \) be open whenever \( V \) is open.
+        Let \( x \in X \) be given.
+        Our goal is to show that \( f \) is continuous at \( x \).
+
+        \baseSkip
+
+        Let \( V \) be an open neighborhood of \( f ( x ) \).
+        Thus, it follows that \( f^{ -1 } ( V ) \) is open by assumption, and
+        it also contains \( x \) -- that is, \( f^{ -1 } ( V ) \) is an
+        open neighborhood of \( x \) in \( X \).
+        If we pick \( U = f^{ -1 } ( V ) \), then we see that 
+        \begin{equation*}
+            f ( U )
+            =
+            \{ f ( x ) \in Y \mid x \in U \}
+            =
+            \{ f ( x ) \in Y \mid x \in f^{ -1 } ( V ) \}
+        \end{equation*}
+        which tells us that \( f ( x ) \in V \) for all \( x \in U \).
+        Thus, we have that \( f ( U ) \subset V \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{18.1}[thm:18.1]
+    Let \( X \) and \( Y \) be topological spaces; let \( f: X \rightarrow Y \).
+    Then the following are equivalent:
+    \begin{enumerate}
+        \item \( f \) is continuous.
+        \item For every subset \( A \) of \( X \), we have that 
+            \( f ( \overline{ A } ) \subset \overline{ f ( A ) } \).
+        \item For every closed set \( B \) of \( Y \), the set \( f^{ -1 } 
+            ( B ) \) is closed in \( X \).
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}
+        We shall show that 
+        \( ( 1 ) \implies ( 2 ) \implies ( 3 ) \implies ( 1 ) \).
+
+        \baseSkip 
+
+        \wrapBox{\( ( 1 ) \implies ( 2 ) \)}
+
+        Let \( x \in \mathrm{Cl} \ A \) be given.
+        Then \( f ( x ) \) represents some arbitrary element of 
+        \( f ( \mathrm{Cl} \ A ) \).
+        Our goal is to show that \( f ( x ) \in \mathrm{Cl} \ f ( A ) \), which 
+        is equivalent to showing that every open neighborhood that contains 
+        \( f ( x ) \) intersects \( f ( A ) \) non-trivially.
+
+        \baseSkip
+
+        Let \( V \) be any open neighborhood of \( f ( x ) \).
+        Since we know that \( f \) is continuous, \( V \) being open in \( Y \) 
+        implies that \( f^{ -1 } ( V ) \) is also open in \( X \).
+        Furthermore, we see that \( V \) containing \( f ( x ) \) implies as 
+        well that \( f^{ -1 } ( V ) \) contains \( x \) -- thus, 
+        \( f^{ -1 } ( V ) \) is an open neighborhood of \( x \).
+        Since we assumed \( x \in \mathrm{Cl} \ A \), it follows that 
+        \( f^{ -1 } ( V ) \cap A \neq \emptyset \).
+        Notice that
+        \begin{equation*}
+            f^{ -1 } ( V ) \cap A
+            =
+            \{ x \in X \mid x \in A \text{ and } x \in f^{ -1 } ( V ) \}
+        \end{equation*}
+        which tells us that for any \( x \in f^{ -1 } ( V ) \cap A \), it must 
+        be the case that \( f ( x ) \in V \cap f ( A ) \).
+        Now since \( f^{ -1 } ( V ) \cap A \neq \emptyset \), we have that
+        \( V \cap f ( A ) \neq \emptyset \).
+        Hence, we can conclude that \( f ( x ) \in \mathrm{Cl} \ f ( A ) \),
+        which results in \( f ( \mathrm{Cl} \ A ) \subset 
+        \mathrm{Cl} \ f ( A ) \).
+
+        \baseSkip 
+
+        \wrapBox{\( ( 2 ) \implies ( 3 ) \)}
+
+        Let \( B \) be a closed set of \( Y \) and let \( A = f^{ -1 } ( B ) \).
+        We want to show that \( A \) is closed in \( X \).
+        In this case, it suffices to show that \( A = \overline{ A } \).
+        By elementary set theory, we have that 
+        \begin{equation*}
+            f ( A )
+            =
+            f ( f^{ -1 } ( B ) )
+            \subset 
+            B
+        \end{equation*}
+        Therefore, we see that if \( x \in \overline{ A } \), then 
+        \begin{equation*}
+            f ( x ) \in f ( \overline{ A } ) 
+            \subset 
+            \overline{ f ( A ) }
+            \subset 
+            \overline{ B } = B
+        \end{equation*}
+        Where the first inclusion results from our assumption, and the second 
+        inclusion results from the fact that \( A \subset B \) implies 
+        \( \overline{ A } \subset \overline{ B } \).
+        From here, we note that \( f ( x ) \in B \) is equivalent to saying that
+        \( x \in f^{ -1 } ( B ) = A \). 
+        Thus, we are left with \( \overline{ A } \subset A \).
+        Since \( A \subset \overline{ A } \) by definition, it follows that 
+        \( A = \overline{ A } \), which tells us that \( f^{ -1 } ( B ) \) is
+        closed.
+
+        \baseSkip 
+
+        \wrapBox{\( ( 3 ) \implies ( 1 ) \)}
+
+        Let \( B \) be a closed set of \( Y \).
+        We are given that \( f^{ -1 } ( B ) \) is closed in \( X \) and want to
+        show that \( f \) is continuous -- that is, for every open set 
+        \( V \) of \( Y \), we have \( f^{ -1 } ( V ) \) to be open in \( X \).
+
+        \baseSkip
+
+        It follows that \( Y \setminus V \) is closed in \( Y \), which results 
+        in \( f^{ -1 } ( Y \setminus V ) \) by our assumption.
+        Furthermore, we have that 
+        \begin{equation*}
+            f^{ -1 } ( Y \setminus V ) = X \setminus f^{ -1 } ( V )
+        \end{equation*}
+        which results in \( f^{ -1 } ( V ) \) to be open in \( X \).
+        Thus, we have that \( f \) is continuous.
+
+        \baseSkip 
+
+        \wrapBox{BONUS: \( ( 1 ) \implies ( 3 ) \)}
+
+        Let \( f \) be continuous and \( B \subset Y \) be a closed set.
+        It follows that \( Y \setminus B \) is open.
+        Since \( f \) is continuous, we have that 
+        \( f^{ -1 } ( Y \setminus B ) \) is open as well.
+        Notice that 
+        \begin{equation*}
+            X \setminus f^{ -1 } ( B ) = f^{ -1 } ( Y \setminus X )
+        \end{equation*}
+        which results in \( f^{ -1 } ( B ) \) is closed in \( X \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Equivalent Definition of Homeomorphism}[thm:18_equiv_hom_def]
+    Let \( X \) and \( Y \) be topological spaces; let \( f : X \rightarrow Y \)
+    be a bijection.
+    Then \( f \) is a homeomorphism if and only if we have \( f ( U ) \) is open
+    if and only if \( U \) is open.
+    That is, another way to defined a homeomorphism is to say that it is a 
+    bijective correspondence \( f: X \rightarrow Y \) such that \( f ( U ) \) 
+    is open if and only if \( U \) is open.
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{18.2 (Rules for Constructing Continuous Functions)}[thm:18.2]
+    Let \( X, Y, \) and \( Z \) be topological spaces.
+    \begin{enumerate}[label = (\alph*)]
+        \item (Constant Function) If \( f: X \rightarrow Y \) maps all of 
+            \( X \) into the single point \( b \) of \( Y \) -- that is, 
+            \( f ( x ) = b \) for all \( x \in X \), then \( f \) is continuous.
+        \item (Inclusion) If \( A \) is a subspace of \( X \) (equipped with 
+            the subspace topology), the inclusion
+            function \( i_{ A }: A \rightarrow X \), given by 
+            \( i_{ A } ( x ) = x \) for all \( x \in A \), is continuous.
+        \item (Composites) If \( f: X \rightarrow Y \) and 
+            \( g: Y \rightarrow Z \) are continuous, then the map
+            \( g \circ f: X \rightarrow Z \), defined by \( ( g \circ f ) ( x )
+            = g ( f( x ) ) \) for all \( x \in X \), is continuous.
+        \item (Restricting the Domain) If \( f: X \rightarrow Y \) is 
+            continuous, and if \( A \) is a subspace of \( X \), then the 
+            restricted function \( f \vert_{ A }: A \rightarrow Y \) is 
+            continuous.
+        \item (Restricting or Expanding the Range) Let \( f: X \rightarrow Y \)
+            be continuous. If \( Z \) is a subspace of \( Y \) containing the 
+            image set \( f ( X ) \), then the function \( g: X \rightarrow Z \)
+            obtained by restricting the range of \( f \) is continuous.
+            If \( Z \) is a space having \( Y \) as a subspace, then the 
+            function \( h: X \rightarrow Z \) obtained by expanding the range of
+            \( f \) is continuous.
+        \item (Local Formulation of Continuity) The map \( f: X \rightarrow Y \)
+            is continuous if \( X \) can be written as the union of open sets 
+            \( U_{ i } \) such that \( f \vert_{ U_{ i } } \) is continuous for 
+            each \( i \in I \), where \( I \) is some index set.
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{a}
+
+        Let \( V \subset Y \) be open. 
+        We want to show that \( f^{ -1 } ( V ) \) is open in \( X \). 
+        Notice that if \( V \) contains \( b \), then we end up getting that 
+        \( f^{ -1 } ( V ) = X \); however, if \( V \) does not contain \( b \), 
+        then \( f^{ -1 } ( V ) = \emptyset \).
+        In either case, we have that \( f^{ -1 } ( V ) \) is open since both 
+        \( X \) and \( \emptyset \) are trivially open.
+        
+        \baseSkip 
+
+        \wrapBox{b}
+
+        Let \( U \subset X \) be open. 
+        We want to show that \( i_{ A }^{ -1 } ( U ) \) is open in \( A \) in
+        the subspace topology.
+        Notice that \( i_{ A }^{ -1 } ( U ) = U \cap A \), and since \( A \) is 
+        equipped with the subspace topology, we see that \( U \cap A \) is open
+        in \( A \) by definition since \( U \) is open in \( X \).
+        Thus, \( i_{ A }^{ -1 } ( U ) \) is open in \( A \) in
+        the subspace topology.
+
+        \baseSkip
+
+        \wrapBox{c}
+
+        Let \( W \subset Z \) be open.
+        Our goal is to show that \( ( g \circ f )^{ -1 } ( W ) \) is open in 
+        \( X \).
+        Notice that \( ( g \circ f )^{ -1 } ( W ) = 
+        f^{ -1 } ( g^{ -1 } ( W ) ) \).
+        Since we are given that \( W \) is open in \( Z \), we have that 
+        \( g^{ -1 } ( W ) \) is open in \( Y \) because \( g \) is continuous.
+        Furthermore, since \( f \) is continuous, we see that 
+        \( f^{ -1 } ( g^{ -1 } ( W ) ) \) must be open as well.
+        Therefore, we see that \( ( g \circ f ) \) is continuous.
+
+        \baseSkip
+
+        \wrapBox{d}
+
+        Notice that \( f \vert A = f \circ i_{ A } \), and since both are 
+        continuous, their composition is continuous as well.
+
+        \baseSkip
+
+        \wrapBox{e}
+
+        \textbf{Restricting range}:
+        Let \( V \cap Z \) be given where \( V \) is open in \( Y \); notice 
+        that \( V \cap Z \) is an arbitrary open set in \( Z \) under the 
+        subspace topology.
+        We want to show that \( g \) is continuous, which means that we need to
+        show that \( g^{ -1 } ( V \cap Z ) \) is open in \( X \).   
+        Notice that \( Z \) is not necessarily open in \( Y \), which 
+        could pose problems for showing that \( g^{ -1 } ( V \cap Z ) \) is 
+        open in \( X \).
+
+        \baseSkip
+
+        Let us look at \( g^{ -1 } ( V \cap Z ) \).
+        This is equivalent to saying that \( g^{ -1 } ( V ) \cap 
+        g^{ -1 } ( Z ) \).
+        Since \( Z \) is defined to be a subspace of \( Y \) containing the 
+        image set \( f ( X ) \), it follows that \( g^{ -1 } ( Z ) = X \).
+        Thus, we have that \( g^{ -1 } ( V ) \cap g^{ -1 } ( Z ) = 
+        g^{ -1 } ( V ) \cap X = g^{ -1 } ( V ) \).
+        From here, we see the following:
+        \begin{equation*}
+            \begin{aligned}
+                g^{ -1 } ( V )
+                &= 
+                \{ x \in X \mid g ( x ) \in V \}
+                \\
+                f^{ -1 } ( V )
+                &= 
+                \{ x \in X \mid f ( x ) \in V \}
+            \end{aligned}
+        \end{equation*}
+        Since \( g \) is obtained by restricting the range of \( f \), we see 
+        that \( g ( x ) = f ( x ) \) for all \( x \in X \), which results in 
+        \( g^{ -1 } ( V ) = f^{ -1 } ( V ) \).
+        Since \( f \) is continuous, it follows that \( f^{ -1 } ( V ) \) is 
+        open, which further results in \( g^{ -1 } ( V ) \) to be open as well.
+        Thus, we have that \( g^{ -1 } ( V \cap Z ) \) is open in \( X \).
+        Hence \( g \) is continuous.
+
+        \baseSkip
+
+        \textbf{Expanding range}:
+        Now to show that \( h: X \rightarrow Z \) is continuous if \( Z \) has 
+        \( Y \) as a subspace, we note that \( h \) is the composite of the 
+        map \( f: X \rightarrow Y \) and \( i_{ Y }: Y \rightarrow Z \).
+        We have already shown that the composition of continuous function are 
+        continuous, which results in \( h \) to be continuous.
+
+        \baseSkip
+
+        \wrapBox{f}
+
+        By hypothesis, we can write \( X \) as a union of open sets 
+        \( U_{ i } \), such that \( f \vert_{ U_{ i } } \) is continuous for 
+        each \( i \in I \).
+        We now let \( V \) be an open set in \( Y \).
+        We want to show that \( f^{ -1 } ( V ) \) is  open.
+        Notice that \( f \vert_{ U_{ i } } \) is constructed by restricting the
+        function \( f \) to \( U_{ i } \), meaning that 
+        \begin{equation*}
+            ( f \vert_{ U_{ i } } )^{ -1 } ( V )
+            =
+            \{ x \in U_{ i } \mid f ( x ) \in V \}
+            =
+            f^{ -1 } ( V ) \cap U_{ i }
+        \end{equation*}
+        since all the expression above represent the set of those points \( x \)
+        lying in \( U_{ i } \) for which \( f ( x ) \in V \).
+        Because we are given \( f \vert_{ U_{ i } } \) to be continuous,
+        we have that \( f^{ -1 } ( V ) \cap U_{ i } \) is open in \( U_{ i } \),
+        hence open in \( X \).
+        Let us now take a look \( f^{ -1 } ( V ) \) more closely knowing that
+        \( X \) can be written as a union of open set \( U_{ i } \):
+        \begin{equation*}
+            \begin{aligned}
+                f^{ -1 } ( V )
+                &=
+                \{ x \in X \mid f ( x ) \in V \}
+                \\
+                &=
+                \{ x \in \bigcup_{ i \in I } U_{ i } \mid f ( x ) \in V \}
+                \\
+                &=
+                \{ x \in X \mid x \in U_{ i } \text{ and } f ( x ) \in V 
+                \text{ for at least one } i \in I \}
+                \\
+                &=
+                \bigcup_{ i \in I } ( f^{ -1 } ( V ) \cap U_{ i } )
+            \end{aligned}
+        \end{equation*}
+        Since each \( f^{ -1 } ( V ) \cap U_{ i } \) is open in \( X \) for all
+        \( i \in I \), and arbitrary unions of open sets are still open, we have
+        that \( f^{ -1 } ( V ) \) is open.
+        Thus, \( f \) is continuous.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{18.3 (The Pasting Lemma)}[thm:18.3]
+    Let \( X = A \cup B \), where \( A \) and \( B \) are closed in \( X \).
+    Let \( f: A \rightarrow Y \) and \( g: B \rightarrow Y \) be continuous.
+    If \( f ( x ) = g ( x ) \) for every \( x \in A \cap B \), then \( f \)
+    and \( g \) combine to give a continuous function \( h: X \rightarrow Y \),
+    defined by setting \( h ( x ) = f ( x ) \) if \( x \in A \), and 
+    \( h ( x ) = g ( x ) \) if \( x \in B \).
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( f \) and \( g \) be continuous.
+        Our goal is to show that \( h \) is continuous.
+        Let \( D \subset Y \) be closed.
+        We want to show that \( h^{ -1 } ( D ) \) is closed as well, which 
+        will tell us \( h \) is continuous.
+        Notice that 
+        \begin{equation*}
+            h^{ -1 } ( D )
+            =
+            [ h^{ -1 } ( D ) \cap A ] \cup [ h^{ -1 } ( D ) \cap B ]
+            =
+            f^{ -1 } ( D ) \cup g^{ -1 } ( D ) 
+        \end{equation*}
+        We have that \( f^{ -1 } ( D ) \) and \( g^{ -1 } ( D ) \) are closed in
+        \( A \) and \( B \), respectively.
+        Since \( A \) and \( B \) are closed in \( X \), it follows that 
+        \( f^{ -1 } ( D ) \) and \( g^{ -1 } ( D ) \) are both closed in \( X \)
+        as well by transitivity of closedness.
+        Hence, it follows that \( h^{ -1 } ( D ) \) is closed as well since 
+        we have a finite union of closed sets, which finishes our proof.
+
+        \baseSkip
+
+        This argument works for finite unions, but does not work for arbitrary unions since we cannot guarantee that arbitrary unions of closed sets 
+        are closed.
+        Furthermore, we have that this theorem can be rephrased in terms of open
+        subsets.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Maps into Products}[thm:18.4]
+    Let \( Y = \prod_{ i \in I } Y_{ i } \) be a product of topological spaces.
+    Let \( f: X \rightarrow Y \) be a function given by the equation:
+    \begin{equation*}
+        \mathbf{f} ( t )
+        =
+        ( f_{ 1 } ( t ), f_{ 2 } ( t ), f_{ 3 } ( t ), \ldots )
+    \end{equation*}\
+    which we can further write in terms of its \textbf{component functions}
+    \( f_{ i } \):
+    \begin{equation*}
+        \mathbf{f} = ( f_{ i } )_{ i \in I }
+        \quad \mathrm{where} \quad 
+        f_{ i } = \mathrm{proj}_{ i } \circ \mathbf{f}
+    \end{equation*}
+    We say that \( \mathbf{f} \) is continuous if and only if its component 
+    functions are all continuous, assuming that the codomain has been equipped 
+    with the product topology.
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{\( \implies \)} 
+
+        Assume that \( \mathbf{f} \) is continuous.
+        We want to show that each of their component functions \( f_{ i } \) are
+        continuous for all \( i \in I \).
+        Indeed, we see that they are continuous since such functions are defined
+        as \( f_{ i } = \mathrm{proj}_{ i } \circ \mathbf{f} \), which is the 
+        composition of two continuous functions.
+
+        \baseSkip
+
+        \wrapBox{\( \impliedby \)}
+
+        Assume \( f_{ i } : X \rightarrow Y \) is continuous for all 
+        \( i \in I \).
+        Let \( U = \prod_{ i \in I } U_{ i } \) be a basic open set in the 
+        product topology.
+        Our goal is to show that \( \mathbf{f} \) is continuous, which we can 
+        do by showing that \( \mathbf{f}^{ -1 } ( U ) \) is open.
+
+        \baseSkip 
+
+        We start by noting that 
+        \begin{equation*}
+            f_{ i }^{ -1 }
+            =
+            ( \mathrm{proj}_{ i } \circ \mathbf{f} )^{ -1 }
+            =
+            \mathbf{f}^{ -1 } \circ \mathrm{proj}_{ i }^{ -1 }
+        \end{equation*}
+        Thus, it follows that 
+        \begin{equation*}
+            \mathbf{f}^{ -1 } ( U )
+            =
+            \mathbf{f}^{ -1 } \left( \prod_{ i \in I } U_{ i } \right)
+            =
+            \mathbf{f}^{ -1 } 
+            \left( 
+                \bigcap_{ i \in I } \mathrm{proj}_{ i }^{ -1 } ( U_{ i } ) 
+            \right)
+            =
+            \bigcap_{ i \in I } 
+            ( \mathbf{f}^{ -1 } \circ \mathrm{proj}_{ i }^{ -1 } ) ( U_{ i } ) 
+            =
+            \bigcap_{ i \in I }  f_{ i }^{ -1 } ( U_{ i } )
+        \end{equation*}
+        Since we are working in a product topology, it follows that 
+        \begin{equation*}
+            \bigcap_{ i \in I }  f_{ i }^{ -1 } ( U_{ i } )
+            =
+            \bigcap_{ \substack{ i \in I \\ U_{ i } \neq Y } } 
+            f_{ i }^{ -1 } ( U_{ i } )
+        \end{equation*}
+        Since each \( f_{ i } \) is continuous for all \( i \in I \), we have
+        that \( f_{ i }^{ -1 } ( U_{ i } ) \) is open for all \( i \in I \).
+        Furthermore, since we only have finitely many \( U_{ i } \) such that
+        \( U_{ i } \neq Y_{ i } \), it follows that 
+        \( \mathbf{f}^{ -1 } ( U ) \) is 
+        open since a finite intersection of open sets is still open.
+        Thus, we have that \( \mathbf{f} \) is continuous.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Continuity and Limits}[thm:cont_lim]
+    Let \( f: X \rightarrow Y \) be a continuous function between topological
+    spaces.
+    If \( x_{ n } \rightarrow x \) is a convergent sequence in \( X \), then 
+    \( f ( x_{ n } ) \rightarrow f ( x ) \) in \( Y \).
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( x_{ n } \rightarrow x \).
+        Our goal is to show that \( f ( x_{ n } ) \rightarrow f ( x ) \).
+        Let \( V \) be an open neighborhood of \( f ( x ) \).
+        We want to show that \( f ( x_{ n } ) \in V \) for all \( n \geq N \).
+        Notice that \( f^{ -1 } ( V ) \) is an open neighborhood of \( x \)
+        because \( f \) is continuous.
+        Because \( x_{ n } \rightarrow x \), we have that there exists some 
+        positive integer \( N \) such that \( x_{ n } \in f^{ -1 } ( V ) \) for all \( n \geq N \).
+        Notice that \( x_{ n } \in f^{ -1 } ( V ) \iff f ( x_{ n } ) \in V \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Hausdorffness and Continuity}[thm:haus_cont]
+    Let \( X \) be a topological space and let \( A \) be a subset of \( X \) so
+    that \( \mathrm{Cl} \ A = X \).
+    Let \( f: X \rightarrow Y \) and \( g: X \rightarrow Y \) be a pair of 
+    continuous functions into a topological space \( Y \) that 
+    \textbf{agree} on \( A \), meaning that \( f ( x ) = g ( x ) \) for all 
+    \( x \in A \).
+
+    \baseSkip 
+
+    If \( Y \) is Hausdorff, then \( f \) and \( g \) must agree on all of
+    \( X \).
+
+    \baseRule
+
+    \begin{proofBox}
+        Towards a contradiction (TAC), assume there exists some \( p \in X \) so
+        that \( f ( p ) \neq g ( p ) \).
+        Because \( Y \) is Hausdorff, there exists disjoint open neighborhoods,
+        say \( U  \) containing \( f ( p ) \) and \( V \) containing \( g ( p ) \).
+        Notice that both \( f^{ -1 } ( U ) \) and \( g^{ -1 } ( V ) \) are  open neighborhoods of \( p \).
+
+        \baseSkip 
+
+        If we take their intersection, then we still end up with an open 
+        neighborhood of \( p \) -- that is, 
+        \( f^{ -1 } ( U ) \cap g^{ -1 } ( V ) \) is still an open neighborhood
+        of \( p \).
+        Since \( p \in \mathrm{Cl} \ A \), this implies that 
+        \( A \cap ( f^{ -1 } ( U ) \cap g^{ -1 } ( V ) ) \neq \emptyset \).
+        Let us pick any 
+        \( x \in A \cap ( f^{ -1 } ( U ) \cap g^{ -1 } ( V ) ) \).
+        This means that \( f ( x ) \in U \) and \( g ( x ) \in V \).
+        Because \( x \in A \), we have by assumption that 
+        \( f ( x ) = g( x ) \), which results in \( U \cap V \neq \emptyset \).
+        However, we have that \( U \cap V = \emptyset \), so we reach a 
+        contradiction.
+
+        \baseSkip
+        
+        Therefore, \( f \) and \( g \) must agree on all of \( X \).
+    \end{proofBox}
+\end{thmBox}

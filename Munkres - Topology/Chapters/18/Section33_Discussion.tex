@@ -1,0 +1,54 @@
+\begin{remarkBox}{On the Urysohn Lemma}
+    The Urysohn Lemma says that if every pair of disjoint closed sets in \( X \) can
+    be separated by disjoint open sets, then each such pair can be separated by a 
+    continuous function.
+
+    \baseSkip
+
+    Notice that the converse is trivial -- that is, if a pair of disjoint closed sets in
+    \( X \) can be separated by a continuous function, then each such pair can be 
+    separated by disjoint open sets; if \( f: X \rightarrow ( 0, 1 ) \) is the function,
+    then \( f^{ -1 } ( [ 0, \frac{ 1 }{ 2 } ) ) \) and 
+    \( f^{ -1 } ( ( \frac{ 1 }{ 2 }, 1 ] ) \) are disjoint open sets containing \( A \)
+    and \( B \), respectively.
+
+    \baseRule
+
+    The proof of the Urysohn lemma cannot be generalized to show that in a regular 
+    space, where you can separate points from closed sets by disjoint open sets, you
+    can also separate points from closed sets by continuous functions.
+
+    \baseSkip
+
+    At first glance, it seems that the proof of the Urysohn lemma should go through.
+    You take a point \( a \) and a closed set \( B \) not containing \( a \), and you
+    begin the proof just as before by defining \( U_{ 1 } = X \setminus B \) and 
+    choosing \( U_{ 0 } \) to be an open set about \( a \) whose closure is contained in
+    \( U_{ 1 } \) (using the regularity of \( X \)).
+    But at the very next step of the proof, you run into difficulty. Suppose that
+    \( p \) is the next rational number in the sequence after \( 0 \) and \( 1 \).
+    You want to find an open set \( U_{ p } \) such that 
+    \( \overline{ U_{ 0 } } \subset U_{ p } \) and 
+    \( \overline{ U_{ p } } \subset U_{ 1 } \) -- for this, regularity is not enough.
+\end{remarkBox}
+
+\begin{remarkBox}{On Completely Regular}
+    Requiring that one be able to separate a point from a closed set by a continuous
+    function is, in fact, a stronger condition than requiring that one can separate
+    them by disjoint open sets.
+    This requirement is made into a new separation axiom, which we defined to be
+    [\hyperlink{def:33_completely_regular}{completely regular}].
+\end{remarkBox}
+
+\begin{remarkBox}{On Well-Ordered}
+    Given a set \( A \) without an order relation, it is natural to ask whether there
+    exists an order relation for \( A \) that makes it into a well-ordered set.
+    If \( A \) is finite, any bijection
+    \begin{equation*}
+        f: A \rightarrow \{ 1, \ldots, n \}
+    \end{equation*}
+    can be used to define an order relation on \( A \); under this relation, \( A \) 
+    has the same order type as the ordered set \( \{ 1 , \ldots , n \} \).
+    In fact, every order relation on a finite set can be obtained this way, as shown in
+    [\hyperlink{thm:10.1}{Theorem 10.1}].
+\end{remarkBox}

@@ -1,0 +1,135 @@
+\begin{defBox}{Open Neighborhood}[def:17_open_neighborhood]
+    An \textbf{open neighborhood of a point} \( x \) in a topological space 
+    \( X \) is any open subset of \( X \) that contains \( x \).
+\end{defBox}
+
+\begin{defBox}{Closed Sets}[def:17_closed_sets]
+    A subset \( A \) of a topological space \( X \) is said to be 
+    \textbf{closed} if the set \( X \setminus A \) is open.
+\end{defBox}
+
+\begin{defBox}{Clopen Sets}[def:17_clopen_sets]
+    Sets that are both closed and open are said to be \textbf{clopen}.
+\end{defBox}
+
+\begin{defBox}{Interior of a Set}[def:17_interior]
+    Let's say that we are given a subset \( A \) of a topological space 
+    \( X \).
+    The \textbf{interior} of \( A \) is defined as the union of all open sets 
+    contained in \( A \).
+    The interior of \( A \) is denoted by \( \mathrm{Int} \ A \) or by 
+    \( A^{ \circ } \).
+
+    \baseSkip
+
+    We can also define \( \mathrm{Int} \ A \) to be the largest open subset of 
+    \( X \) that is contained in \( A \).
+
+    \baseSkip 
+
+    By design, we see that if \( U \in X \) is open and \( U \subset A \), then 
+    \( U \subset \mathrm{Int} \ A \).
+\end{defBox}
+
+\begin{defBox}{Closure of a Set}[def:17_closure]
+    Let's say that we are given a subset \( A \) of a topological space 
+    \( X \).
+    The \textbf{closure} of \( A \) is defined as the intersection of all 
+    closed sets containing in \( A \).
+    The closure of \( A \) is denoted by \( \mathrm{Cl} \ A \) or by 
+    \( \overline{ A } \).
+
+    \baseSkip
+
+    We can also define \( \overline{ A } \) to be the smallest closed subset of 
+    \( X \) that contains \( A \).
+
+    \baseSkip
+    
+    By design, we see that if \( C \in X \) is closed and \( C \supset A \), 
+    then \( \overline{ A } \subset C \).
+\end{defBox}
+
+\begin{defBox}{Boundary of a Set}[def:17_boundary]
+    Let's say that we are given a subset \( A \) of a topological space 
+    \( X \).
+    The \textbf{boundary} of \( A \), denoted as \( \partial A \) is the 
+    complement of \( \mathrm{Int} \ A \) in \( \overline{ A } \) -- that is, 
+    \begin{equation*}
+        \partial A \equiv 
+        \overline{ A } \setminus \mathrm{Int} \ A
+    \end{equation*}
+    An alternative definition that is commonly given is the following:
+    \begin{equation*}
+        \partial A 
+        \equiv 
+        \overline{ A } \cap ( \overline{ X \setminus A } )
+    \end{equation*}
+\end{defBox}
+
+\begin{defBox}{Limit Point}[def:17_limit_point]
+    If \( A \) is a subset of the topological space \( X \) and if \( x \) is 
+    a point of \( X \), we say that \( x \) is a \textbf{limit point} of 
+    \( A \) if every neighborhood of \( x \) intersects \( A \) in some point
+    \textit{other than x itself} -- that is, if \( U \) is an open neighborhood
+    of a limit point \( x \) of \( A \), then \( U \cap A \) must contain at
+    least one point besides \( x \).
+
+    \baseSkip
+
+    Said differently, \( x \) is a limit point of \( A \) if it belongs to the
+    closure of \( A \setminus \{ x \} \). Notice that the point \( x \) may lie
+    in \( A \) or not; for this definition, it does not matter.
+\end{defBox}
+
+\begin{defBox}{Accumulation Point}[def:17_accumulation_point]
+    Let \( X \) be a topological space and \( ( x_{ 0 }, x_{ 1 }, x_{ 2 }, 
+    \ldots ) \) be a sequence in \( X \).
+    We say that a given \( x \in X \) is an \textbf{accumulation point} of the 
+    sequence if, for each open neighborhood \( U \) of \( x \), there exist 
+    infinitely many \( n \in \mathbb{N} \) such that \( x_{ n } \in U \).
+\end{defBox}
+
+\begin{defBox}{Image of a Sequence}[def:17_sequence_image]
+    The \textbf{image} of a given sequence in a topological space \( X \) is the
+    subset of \( X \) consisting of all elements that appear in that sequence.
+\end{defBox}
+
+\begin{defBox}{Convergence}[def:17:convergence]
+    In an arbitrary topological space, we say that a sequence of points 
+    \( x_{ 1 }, x_{ 2 }, \ldots \) (commonly denoted as \( ( x_{ n } ) \)) of 
+    the space \( X \) \textbf{converges}
+    to the point \( x \) (called the \textbf{limit} of the sequence) of \( X \) 
+    provided that, corresponding to each 
+    neighborhood \( U \) of \( x \), there is a positive integer \( N \)
+    such that \( x_{ n } \in U \) for \( n \geq N \).
+
+
+    \baseSkip 
+
+    If \( X \) is a metric space, then we say that a sequence of points 
+    \( x_{ 1 }, x_{ 2 }, \ldots \) of the space \( X \) \textbf{converges}
+    to the point \( x \) of \( X \) (written as \( x_{ n } \rightarrow x \))
+    if and only if: for all \( \epsilon > 0 \), there exists an index \( N \)
+    such that \( d ( x_{ n }, x ) < \epsilon \) for all \( n \geq N \).
+    I.e., we have \( x_{ n } \rightarrow x \) when: for each \( \epsilon > 0 \),
+    the sequence \( x_{ 1 }, x_{ 2, \ldots } \) is \textit{eventually} contained
+    in the open ball of radius \( \epsilon \) centered at \( 0 \).
+    
+    \baseSkip 
+
+    By eventually, we mean that there is some index \( N \) so that the 
+    statement is true for all \( x_{ n } \) with \( n \geq N \).
+\end{defBox}
+
+\begin{defBox}{Hausdorff Space}[def:17_Hausdorff]
+    A topological space \( X \) is called a \textbf{Hausdorff space} if for each
+    pair \( x_{ 1 }, x_{ 2 } \) of distinct points of \( X \), there exists 
+    neighborhoods \( U_{ 1 }, U_{ 2 } \) of \( x_{ 1 }, x_{ 2 } \), 
+    respectively, that are disjoint -- i.e., \( U_{ 1 } \cap U_{ 2 } = 
+    \emptyset \)
+\end{defBox}
+
+\begin{defBox}{\( T_{ 1 } \)}[def:17_T1]
+    The \( T_{ 1 } \) axiom is the condition that finite point sets be closed.
+\end{defBox}

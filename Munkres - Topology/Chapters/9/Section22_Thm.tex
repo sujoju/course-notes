@@ -1,0 +1,196 @@
+\begin{thmBox}{22.1}[thm:22.1]
+    Let \( p: X \rightarrow Y \) be a quotient map; let \( A \) be a subspace of
+    \( X \) that is saturated with respect to \( p \); let \( q: A \rightarrow 
+    p ( A ) \) be the map obtained by restricting \( p \).
+    \begin{enumerate}
+        \item If \( A \) is either open or closed in \( X \), then \( q \) is 
+            a quotient map.
+        \item If \( p \) is either an open map or a closed map, then \( q \) is
+            a quotient map.
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{22.2}[thm:22.2]
+    Let \( p: X \rightarrow Y \) be a quotient map.
+    Let \( Z \) be a space and let \( g: X \rightarrow Z \) be a map that is 
+    constant on each set \( p^{ -1 } ( \{ y \} ) \), for \( y \in Y \).
+    Then \( g \) induces a map \( f: Y \rightarrow Z \) such that 
+    \( f \circ p = g \). 
+    The induced map \( f \) is continuous if and only if \( g \) is continuous;
+    \( f \) is a quotient map if and only if \( g \) is a quotient map.
+    \begin{center}
+        \begin{tikzcd}[ row sep = large ]
+            X \arrow[ d, swap, "p" ] \arrow [ dr, "g" ]
+            \\
+            Y \arrow[ r, dashed, swap, "f" ] & Z
+        \end{tikzcd}
+    \end{center}
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}[Corollary]{22.3}[cor:22.3]
+    Let \( g: X \rightarrow Z \) be a surjective continuous map.
+    Let \( X^{ * } \) be the following collection of subsets of \( X \):
+    \begin{equation*}
+        X^{ * }
+        =
+        \{ g^{ -1 } ( \{ z \} ) \mid z \in Z \}
+    \end{equation*}
+    Give \( X^{ * } \) the quotient topology.
+    
+    \begin{enumerate}[label = (\alph*)]
+        \item The map \( g \) induces a bijective continuous map \( f: X^{ * } 
+            \rightarrow Z \), which is a homeomorphism if and only if \( g \) 
+            is a quotient map.
+            \begin{center}
+                \begin{tikzcd}[ row sep = large ]
+                    X \arrow[ d, swap, "p" ] \arrow [ dr, "g" ]
+                    \\
+                    X^{ * } \arrow[ r, swap, "f" ] & Z
+                \end{tikzcd}
+            \end{center}
+        \item If \( Z \) is Hausdorff, then so is \( X^{ * } \)
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Equivalent Quotient Spaces}[thm:22_quotient_space_equivalent]
+    Let \( p: X \rightarrow Y \) be a quotient map.
+    Then \( Y \) is homeomorphic to the quotient space \( X^{ * } \) determined
+    by the equivalence relation: \( x \sim y \) if and only if 
+    \( p ( x ) = p ( y ) \).
+
+    \baseRule
+
+    \begin{proofBox}
+        Consider this diagram of maps:
+        \begin{center}
+            \begin{tikzcd}[ row sep = large ]
+                X \arrow[ d, swap, "\pi" ] \arrow [ dr, "p" ]
+                \\
+                X^{ * } \arrow[ r, swap, "\overline{ p }" ] & Y
+            \end{tikzcd}
+        \end{center}
+        We define \( \pi ( x ) = [ x ] \) for all \( x \in X \).
+        Let us call \( \overline{ p }: X^{ * } \rightarrow Y \) to be defined by
+        \( \overline{ p } ( [ x ] ) = p ( x ) \).
+        We claim that \( \overline{ p } \) is a homeomorphism between \( X \)
+        and \( Y \), which means that we need to check three conditions:
+        the first is that \( \overline{ p } \) is well-defined,
+        the second is that \( \overline{ p } \) is a bijection, and the third 
+        is that \( \overline{ p } \) and \( \overline{ p }^{ -1 } \) are 
+        continuous.
+
+        \baseSkip
+
+        For the first and second conditions can be seen via the following
+        equivalences:
+        \begin{equation*}
+            [ x ] = [ y ]
+            \iff 
+            x \sim y
+            \iff 
+            p ( x ) = p ( y )
+        \end{equation*}
+        where the second equivalence follows from our assumption.
+        Going from left-to-right gives us that \( \overline{ p } \) is 
+        well-defined,
+        Going from right-to-left gives us that \( \overline{ p } \) is 
+        injective.
+        Furthermore, \( \overline{ p } \) is surjective since \( p \) is a
+        surjection.
+        Thus, \( \overline{ p } \) is a bijection, which tells us that it has 
+        an inverse \( \overline{ p }^{ -1 } \).
+
+        \baseSkip
+
+        We now need to verify the third condition -- that is, we need to show 
+        that both \( \overline{ p } \) and \( \overline{ p }^{ -1 } \) are
+        continuous. 
+        We start by noting that
+        \( X^{ * } \) is equipped with the quotient topology induced by 
+        \( \pi \) and \( Y \) is equipped with the quotient topology induced 
+        by \( p \).
+        Further notice that \( p = \overline{ p } \circ \pi \).
+
+        \baseSkip
+
+        We first go about showing that \( \overline{ p } \) is continuous.
+        Let \( V \subset Y \) be open.
+        Our goal is to show that \( \overline{ p }^{ -1 } ( V ) \) is open
+        in \( X^{ * } \) in the quotient topology induced by \( \pi \).
+        This means that we need to show that \( \pi^{ -1 } (
+        \overline{ p }^{ -1 } ( V ) ) \) is open in \( X \).
+        Notice that
+        \begin{equation*}
+            \pi^{ -1 } ( \overline{ p }^{ -1 } ( V ) )
+            =
+            ( \overline{ p } \circ \pi )^{ -1 } ( V )
+            =
+            p^{ -1 } ( V )
+        \end{equation*}
+        Since we know that \( p \) is continuous, we find that \( p^{ -1 } 
+        ( V ) \) is open in \( X \), which means that 
+        \( \pi^{ -1 } ( \overline{ p }^{ -1 } ( V ) ) \) is open in \( X \).
+        Thus, we have that \( \overline{ p } \) is continuous.
+
+        \baseSkip
+
+        We now need to show that \( \overline{ p }^{ -1 } \), which exists
+        since \( \overline{ p } \) is a bijection, is continuous.
+        Let \( W \subset X^{ * } \) be open.
+        We want to show that \( ( \overline{ p }^{ -1 } )^{ -1 } ( W ) \) is 
+        open in \( Y \) under the quotient topology induced by \( p \).
+        Now because the inverse of a function is unique, we see that 
+        \( ( \overline{ p }^{ -1 } )^{ -1 } ( W ) = \overline{ p } ( W ) \).
+        Thus, it suffices to check that \( \overline{ p } ( W ) \) is open
+        in \( Y \) under the quotient topology induced by \( p \).
+
+        \baseSkip 
+
+        To do so, we shall utilize the fact that \( p \) is a quotient map;
+        because \( p \) is a quotient map, we have that 
+        \( \overline{ p } ( W ) \) is open in \( Y \) if and only if 
+        \( p^{ -1 } ( \overline{ p } ( W ) ) \) is open in \( X \).
+        Notice that
+        \begin{equation*}
+            p = \overline{ p } \circ \pi
+            \iff 
+            \pi = \overline{ p }^{ -1 } \circ p
+            \implies 
+            p^{ -1 } ( \overline{ p } ( W ) )
+            =
+            ( \overline{ p }^{ -1 } \circ p )^{ -1 } ( W )
+            =
+            \pi^{ -1 } ( W )
+        \end{equation*}
+        Since \( \pi \) itself is a quotient map (namely, continuous), we have 
+        that \( W \) being open in \( X^{ * } \) implies that 
+        \( \pi^{ -1 } ( W ) \) is open in \( X \).
+        Thus, we have that \( p^{ -1 } ( \overline{ p } ( W ) ) \) is open in 
+        \( X \), which results in \( \overline{ p } ( W ) \) to be
+        open in \( Y \).
+        With this, we see that \( \overline{ p }^{ -1 } \) is continuous.
+
+        \baseSkip
+
+        With all three conditions proved, we have that \( \overline{ p } \) is 
+        a homeomorphism between \( X \) and \( Y \)
+    \end{proofBox}
+\end{thmBox}

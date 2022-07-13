@@ -1,0 +1,453 @@
+\begin{thmBox}{30.1}[thm:30.1]
+    Let \( X \) be a topological space.
+
+    \begin{enumerate}[label = (\alph*)]
+        \item Let \( A \) be a subset of \( X \). If there is a sequence of 
+            points of \( A \) converging to \( x \), then
+            \( x \in \overline{ A } \); the converse hold if \( X \) is 
+            first countable.
+        \item Let \( f: X \rightarrow Y \). If \( f \) is continuous, then for
+            every convergent sequence \( x_{ n } \rightarrow x \) in \( X \),
+            the sequence \( f ( x_{ n } ) \) converges to \( f ( x ) \).
+            The converse holds if \( X \) is first-countable.
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}
+        The proof for this proof can be seen in \S 21 -- it is just a generalization
+        under the hypothesis of metrizability. 
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{30.2}[thm:30.2]
+    A subspace of a first-countable space is first-countable, and a countable
+    product of first-countable spaces is first-countable.
+    
+    \baseSkip
+
+    A subspace of a second-countable space is second-countable, and a countable 
+    product of second-countable spaces is second-countable.
+
+    \baseRule
+
+    \begin{proofBox}
+        Let us first consider the second countability axiom.
+        If \( \mathcal{B} \) is a countable basis for \( X \), then we have that
+        \begin{equation*}
+            \{ B \cap A \mid B \in \mathcal{B} \}
+        \end{equation*}
+        is a countable basis for the subspace of \( A \) of \( X \).
+        Thus, we have that \( A \) is second-countable.
+        Now, if \( \mathcal{B}_{ i } \) is a countable basis for the spaces
+        \( X_{ i } \), then the collection of all products
+        \( \prod U_{ i } \), where \( U_{ i } \in \mathcal{B}_{ i } \) for 
+        finitely many values of \( i \) and \( U_{ i } = X_{ i } \) for all 
+        other values of \( i \), is a countable basis for \( \prod X_{ i } \).
+
+        \baseSkip
+
+        Let us now consider the first countability axiom.
+        Let \( A \) be a given subset of \( X \).
+        Let \( x \in A \) be given as well.
+        Since \( X \) is first-countable and \( x \in A \subset X \), it 
+        follows that there is a countable basis \( \mathcal{B}_{ x } \) at
+        \( x \) in the topology of \( X \).
+        As a result, we can see that
+        \begin{equation*}
+            \{ B \cap A \mid B \in \mathcal{B}_{ x } \}
+        \end{equation*}
+        is a countable basis for \( x \) in the subspace topology of \( A \).
+        Since this is true for any \( x \in A \), we have that \( A \) is 
+        first-countable.
+        Now, let \( \prod X_{ i } \) be a countable product of first-countable
+        spaces.
+        Let \( \mathbf{x} \in \prod X_{ i } \) be any given point.
+        Since we know that each \( X_{ i } \) is first-countable, we have that
+        for each coordinate \( x_{ i } \) of \( \textbf{x} \), there is some
+        countable basis \( \mathcal{B}_{ x_{ i } } \) at \( x \) in the topology
+        of \( X_{ i } \).
+        The collection of all products \( \prod U_{ i } \), where
+        \( U_{ i } \in \mathcal{B}_{ x_{ i } } \) for finitely many values of 
+        \( i \) and \( U_{ i } = X_{ i } \) for all other values of \( i \), 
+        is a countable basis for \( \mathbf{x} \).
+        Thus, we have that \( \prod X_{ i } \) is first-countable.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{30.3}[thm:30.3]
+    Suppose that \( X \) has a countable basis -- that is, suppose that 
+    \( X \) is second countable.
+    Then:
+
+    \begin{enumerate}[label = (\alph*)]
+        \item Every open covering of \( X \) contains a countable subcollection
+            covering \( X \).
+            I.e., \( X \) is Lindel\"{o}f.
+        \item There exists a countable subset of \( X \) that is dense in 
+            \( X \).
+            I.e., \( X \) is separable.
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( X \) be second-countable.
+        Let \( \mathcal{B} = \{ B_{ n } \} \) be a countable basis for \( X \).
+
+        \baseSkip
+        \wrapBox{a}
+
+        Let \( \mathcal{U} \) be an open cover of \( X \).
+        We want to show that there exists a countable subcollection of 
+        \( \mathcal{U} \) that still covers \( X \).
+        If \( \mathcal{B} \) is \textit{subordinate to the open cover} 
+        \( \mathcal{U} \), meaning that every \( B \in \mathcal{B} \) is 
+        contained in some \( U_{ B } \in \mathcal{U} \), then:
+        \begin{equation*}
+            \{ U_{ B } \mid B \in \mathcal{B} \}
+        \end{equation*}
+        is a countable subcover of \( X \).
+
+        \baseSkip
+
+        Given some open cover \( \mathcal{U} \) of a topological space \( X \),
+        and a basis \( \mathcal{B} \) for the topology on \( X \), then there
+        exists a basis \( \mathcal{B}_{ \mathcal{U} } \subset \mathcal{B} \) and
+        is subordinate to \( \mathcal{U} \).
+
+        \baseSkip
+
+        To show why, let \( B \in \mathcal{B} \) be given such that it is not
+        contained in any of the open sets in the collection \( \mathcal{U} \).
+        Let \( x \in B \) be given.
+        We know that because \( \mathcal{U} \) is an open cover of \( X \),
+        we have that \( x \) must belong to at least one open set in this
+        cover, say \( U_{ x } \).
+        Now, since \( \mathcal{B} \) is a basis for \( X \) and \( U_{ x } \)
+        is open in \( X \), it follows by [\hyperlink{lem:13.2}{Lemma 13.2}]
+        that there exists some element \( B' \in \mathcal{B} \) such that
+        \( x \in B' \subset U_{ x } \).
+        Notice that \( x \in B \) and \( x \in B' \); \( \mathcal{B} \) being a 
+        basis tells us that there exists a basis element \( B_{ x } \) 
+        containing \( x \) such that \( B_{ x } \subset B \cap B' \).
+        Doing this for all \( x \in B \) results in us seeing that 
+        \( B = \bigcup_{ x \in B } B_{ x } \); note that each \( B_{ x } \)
+        is contained in some element \( U_{ x } \) of the open cover
+        \( \mathcal{U} \).
+        
+        \baseSkip
+
+        To recap, we have essentially broken down \( B \) into smaller basis
+        elements, where each of these elements are contained in some element
+        \( U_{ x } \) of the open cover \( \mathcal{U} \), and whose union
+        is all of \( B \).
+        If we do this for all \( B \in \mathcal{B} \) such that it is not
+        contained in any of the open sets in the collection \( \mathcal{U} \),
+        then we end up with a finer basis \( \mathcal{B}_{ \mathcal{U} } \)
+        that is subordinate to \( \mathcal{U} \).
+
+        \baseSkip 
+
+        One other way that we could have proved the existence of a subordinate basis 
+        is if we were to remove all the basis elements that were not contained in some 
+        element of the open cover \( \mathcal{U} \).
+        Indeed, we see that the remaining basis elements are subordinate to the open 
+        cover \( \mathcal{U} \), and they still form a basis for the topology on 
+        \( X \); the reason being similar to the argument made earlier.
+
+        \baseSkip
+
+        Generally, we can replace \( \mathcal{B} \) with a potentially smaller
+        basis that is subordinate to \( \mathcal{U} \), and we can apply the 
+        same argument as earlier.
+
+        \baseSkip
+        \wrapBox{b}
+
+        For each nonempty \( B \in \mathcal{B} \), let us pick some 
+        \( x_{ B } \in B \).
+        We claim that 
+        \begin{equation*}
+            A
+            =
+            \{ x_{ B } \mid B \in \mathcal{B} \}
+        \end{equation*}
+        is both countable and dense.
+        It is clearly countable since \( \mathcal{B} \) is countable.
+        To show that \( A \) is dense, we want to show that 
+        \( \mathrm{Cl} \ A = X \).
+        Let \( x \in X \) and an open neighborhood \( U \) of \( x \) be given.
+        Because we have that \( \mathcal{B} \) is a basis, this implies that 
+        there exists
+        \( B \in \mathcal{B} \) such that \( x \in B \subset U \).
+        Thus, we have that \( x_{ B } \in U \), which results in 
+        \( U \cap A \neq \emptyset \).
+        Thus, we have that \( x \in \mathrm{Cl} \ A \), which tells us 
+        that \( X \subset \mathrm{Cl} \ A \).
+        Hence, we see that \( \mathrm{Cl} \ A = X \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Extension of [\hyperlink{thm:30.3}{Theorem 30.3}]}[thm:30.4]
+    Let \( X \) be a metric space.
+    Then the following statements are equivalent:
+
+    \begin{enumerate}
+        \item \( X \) is second-countable
+        \item \( X \) is separable
+        \item \( X \) is Lindel\"{o}f
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}
+        From [\hyperlink{thm:30.3}{Theorem 30.3}], we can see that 
+        \( ( 1 ) \implies ( 2 ) \) and \( ( 1 ) \implies ( 3 ) \).
+        It suffices to show that \( ( 2 ) \implies ( 1 ) \) and 
+        \( ( 3 ) \implies ( 1 ) \).
+
+        \baseSkip
+        \wrapBox{\( ( 2 ) \implies ( 1 ) \)}
+
+        Let \( A \) be a countable dense subset of \( X \).
+        We define 
+        \( 
+            \mathcal{B} 
+            = 
+            \{ B_{ q }( a ) \mid a \in A \text{ and } q \in \mathbb{Q}_{ > 0 } \} 
+        \)
+        to be the set of balls of rational radius centered at points in \( A \).
+        We claim that \( \mathcal{B} \) is a countable basis for \( X \).
+
+        \baseSkip
+
+        We shall first show that \( \mathcal{B} \) is countable. 
+        Let us define \( B_{ \mathbb{Q}_{ > 0 } }( a ) \) to be as follows:
+        \begin{equation*}
+            B_{ \mathbb{Q}_{ > 0 } }( a )
+            =
+            \{ B_{ q }( a ) \mid q \in \mathbb{Q}_{ > 0 } \}
+        \end{equation*}
+        Since \( \mathbb{Q}_{ > 0 } \) is countable, we see that 
+        \( B_{ \mathbb{Q}_{ > 0 } }( a ) \) is countable as well.
+        Thus, we see that 
+        \begin{equation*}
+            \mathcal{B}
+            =
+            \{ B_{ q }( a ) \mid a \in A \text{ and } q \in \mathbb{Q}_{ > 0 } \}
+            =
+            \bigcup_{ a \in A } B_{ \mathbb{Q}_{ > 0 } }( a )
+        \end{equation*}
+        is a countable union of countable sets, which we know is countable.
+
+        \baseSkip
+
+        From here, we let \( x \in X \) and \( r \in \mathbb{R}_{ > 0 } \) be given.
+        We want to show that there exists some \( a \in A \) and 
+        \( q \in \mathbb{Q}_{ > 0 } \) so that \( x \in B_{ q }( a ) \) and 
+        \( B_{ q }( a ) \subset B_{ r }( x ) \).
+        Since we know that \( A \) is dense in \( X \), we have that 
+        \( \overline{ A } = X \); thus, it follows that for any \( x \in X \) and any 
+        open neighborhood \( U \) of \( x \), we get that \( U \cap A \neq \emptyset \).
+        Since \( B_{ r }( x ) \) is an open neighborhood of \( x \), we see that 
+        \( B_{ r }( x ) \cap A \neq \emptyset \); in fact, we can do better and
+        say that since \( B_{ \frac{ r }{ 2 } }( x ) \) is an open neighborhood of 
+        \( x \), we see that \( B_{ \frac{ r }{ 2 } }( x ) \cap A \neq \emptyset \).
+        Let \( a \in B_{ \frac{ r }{ 2 } }( x ) \cap A \).
+
+        \baseSkip
+
+        Our goal now is to find some \( q \in \mathbb{Q}_{ > 0 } \) such that 
+        \( x \in B_{ q }( a ) \subset B_{ r }( x ) \).
+        Since we know that \( a \in B_{ \frac{ r }{ 2 } }( x ) \), we have that 
+        \( d ( a, x ) < \frac{ r }{ 2 } \).
+        To guarantee that \( x \in B_{ q }( a ) \), we can choose some rational number
+        \( q \in \mathbb{Q}_{ > 0 } \) such that \( d ( a, x ) < q < \frac{ r }{ 2 } \);
+        such a rational number \( q \) exists as \( \mathbb{Q} \) is dense in 
+        \( \mathbb{R} \).
+        All that is left to do is to show that \( B_{ q }( a ) \subset B_{ r }( x ) \)
+        -- this amounts to showing that for all \( b \in B_{ q }( a ) \), 
+        we have that \( b \in B_{ r }( x ) \).
+        The triangle inequality tells us that
+        \begin{equation*}
+            d ( b, x )
+            \leq 
+            d ( b, a ) + d ( a, x )
+        \end{equation*}
+        Because \( x \in B_{ q }( a ) \), we see that 
+        \( d ( a, x ) < q < \frac{ r }{ 2 } \); the same could be said for \( b \).
+        Thus, we see that 
+        \begin{equation*}
+            d ( b, x )
+            \leq 
+            d ( b, a ) + d ( a, x ) 
+            < 
+            q + q
+            <
+            \frac{ r }{ 2 } + \frac{ r }{ 2 } = r
+        \end{equation*}
+        Since our choice of \( b \in B_{ q }( a ) \) was arbitrary, we have that 
+        \( B_{ q }( a ) \subset B_{ r }( x ) \).
+
+        \baseSkip
+
+        Finally, we want to show that \( \mathcal{B} \) is a basis that generates the 
+        topology on \( X \).
+        This amounts to showing that for any open set \( U \) of \( X \) and each
+        \( x \in U \), there is an element \( B \in \mathcal{B} \) such that
+        \( x \in B \subset U \); notice that this is precisely 
+        [\hyperlink{lem:13.2}{Lemma 13.2}].
+        Let \( U \) be any open set of \( X \); let \( x \in U \) be given.
+        Since \( U \) is open in \( X \) and \( X \) is a metric space, we see that 
+        there exists some positive real number \( r \) such that
+        \( x \in B_{ r }( x ) \subset U \).
+        We have just shown that there exists some \( a \in A \) and 
+        \( q \in \mathbb{Q}_{ > 0 } \) so that \( x \in B_{ q }( a ) \) and 
+        \( B_{ q }( a ) \subset B_{ r }( x ) \).
+        If we let \( B = B_{ q }( a ) \), then we have that 
+        \( x \in B \subset B_{ r }( x ) \subset U \), which tells us that 
+        \( \mathcal{B} \) is indeed a basis that generates the topology on \( X \).
+        Hence, we have that \( X \) has a countable basis -- that is, \( X \) is 
+        second-countable.
+
+
+        \baseSkip
+        \wrapBox{\( ( 3 ) \implies ( 1 ) \)}
+
+        Let \( X \) be a Lindel\"{o}f metric space.
+        Since \( X \) is a metric space, we have that balls of some radius \( r \), 
+        where \( r \) is a real number, are open subsets of \( X \).
+        Furthermore, since \( X \) is Lindel\"{o}f, we see that for every open cover
+        \( \mathcal{A} \), there exists a countable subcollection of \( \mathcal{A} \) 
+        that covers \( X \).
+    
+        \baseSkip
+    
+        We start off by noting that
+        \begin{equation*}
+            \mathcal{A}
+            =
+            \{ B_{ \frac{ 1 }{ n } }( x ) \mid x \in X \}
+        \end{equation*}
+        is an open cover of \( X \) for all \( n \in \mathbb{Z}_{ + } \).
+        Since \( X \) is Lindel\"{o}f, we have that there exists a countable 
+        subcollection of \( \mathcal{A} \) that covers \( X \), and this is true for 
+        all \( n \in \mathbb{Z}_{ + } \); let's denote \( \mathcal{A}_{ n } \)
+        to be this countable covering of \( X \) by \( \frac{ 1 }{ n } \)-balls.
+    
+        \baseSkip
+    
+        We shall now define the following:
+        \begin{equation*}
+            \mathcal{B}
+            =
+            \bigcup_{ n \in \mathbb{Z} } \mathcal{A}_{ n }
+        \end{equation*}
+        We claim that \( \mathcal{B} \) is a countable basis.
+        It is clear to see that \( \mathcal{B} \) is countable as it is a countable 
+        union of countable sets. 
+        All that is left to do is to show that \( \mathcal{B} \) is a basis.
+        
+        \baseSkip
+    
+        Let \( U \) be any open set of \( X \).
+        Let \( x \) be any element of \( U \).
+        Since \( U \) is open, we have that there exists some positive real number 
+        \( r \) such that \( x \in B_{ r }( x ) \subset U \) -- i.e., \( U \) being 
+        open in a metric space means that we can always put a ball of some positive 
+        real radius around each point in \( U \) such that this ball is contained in 
+        \( U \).
+        Now, because \( \mathcal{A}_{ n } \) is a countable subcover of \( X \) for all 
+        \( n \in \mathbb{Z}_{ + } \), we see that \( x \) must be contained in some
+        ball of radius \( \frac{ 1 }{ n } \) centered at some point \( y_{ n } \) of
+        \( X \) -- that is, \( x \in B_{ \frac{ 1 }{ n } }( y_{ n } ) \) for all 
+        \( n \in \mathbb{Z}_{ + } \), where \( y_{ n } \) is some element of \( X \) 
+        that depends on the particular countable subcover \( \mathcal{A}_{ n } \) and 
+        \( x \in X \) that we are considering.
+    
+        \baseSkip
+    
+        Our goal is to find some \( n \in \mathbb{Z}_{ + } \) such that 
+        \( B_{ \frac{ 1 }{ n } }( y_{ n } ) \subset B_{ r }( x ) \). 
+        It suffices to show that for all \( z \in B_{ \frac{ 1 }{ n } }( y_{ n } ) \), 
+        we have that \( z \in B_{ r }( x ) \).
+        Since we have a metric to work with, say \( d \), the triangle inequality tells 
+        us that
+        \begin{equation*}
+            d ( z, x )
+            \leq 
+            d ( z, y_{ n } ) + d ( y_{ n }, x )
+        \end{equation*}
+        Because \( x \in B_{ \frac{ 1 }{ n } }( y_{ n } ) \), we see that 
+        \( d ( y_{ n }, x ) < \frac{ 1 }{ n } \); notice that the same can be said with 
+        \( z \).
+        Thus, we see that 
+        \begin{equation*}
+            d ( z, x )
+            \leq 
+            d ( z, y_{ n } ) + d ( y_{ n }, x ) 
+            < 
+            \frac{ 1 }{ n } + \frac{ 1 }{ n } = \frac{ 2 }{ n }
+        \end{equation*}
+        In order for \( z \in B_{ r }( x ) \), we need \( d ( z, x ) < r \) -- this is
+        guaranteed to happen if \( \frac{ 1 }{ n } < \frac{ r }{ 2 } \).
+        Therefore, if we choose \( n \in \mathbb{Z}_{ + } \) such that 
+        \( \frac{ 1 }{ n } < \frac{ r }{ 2 } \), then we end up getting that 
+        \( z \in B_{ r }( x ) \) for all \( z \in B_{ \frac{ 1 }{ n } }( y_{ n } ) \) 
+        -- that is, we get 
+        \( x \in B_{ \frac{ 1 }{ n } }( y_{ n } ) \subset B_{ r }( x ) \subset U \).
+    
+        \baseSkip
+    
+        Putting everything together, we see that for all \( x \in U \), there exists 
+        some \( n \in \mathbb{Z}_{ + } \) such that 
+        \( x \in B_{ \frac{ 1 }{ n } }( y_{ n } ) \subset U \), 
+        where \( y_{ n } \) is some element of \( X \) that depends on the particular 
+        finite subcover \( \mathcal{A}_{ n } \) and \( x \in X \) that we are 
+        considering.
+        By [\hyperlink{lem:13.2}{Lemma 13.2}], we have that \( \mathcal{B} \) is a 
+        countable basis for \( X \).
+        Thus, \( X \) is second-countable.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Variation of [\hyperlink{thm:30.2}{Theorem 30.2}]}[thm:30.5]
+    Let \( X \) be a topological space and Lindel\"{o}f.
+    Any closed subspace of \( X \) is Lindel\"{o}f.
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( A \) be a closed subspace of \( X \). 
+        Let \( \mathcal{U} \) be an open cover of \( A \) by sets open in \( A \). 
+        We want to show that there exists a countable subcover of \( A \) by sets 
+        open in \( A \). 
+        To start, we first note that for each element \( U_{ i } \in \mathcal{U} \),
+        there exists some open set \( V_{ i } \) in \( X \) such that 
+        \( U_{ i } = A \cap V_{ i } \) by definition of the subspace topology. 
+        From this, we can see that \( \mathcal{V} = \{ V_{ i } \} \) is an open cover 
+        of \( A \) by sets open in \( X \). 
+
+        \baseSkip 
+
+        Since \( A \) is closed in \( X \), this means that \( X \setminus A \) must be 
+        open in \( X \) as well. 
+        Thus, we get that 
+        \begin{equation*}
+            ( X \setminus A ) \cup \left( \bigcup V_{ i } \right)   
+        \end{equation*}
+        is an open cover of \( X \) by sets open in \( X \). 
+        Since \( X \) is Lindel\"{o}f, it follows that there exists a countable subcover
+        of \( X \) for our particular open cover. 
+        Let's say that such a countable subcover is as follows: 
+        \begin{equation*}
+            \left\{ X \setminus A, V_{ i_{ j } } \mid j \in \mathbb{Z}_{ + } \right\}
+        \end{equation*}
+        With this, we can see that \( \{ V_{ i_{ j } } \}_{ j \in \mathbb{Z}_{ + } } \)
+        is still an open cover of \( A \) by sets open in \( X \), which implies that 
+        \( \{ U_{ i_{ j } } = A \cap V_{ i_{ j } } \}_{ j \in \mathbb{Z}_{ + } } \)
+        is a countable open cover of \( A \) by sets open in \( A \).
+        Thus, we have that \( A \) is Lindel\"{o}f.
+    \end{proofBox}
+\end{thmBox}

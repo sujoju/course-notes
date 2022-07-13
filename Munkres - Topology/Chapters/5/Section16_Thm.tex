@@ -1,0 +1,227 @@
+\begin{thmBox}[Lemma]{16.1}[lem:16.1]
+    If \( \mathcal{B} \) is a basis for the topology of \( X \) then the 
+    collection 
+    \begin{equation*}
+        \mathcal{B}_{ Y }
+        =
+        \{ Y \cap B \mid B \in \mathcal{B} \}
+    \end{equation*}
+    is a basis for the subspace topology on \( Y \).
+
+    \baseRule
+
+    \begin{proofBox}
+        We start by noting that \( \mathcal{B}_{ Y } \) is a collection of open 
+        sets of \( Y \), where the topology on \( Y \) is the subspace topology.
+        From here, we shall utilize [\hyperlink{lem:13.2}{Lemma 13.2}]; our goal
+        is to show that for each open set \( Y \cap U \) of \( Y \) (where 
+        \( U \) is an open set of \( X \)) and each \( y \in Y \cap U \), there 
+        is an element \( Y \cap B \in \mathcal{B}_{ Y } \) such that 
+        \( y \in Y \cap B \subset Y \cap U \).
+
+        \baseSkip
+
+        Let's say that we are given any \( U \) open in \( X \), \( Y \cap U \)
+        open in \( Y \), and \( y \in Y \cap U \).
+        By the definition of openness in \( X \) (under the basis 
+        \( \mathcal{B} \)), we have that there is a basis element 
+        \( B \in \mathcal{B} \) such that \( y \in B \subset U \).
+
+        \baseSkip 
+        
+        Notice that \( B \subset U \) implies that \( Y \cap B \subset 
+        Y \cap U \).
+        Furthermore, knowing that \( y \in Y \cap U \) and 
+        \( y \in B \subset U \) implies as well that \( y \in Y \cap B \subset 
+        Y \cap U \).
+        Thus, by [\hyperlink{lem:13.2}{Lemma 13.2}], we have that 
+        \( \mathcal{B}_{ Y } \) is a basis for the subspace topology on \( Y \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}[Lemma]{16.2}[lem:16.2]
+    Let \( Y \) be a subspace of \( X \). 
+    If \( U \) is open in \( Y \) and \( Y \) is open in \( X \), then 
+    \( U \) is open in \( X \).
+
+    \baseRule
+
+    \begin{proofBox}
+        Since \( U \) is open in \( Y \), we have that there exists some \( V \)
+        open in \( X \) so that \( U = Y \cap V \).
+        Since \( Y \) and \( V \) are both open in \( X \), and \( X \) is a 
+        topological space, we have that \( Y \cap V \) is open in \( X \) as 
+        well (finite intersection of open sets is open).
+        Thus, we have that \( U \) is open in \( X \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{16.3}[thm:16.3]
+    If \( A \) is a subspace of \( X \) and \( B \) is a subspace of \( Y \),
+    then the product topology on \( A \times B \) is the same as the topology
+    \( A \times B \) inherits as a subspace of \( X \times Y \).
+
+    \baseRule
+
+    \begin{proofBox}
+        Let us start by examining the general basis element for the subspace
+        topology on \( A \times B \).
+        Such a basis element if of the following form: \( ( A \times B ) \cap 
+        ( U \times V ) \), where \( U \times V \) is the general basis element
+        for \( X \times Y \), where \( U \) is open in \( X \) and \( V \) is
+        open in \( Y \).
+        We can see that 
+        \begin{equation*}
+            ( A \times B ) \cap ( U \times V )
+            =
+            ( A \cap U ) \times ( B \cap V )
+        \end{equation*}
+        Now since \( A \cap U \) and \( B \cap V \) are the general open sets
+        for the subspace topologies on \( A \) and \( B \), respectively, 
+        we have the set \( ( A \cap U ) \times ( B \cap V ) \) to be the
+        general basis element for the product topology on \( A \times B \).
+
+        \baseSkip
+
+        From this, we can conclude that the bases for the subspace topology on
+        \( A \times B \) and for the product topology on \( A \times B \) are 
+        the same.
+        Hence, the topologies are the same as well.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{16.4}[thm:16.4]
+    Let \( X \) be an ordered set in the order topology; 
+    let \( Y \) be a subset of \( X \) that is convex in \( X \).
+    Then the order topology on \( Y \) is the same as the topology \( Y \) 
+    inherits as a subspace of \( X \).
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Closures and Interiors in Subspaces}[thm:16_clo_int_subspace]
+    Let \( X \) be a topological space and let \( A \subset U \subset X \).
+    The following hold:
+    \begin{enumerate}[label = (\alph*)]
+        \item If \( U \) is open in \( X \), then the interior of \( A \) in 
+            \( U \) equals the interior of \( A \) in \( X \).
+        \item If \( U \) is closed in \( X \), then the closure of \( A \) in 
+            \( U \) equals the closure of \( A \) in \( X \)
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{a}
+        Let us start by noting that \( \mathrm{Int} \ A \) is defined to be the 
+        union of all open subsets (either in \( U \) or \( X \)) contained in 
+        \( A \). 
+        We shall start by supposing that we have some open subset \( V \) in 
+        \( U \) that is contained in \( A \).
+        We want to show that \( V \) is also an open subset in \( X \) contained
+        in \( A \). 
+        It is immediate to see that the containment condition is trivially met,
+        so we just need to show that \( V \) is open in \( X \).
+        Note that being open in \( U \) (which is a subspace of \( X \)) means 
+        that there exists some open set \( W \) of \( X \) such that 
+        \( V = U \cap W \).
+        Since both \( U \) and \( W \) are open sets of \( X \), and finite 
+        intersections of open sets are open, we have that \( U \cap W \) (hence 
+        \( V \)) is open in \( X \).
+        Thus, we have that 
+        \begin{equation*}
+            \mathrm{Int} \ A \text{ in } U
+            \subset 
+            \mathrm{Int} \ A \text{ in } X
+        \end{equation*}
+
+        \baseSkip
+
+        Let us now suppose that we have some open subset \( Z \) in \( X \) 
+        that is contained in \( A \).
+        We want to show that \( Z \) is also an open subset in \( U \) 
+        contained in \( A \).
+        Again, the containment condition is trivially met by construction, so 
+        we just need to show that \( Z \) is open in \( U \).
+        Because \( Z \) is contained in \( A \), which is a subset of \( U \) 
+        (i.e., \( Z \subset A \subset U \)), we have that \( U \cap Z = Z \).
+        Therefore, we see that \( Z \) itself is open in \( U \).
+        Thus, we have that 
+        \begin{equation*}
+            \mathrm{Int} \ A \text{ in } U
+            \supset 
+            \mathrm{Int} \ A \text{ in } X
+        \end{equation*}
+        Putting everything together gives us
+        \begin{equation*}
+            \mathrm{Int} \ A \text{ in } U
+            =
+            \mathrm{Int} \ A \text{ in } X
+        \end{equation*}
+
+        \baseSkip
+
+        \wrapBox{b}
+        Let us now let \( U \) to be closed in \( X \).
+        Furthermore, let us define the following:
+        \begin{equation*}
+            \mathrm{Cl}_{ U } \ A
+            =
+            \text{ closure of \( A \) in \( U \)}
+            \quad \mathrm{and} \quad 
+            \mathrm{Cl}_{ X } \ A
+            =
+            \text{ closure of \( A \) in \( X \)}
+        \end{equation*}
+        We first want to show that \( \mathrm{Cl}_{ U } \ A \subset 
+        \mathrm{Cl}_{ X } \ A \).
+        To do so, notice that \( \mathrm{Cl}_{ X } \ A \) and \( U \) are both 
+        closed in \( X \) and contain \( A \). 
+        Thus, it follows that \( \mathrm{Cl}_{ X } \ A \cap U \) is closed in 
+        \( U \) under the subspace topology and contains \( A \)
+        (c.f. [\hyperlink{thm:17.4}{Theorem 17.2}]).
+        By definition, we have that \( \mathrm{Cl}_{ U } \ A \) is the smallest
+        set closed in \( U \) containing \( A \), meaning that 
+        \( \mathrm{Cl}_{ U } \ A \subset \mathrm{Cl}_{ X } \ A \cap U \).
+        
+        \baseSkip
+
+        From here, we note that \( \mathrm{Cl}_{ X } \ A \cap U \subset 
+        \mathrm{Cl}_{ X } \ A \) since the intersection must be contained in 
+        each of the set that are being intersected.
+        Putting everything together results in
+        \begin{equation*}
+            \mathrm{Cl}_{ U } \ A 
+            \subset 
+            \mathrm{Cl}_{ X } \ A \cap U 
+            \subset 
+            \mathrm{Cl}_{ X } \ A
+        \end{equation*}
+
+        \baseSkip 
+
+        We now want to show that \( \mathrm{Cl}_{ X } \ A \subset 
+        \mathrm{Cl}_{ U } \ A \).
+        We start by noting that \( \mathrm{Cl}_{ U } \ A \) is closed in 
+        \( U \), and that \( U \) is closed in \( X \).
+        Thus, by the transitivity of closedness, we see that 
+        \( \mathrm{Cl}_{ U } \ A \) is closed in \( X \).
+        From here, we note that \( A \subset \mathrm{Cl}_{ U } \ A \), which 
+        tells us that \( \mathrm{Cl}_{ U } \ A \) is a closed set in \( X \)
+        that also contains \( A \).
+        Since \( \mathrm{Cl}_{ X } \ A \) is defined to be the smallest closed 
+        set in \( X \) that also contains \( A \), it follows that 
+        \( \mathrm{Cl}_{ X } \ A \subset \mathrm{Cl}_{ U } \ A \).
+        Putting everything together gives us
+        \begin{equation*}
+            \mathrm{Cl}_{ U } \ A
+            =
+            \mathrm{Cl}_{ X } \ A
+        \end{equation*}
+
+    \end{proofBox}
+\end{thmBox}

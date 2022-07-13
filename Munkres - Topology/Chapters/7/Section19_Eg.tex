@@ -1,0 +1,175 @@
+\begin{egBox}{Box Topology}[eg:19.1]
+    We want to show that the basis given in [\hyperlink{box_top}{box topology}]
+    definition is indeed a basis.
+
+    \baseSkip
+
+    Let \( \{ X_{ i } \}_{ i \in I } \) be an indexed set of topological spaces
+    and \( X = \prod_{ i \in I } X_{ i } \).
+    We see that for each \( x \in X \), there is indeed at least one basis 
+    element containing \( x \) -- \( X \) itself is a basis element by 
+    definition since \( X_{ i } \) is open trivially for all \( i \in I \).
+    Thus, the first condition for a basis is met.
+
+    \baseSkip 
+
+    As for the second condition, we want to show that if \( x \) belongs to the
+    intersection of two basis elements, say \( B_{ 1 } = \prod_{ i \in I }
+    U_{ i } \) and \( B_{ 2 } = \prod_{ i \in I } V_{ 1 } \), then there is a
+    basis element \( B_{ 3 } \) containing \( x \) such that 
+    \( B_{ 3 } \subset B_{ 1 } \cap B_{ 2 } \).
+    In fact, we see that this condition follows immediately as the intersection
+    of \( B_{ 1 } \) and \( B_{ 2 } \) is itself another basis element:
+    \begin{equation*}
+        B_{ 3 }
+        =
+        \left( \prod_{ i \in I } U_{ i } \right)
+        \cap 
+        \left( \prod_{ i \in I } V_{ i } \right)
+        =
+        \prod_{ i \in I } ( U_{ i } \cap V_{ i } )
+    \end{equation*}
+    Where \( U_{ i } \cap V_{ i } \) are both open in \( X_{ i } \) due to 
+    then being a finite intersection of open sets.
+\end{egBox}
+
+\begin{egBox}{Sequences in the Box Topology}[eg:19.2]
+    Let's consider the sequence \( \mathbf{x}^{ n } \) of points in
+    \( \mathbb{R}^{ \omega } = \prod_{ i = 0 }^{ \infty } \mathbb{R} \) shown
+    below:
+    \begin{equation*}
+        \mathbf{x}^{ 1 }
+        =
+        ( 1, 1, 1, \ldots )
+        \quad
+        \mathbf{x}^{ 2 }
+        =
+        \left( \frac{ 1 }{ 2 }, \frac{ 1 }{ 2 }, \frac{ 1 }{ 2 }, \ldots \right)
+        \quad
+        \mathbf{x}^{ 3 }
+        =
+        \left( \frac{ 1 }{ 3 }, \frac{ 1 }{ 3 }, \frac{ 1 }{ 3 }, \ldots \right)
+        \quad
+        \ldots
+    \end{equation*}
+    Seems natural that we have the convergence \( \mathbf{x}^{ n } \rightarrow
+    ( 0, 0, 0, \ldots ) \) because, for each fixed index, we have a sequence 
+    that converges to \( 0 \) ... Right?
+
+    \baseSkip
+
+    Unfortunately, \textbf{not} in the box topology.
+    We can find a basic open neighborhood of \( ( 0, 0, 0, \ldots ) \) that 
+    contain \textbf{none} of the \( \mathbf{x}^{ n } \) above:
+    \begin{equation*}
+        \prod_{ n = 1 }^{ \infty } 
+        \left( - \frac{ 1 }{ n }, \frac{ 1 }{ n } \right)
+    \end{equation*}
+\end{egBox}
+
+\begin{egBox}{Closure of \( \mathbb{R}^{ \infty } \)}[eg:19.3]
+    We define \( \mathbb{R}^{ \infty } \subset \mathbb{R}^{ \omega } \) to 
+    consist of all elements whose coordinates are eventually zero.
+    Precisely,
+    \begin{equation*}
+        \mathbb{R}^{ \infty }
+        =
+        \{
+            \mathbf{x} \in \mathbb{R}^{ \omega }
+            \mid 
+            \text{there exists index } K \text{ so that } 
+            x_{ k } = 0 \text{ for all } k \geq K
+        \}
+    \end{equation*}
+    The closure of \( \mathbb{R}^{ \infty } \) in the product topology on 
+    \( \mathbb{R}^{ \omega } \), denoted as \( \mathrm{Cl} \ 
+    \mathbb{R}^{ \infty } \), is all of \( \mathbb{R}^{ \omega } \).
+
+    \baseSkip
+
+    To show why, we start by letting \( \mathbf{x} = ( x_{ 1 }, x_{ 2 }, 
+    x_{ 3 }, \ldots ) \) be a given element of \( \mathbb{R}^{ \omega } \).
+    Our goal is to show that \( \mathbf{x} \in \mathrm{Cl} \
+    \mathbb{R}^{ \infty } \).
+    We know that [\hyperlink{thm:17.5}{Theorem 17.5}] tells us that we must 
+    equivalently show that every basic open set \( U \) containing 
+    \( \mathbf{x} \) intersects \( \mathbb{R}^{ \infty } \).
+
+    \baseSkip 
+
+    Let \( U = \prod_{ i \in I } U_{ i } \) be any basic open neighborhood of 
+    \( \mathbf{x} \) -- again, we can always interchange "open" with "basic".
+    We know by definition of the product topology that there can only be 
+    finitely many \( i \in I \) such that \( U_{ i } \neq \mathbb{R} \);
+    let \( i_{ 1 } , \ldots , i_{ n } \) be all such \( i \) and define 
+    \( N = \max \{ i_{ 1 } , \ldots , i_{ n } \} \).
+    From this, it follows that for all \( i > N \), we have 
+    \( U_{ i } = \mathbb{R} \).
+
+    \baseSkip 
+
+    We now define a sequence \( \mathbf{x}' \) of elements
+    in \( \mathbb{R}^{ \infty } \) as follows:
+    \begin{equation*}
+        x_{ i }'
+        \equiv 
+        \begin{cases} 
+            x_{ i } &\quad i \leq N
+            \\
+            0 &\quad i > N
+        \end{cases}
+    \end{equation*}
+    We can see that \( \mathbf{x}' \in U \cap \mathbb{R}^{ \infty } \),
+    which means that \( U \cap \mathbb{R}^{ \infty } \) is non-empty.
+    Since our choice of \( U \) was arbitrary, we have that every basic open 
+    set in \( \mathbb{R}^{ \omega } \) containing \( \mathbf{x} \) intersects
+    \( \mathbb{R}^{ \infty } \).
+    Thus, \( \mathbf{x} \in \mathrm{Cl} \ \mathbb{R}^{ \infty } \).
+
+    \baseSkip
+
+    Furthermore, since our choice of \( \mathbf{x} \) was arbitrary, we have 
+    that every element of \( \mathbb{R}^{ \omega } \) is in the closure of 
+    \( \mathbb{R}^{ \infty } \).
+    Therefore, we see that \( \mathbb{R}^{ \omega } = 
+    \mathrm{Cl} \ \mathbb{R}^{ \infty } \), as desired.
+
+    \baseRule
+
+    Alternatively, for each element \( \mathbf{x} = ( x_{ 1 }, x_{ 2 }, 
+    x_{ 3 }, \ldots ) \) of \( \mathbb{R}^{ \omega } \), we can identify a 
+    sequence 
+    \( \mathbf{x}^{ n } \) of elements in \( \mathbb{R}^{ \infty } \) so that 
+    \( \mathbf{x}^{ n } \rightarrow \mathbf{x} \) in the product topology of 
+    \( \mathbb{R}^{ \omega } \):
+    \begin{equation*}
+        \begin{aligned}
+            \mathbf{x}^{ 1 } &= ( x_{ 1 }, 0, \ldots )
+            \\
+            \mathbf{x}^{ 2 } &= ( x_{ 1 }, x_{ 2 }, 0, \ldots )
+            \\
+            \mathbf{x}^{ 3 } &= ( x_{ 1 }, x_{ 2 }, x_{ 3 }, 0, \ldots )
+            \\
+            &\vdots 
+            \\
+            \mathbf{x} &= ( x_{ 1 }, x_{ 2 }, x_{ 3 }, \ldots )
+        \end{aligned}
+    \end{equation*}
+    We can see that this sequence converges in the product topology of 
+    \( \mathbb{R}^{ \omega } \) since we have that each \( x_{ i }^{ n } 
+    \rightarrow x_{ i } \) (recall 
+    [\hyperlink{thm:15_convergence_product}{convergence}] of sequences in 
+    products).
+
+    \baseSkip
+
+    To show why \( \mathbb{R}^{ \omega } \) is equal to 
+    \( \mathrm{Cl} \ ( \mathbb{R}^{ \infty } ) \), we note that 
+    every open neighborhood of \( \mathbf{x} \) contains points in this 
+    sequence (by construction, essentially), which are also points in 
+    \( \mathbb{R}^{ \infty } \).
+    So \( \mathbf{x} \) is in \( \mathrm{Cl} \ ( \mathbb{R}^{ \infty } ) \),
+    and since this choice of \( \mathbf{x} \) was arbitrary, we have that 
+    \( \mathbb{R}^{ \omega } \) is equal to 
+    \( \mathrm{Cl} \ ( \mathbb{R}^{ \infty } ) \).
+\end{egBox}

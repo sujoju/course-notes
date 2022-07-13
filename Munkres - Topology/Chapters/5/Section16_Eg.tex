@@ -1,0 +1,231 @@
+\begin{egBox}{Subspace Topology}[eg:16-1]
+    Let us show that the [\hyperlink{def:16_subspace_top}{subspace topology}] 
+    \( \mathcal{T}_{ Y } \) is indeed a topology.
+    For the first condition, we see that \( \emptyset, Y \in 
+    \mathcal{T}_{ Y } \) because 
+    \begin{equation*}
+        \emptyset = Y \cap \emptyset
+        \quad \mathrm{and} \quad 
+        Y = Y \cap X
+    \end{equation*}
+    where \( \emptyset \) and \( X \) are elements of \( \mathcal{T} \).
+
+    \baseSkip
+
+    We now want to show that it is closed under finite intersections.
+    Let's say that we are given a finite amount of open sets 
+    \( U_{ 1 } , \ldots , U_{ n } \in \mathcal{T} \). 
+    Our goal is to show that 
+    \( ( Y \cap U_{ 1 } ) \cap \ldots \cap ( Y \cap U_{ n } ) \in 
+    \mathcal{T}_{ Y } \).
+    To do so, we start by noting that because \( \mathcal{T} \) is a topology,
+    it follows that \( U_{ 1 } \cap \ldots \cap U_{ n } \in \mathcal{T} \).
+    Thus, we have \( Y \cap ( U_{ 1 } \cap \ldots \cap U_{ n } ) \in 
+    \mathcal{T}_{ Y } \).
+    However, notice that 
+    \begin{equation*}
+        Y \cap ( U_{ 1 } \cap \ldots \cap U_{ n } )
+        =
+        ( Y \cap U_{ 1 } ) \cap \ldots \cap ( Y \cap U_{ n } )
+    \end{equation*}
+    which means that \( ( Y \cap U_{ 1 } ) \cap \ldots \cap ( Y \cap U_{ n } ) 
+    \in \mathcal{T}_{ Y } \).
+
+    \baseSkip
+
+    Finally, we want to show that it is closed under arbitrary unions.
+    Let's say that we are given a collection of open sets 
+    \( \{ U_{ i } \}_{ i \in I } \), where \( I \) is some indexing set.
+    Our goal is to show that \( \bigcup_{ i \in I } ( Y \cap U_{ i } ) \in 
+    \mathcal{T}_{ Y } \).
+    To do so, we start by noting that because \( \mathcal{T} \) is a topology,
+    it follows that \( \bigcup_{ i \in I } U_{ i } \in \mathcal{T} \).
+    Thus, we have \( Y \cap ( \bigcup_{ i \in I } U_{ i } ) \in 
+    \mathcal{T}_{ Y } \).
+    However, notice that 
+    \begin{equation*}
+        Y \cap \left( \bigcup_{ i \in I } U_{ i } \right)
+        =
+        \bigcup_{ i \in I } ( Y \cap U_{ i } )
+    \end{equation*}
+    which means that \( \bigcup_{ i \in I } ( Y \cap U_{ i } ) \in 
+    \mathcal{T}_{ Y } \).
+\end{egBox}
+
+\begin{egBox}{Open and Closed Sets in Different Subspace Topologies}[eg:16-2]
+    Decide whether the set \( A = [ 0, 1 ) \) is open, closed, or neither in
+    the specified subset \( B \) of \( X = \mathbb{R} \). 
+    Here \( \mathbb{R} \) is equipped with the standard topology and \( B \) is 
+    equipped with the corresponding subspace topology.
+
+    \baseSkip 
+
+    \wrapBox{\( B = \mathbb{R} \)}
+    In this case, we see that the corresponding subspace topology of \( B \) is 
+    exactly the standard topology on \( \mathbb{R} \).
+    In this topology, we have that \( A \) is neither open nor closed.
+
+    \baseSkip 
+
+    \wrapBox{\( B = [ 0, \infty ) \)}
+    In this case, we see that \( B \cap ( -1, 1 ) = A \).
+    Since \( ( -1, 1 ) \) is open in \( \mathbb{R} \) under the standard
+    topology, it follows that \( B \cap ( -1, 1 ) = A \) is open in \( B \)
+    equipped with the subspace topology by definition.
+    Notice that \( A \) is not closed in \( B \) since there is no closed set 
+    in \( \mathbb{R} \) whose intersection with \( B \) equals \( A \).
+
+    \baseSkip 
+
+    \wrapBox{\( B = [ 0, 1 ) \cup [ 2, 3 ) \)}
+    In this topology, we see that \( A \) is both open and closed in \( B \).
+    We have that \( [ 2, 3 ) = B \cap [ 2, 3 ] \), which tells us that
+    \( [ 2, 3 ) \) is closed in \( B \).
+    This further means that \( A = B \setminus [ 2, 3 ) \) must be open.
+    To show that \( A \) is closed, we have that \( A = B \cap [ 0, 1 ] \),
+    which results in \( A \) being closed for the same reason as with 
+    \( [ 2, 3 ) \).
+\end{egBox}
+
+\begin{egBox}{Two Subspace Topologies on a Set}[eg:16-3]
+    Let \( X \) be a topological space and let \( A \subset B \subset X \).
+    Equip \( B \) with the subspace topology as a subset of \( X \).
+    The set \( A \) can also be equipped with the subspace topology as a subset
+    of \( X \).
+    However, \( A \) can alternatively be equipped with the subspace topology 
+    as a subset of \( B \).
+    We can show that these two topologies on \( A \) are equal.
+
+    \baseSkip 
+
+    Let us start by denoting \( \mathcal{T}_{ A_{ B } } \) to be the subspace 
+    topology on \( A \) in \( B \).
+    Let \( \mathcal{T}_{ A_{ X } } \) denote the subspace topology on 
+    \( A \) in \( X \).
+    In particular, we see that 
+    \begin{equation*}
+        \begin{aligned}
+            \mathcal{T}_{ A_{ B } }
+            &=
+            \{
+                A \cap U \mid U \text{ open in } B
+            \}
+            \\
+            \mathcal{T}_{ A_{ X } }
+            &=
+            \{
+                A \cap V \mid V \text{ open in } X
+            \}
+        \end{aligned}
+    \end{equation*}
+    Since \( B \) is a subspace of \( X \), we see that \( U \) being open in 
+    \( B \) means that there exists some open set \( W \) in \( X \) such that 
+    \( U = B \cap W \).
+    Adding on the fact that \( A \subset B \), we see that 
+    \begin{equation*}
+        A \cap U
+        =
+        A \cap ( B \cap W )
+        =
+        ( A \cap B ) \cap W
+        =
+        A \cap W
+    \end{equation*}
+    Thus, we get that 
+    \begin{equation*}
+        \begin{aligned}
+            \mathcal{T}_{ A_{ B } }
+            &=
+            \{
+                A \cap W \mid W \text{ open in } X
+            \}
+            \\
+            \mathcal{T}_{ A_{ X } }
+            &=
+            \{
+                A \cap V \mid V \text{ open in } X
+            \}
+        \end{aligned}
+    \end{equation*}
+    which we can see is exactly the same collection.
+    Thus, both topologies on \( A \) are equal.
+\end{egBox}
+
+\begin{egBox}{Subspace Topology of \( [ 0, 1 ] \)}[eg:16-4]
+    Consider the subset \( Y = [ 0, 1 ] \) of the real line \( \mathbb{R} \),
+    in the subspace topology.
+    Again, the subspace topology has as basis all sets of the form 
+    \( Y \cap ( a, b ) \), where \( ( a, b ) \) is a basic open interval in 
+    \( \mathbb{R} \).
+    Such a set is of one of the following types:
+    \begin{equation*}
+        Y \cap ( a, b )
+        =
+        \begin{cases} 
+            ( a, b ) \quad & \text{if } a \text{ and } b \text{ are in } Y
+            \\
+            [ 0, b ) \quad & \text{if only } b \text{ is in } Y
+            \\
+            ( a, 1 ] \quad & \text{if only } a \text{ is in } Y
+            \\
+            Y \text{ or } \emptyset \quad & 
+            \text{if neither } a \text{ nor } b \text{ is in } Y
+        \end{cases}
+    \end{equation*}
+    By definition, each of these sets is open in \( Y \).
+    But the sets of the second and third type are not open in the larger space
+    \( \mathbb{R} \).
+\end{egBox}
+
+\begin{egBox}{Subspace Topology of \( \mathbb{Z} \)}[eg:16-5]
+    We claim that the subspace topology on \( \mathbb{Z} \) (as a subspace of 
+    \( \mathbb{R} \)) is the discrete topology.
+
+    \baseSkip
+
+    To start, we note that the open sets in \( \mathbb{Z} \) under the subspace
+    topology are all of the following form: \( \mathbb{Z} \cap U \), where
+    \( U \) is an open set in \( \mathbb{R} \).
+    One can see that this collection of open sets results in all possible 
+    subsets of \( \mathbb{Z} \) by noting that we can put an open interval
+    centered at each \( x \in \mathbb{Z} \) with a radius of 
+    \( \frac{ 1 }{ 2 } \). 
+    Since unions of open sets are still open, we find that any possible 
+    subset of \( \mathbb{Z} \) is obtained by taking the union of the open 
+    intervals that we
+    constructed which contains the points in the subset of \( \mathbb{Z} \);
+    the resulting intersection of \( \mathbb{Z} \) with such a union results 
+    in the subset we wanted.
+    Thus, we have that all the subsets of \( \mathbb{Z} \) are therefore open
+    under the subspace topology, which tells us that the subspace topology 
+    is the same as the discrete topology.
+\end{egBox}
+
+\begin{egBox}{Subspace Topology of \( \mathbb{Q} \)}[eg:16-6]
+    We claim that the subspace topology on \( \mathbb{Q} \) (as a subspace of 
+    \( \mathbb{R} \)) is \textit{not} the discrete topology.
+
+    \baseSkip
+
+    Let us suppose that \( \mathbb{Q} \) under the subspace topology is the
+    discrete topology.
+    Then this means that we have some open set \( U \) in \( \mathbb{R} \) such
+    that \( \mathbb{Q} \cap U = \{ q \} \) for some \( q \in \mathbb{Q} \) --
+    indeed, if \( \mathbb{Q} \) is the discrete topology under the subspace 
+    topology, then any subset of \( \mathbb{Q} \) is open and can be written 
+    as the intersection of an open set in \( \mathbb{R} \) and \( \mathbb{Q} \).
+    Since we know that \( U \) is an open set in \( \mathbb{R} \) that contains
+    \( q \), we find that there exists some \( t \in \mathbb{R} \) such that 
+    \( ( q - t, q + t ) \subset U \).
+    However, since we also know that \( \mathbb{Q} \) is dense in 
+    \( \mathbb{R} \), we are always able to find another rational number in
+    between \( q - t \) and \( q \) as well as \( q \) and \( q + t \).
+    Thus, we end up getting that \( \mathbb{Q} \cap U \neq \{ q \} \) as there
+    are always more rational numbers that we can find in between any open 
+    interval that contains \( q \).
+    
+    \baseSkip 
+
+    Hence, we reach a contradiction and have that \( \mathbb{Q} \) under the 
+    subspace topology is \textit{not} the discrete topology.
+\end{egBox}

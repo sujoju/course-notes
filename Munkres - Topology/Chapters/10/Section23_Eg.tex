@@ -1,0 +1,152 @@
+\begin{egBox}{Trivial Topology}[eg:23.1]
+    Let \( X \) be a topological space under the trivial topology.
+    We have that \( X \) is connected.
+    In fact, we have that \( X \) is path-connected.
+\end{egBox}
+
+\begin{egBox}{Discrete Topology}[eg:23.2]
+    Let \( X \) be a topological space under the discrete topology (with 
+    \( X \) having at least two elements).
+    We have that \( X \) is disconnected (i.e., not connected) since every 
+    subset of \( X \) is open; thus, it follows that every set is closed 
+    since its complement is equal to some open set in \( X \).
+\end{egBox}
+
+\begin{egBox}{Non-Connected Spaces}[eg:23.3]
+    Let \( X = [ 0, 1 ] \cup [ 2, 3 ] \) be a subset of \( \mathbb{R} \) with
+    the subspace topology.
+    Under this topology, we can see that both \( [ 0, 1 ] \) and 
+    \( [ 2, 3 ] \) are clopen in \( X \).
+    This tells us that \( X \) is not connected.
+\end{egBox}
+
+\begin{egBox}{Closed intervals in \( \mathbb{R} \) are Connected}[eg:23.4]
+    Every closed interval in \( \mathbb{R} \) is connected.
+    We shall not prove this very rigorously, but will provide the main 
+    reasoning behind the proof.
+
+    \baseSkip
+    Take \( X = [ 0, 3 ] \).
+    We want to show that a non-empty clopen subset \( A \) must be 
+    \( [ 0, 3 ] \).
+    Let's say that \( A \) contains \( 1 \).
+    Since \( A \) is clopen (hence, open), we see that there must be some open 
+    interval, say \( I \), that contains \( 1 \) and is contained in \( A \).
+    Now, since \( A \) is clopen (hence, closed), we know that \( I \) must 
+    include its limits points (since it must equal its closure), which means
+    that its endpoints are included in \( I \).
+
+    \baseSkip
+
+    From here, we can apply a similar argument to the endpoints of \( I \); if 
+    we focus our attention to the right endpoint, then we see that 
+    since \( A \) is clopen (hence, open), there must be some open 
+    interval, say \( I' \), that contains the endpoint and is contained in 
+    \( A \).
+    Now, since \( A \) is clopen (hence, closed), we know that \( I' \) must 
+    include its limits points (since it must equal its closure), which means
+    that its endpoints are included in \( I' \) as well.
+
+    \baseSkip
+
+    Continuing this process for both endpoints results in us eventually getting 
+    that \( A = [ 0, 3 ] \) -- thus, showing that every closed interval in
+    \( \mathbb{R} \) is connected.
+\end{egBox}
+
+\begin{egBox}{Connectedness in the Cofinite Topology}[eg:23.5]
+    Let \( X \) be a set equipped with the cofinite topology.
+    We claim that \( X \) is connected if \( X \) is infinite or if \( X \) 
+    has \( \leq 1 \) element.
+    Furthermore, we claim that \( X \) is \textbf{disconnected} (i.e., not 
+    connected) otherwise.
+
+    \baseSkip
+
+    Starting with the first claim, let us suppose that \( X \) is infinite.
+    We want to show that \( X \) has no non-trivial clopen subsets.
+    Towards a contradiction, let's assume that there exists a non-trivial 
+    clopen subset \( A \) of \( X \).
+    Since \( A \) is open in \( X \) under the cofinite topology, it follows
+    that \( X \setminus A \) is finite (it cannot be all of \( X \) since 
+    \( A \) is non-trivial).
+    Also, since we know that \( A \) is also closed in \( X \) under the 
+    cofinite topology, it follows that \( X \setminus A \) must be open in 
+    \( X \).
+    However, \( X \setminus A \) being open in \( X \) means that 
+    \( X \setminus ( X \setminus A ) = A \) must be finite (it cannot be all of 
+    \( X \) since \( A \) is non-trivial).
+    This results in a contradiction since \( X \) is assumed to be infinite,
+    meaning that both \( X \setminus A \) and \( A \) cannot be finite.
+    Thus, \( X \) has no non-trivial clopen subsets, meaning that \( X \) is 
+    connected.
+
+    \baseSkip
+
+    Let us now consider the case when \( X \) has \( \leq 1 \) element.
+    If \( X \) has no elements (that is, \( X = \emptyset \)), then we are 
+    done since \( \emptyset \) is trivially connected.
+    Now if \( X \) has \( 1 \) element, then we see that the only clopen sets of
+    \( X \) under the cofinite topology are the trivial clopen sets.
+    Thus, we have that \( X \) is connected as well.
+
+    \baseSkip
+
+    We now want to show that \( X \) is disconnected otherwise.
+    Suppose that \( X \) is a finite set that has \( > 1 \) elements.
+    Because \( X \) is finite, we end up getting that the discrete topology and
+    cofinite topology are equivalent to each other.
+    Since we know that the discrete topology is disconnected, we have that
+    \( X \) is disconnected as well.
+\end{egBox}
+
+\begin{egBox}{Connectedness of Boundary and Interior}[eg:23.6]
+    Suppose that \( A \) is a connected subspace of \( X \).
+    Does it follows that \( \mathrm{Int} \ A \) and \( \partial A \) are
+    connected as well?
+    Does the converse hold?
+
+    \baseSkip
+
+    Let \( X = \mathbb{R} \) under the standard topology;
+    let \( A = [ -1, 0 ] \cup [ 0, 1 ] \).
+    We can see that \( A \) is connected as it is the union of two connected 
+    sets that share a point in common.
+    However, we see that \( \mathrm{Int} \ A = ( -1, 0 ) \cup ( 0, 1 ) \),
+    which is not connected. 
+    Now, let \( A = ( 0, 1 ) \).
+    Be can see that \( \partial A = \{ 0, 1 \} \), which is also not connected
+    since we see that both \( \{ 0 \} \) and \( \{ 1 \} \) are nontrivial 
+    clopen subsets of \( A \).
+    Hence, we end up seeing that \( \mathrm{Int} \ A \) and \( \partial A \) 
+    need not be connected if \( A \) is connected.
+
+    \baseSkip
+
+    As for the converse, let us assume that \( \mathrm{Int} \ A \) and
+    \( \partial A \) are connected.
+    Towards a contradiction, let us assume that \( A \) is connected.
+    It follows that \( \mathrm{Cl} \ A \) must be connected as well.
+    If we let \( A = \mathbb{Q} \), then we see that 
+    \( \mathrm{Int} \ \mathbb{Q} = \emptyset \); indeed, there is no way
+    that we can have an open neighborhood of any rational number such that
+    this neighborhood is fully contained in \( \mathbb{Q} \) -- we can always 
+    another real number within this neighborhood . 
+    Thus, it follows that
+    \begin{equation*}
+        \partial \mathbb{Q} 
+        =
+        \mathrm{Cl} \ \mathbb{Q} \setminus \mathrm{Int} \ \mathbb{Q}
+        =
+        \mathbb{R} \setminus \emptyset
+        =
+        \mathbb{R}
+    \end{equation*}
+    Notice that both \( \emptyset \) and \( \mathbb{R} \) are connected, which
+    tells us that \( \mathrm{Int} \ \mathbb{Q} \) and \( \partial \mathbb{Q} \)
+    are both connected.
+    However, we know that \( \mathbb{Q} \) is not connected since
+    \( \mathbb{Q} \cap ( - \infty, a ) \) and
+    \( \mathbb{Q} \cap ( a, \infty ) \) form a separation of \( \mathbb{Q} \).
+    Notice that \( \mathrm{Cl} \ A = \mathrm{Int} \ A \cup \partial A \).
+\end{egBox}

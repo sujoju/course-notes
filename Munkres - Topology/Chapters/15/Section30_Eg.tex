@@ -1,0 +1,52 @@
+\begin{egBox}{Second Axiom Implies First}[eg:30.1]
+    The second countability axiom implies the first.
+
+    \baseSkip
+
+    Let \( X \) be second-countable.
+    The \( X \) has a countable basis \( \mathcal{B} \) for its topology.
+    For any points \( x \in X \), we have that the subset of \( \mathcal{B} \) 
+    consisting of those basis elements containing the point \( x \) is a 
+    countable basis at \( x \).
+    Thus, \( X \) is first-countable as well.
+\end{egBox}
+
+\begin{egBox}{Examples of Second-Countable Spaces}[eg:30.2]
+    \( \mathbb{R} \) is second-countable; a countable basis for \( \mathbb{R} \)
+    would be as follows:
+    \begin{equation*}
+        \{ ( p, q ) \mid p, q \in \mathbb{Q} \}
+    \end{equation*}
+    We have shown in a previous HW that this was indeed a basis.
+    We also know that this collection is countable since 
+    \( \mathbb{Q} \times \mathbb{Q} \) is countable, and the collection 
+    can be injectively mapped into \( \mathbb{Q} \times \mathbb{Q} \).
+\end{egBox}
+
+\begin{egBox}{\( \mathbb{R}_{ \ell } \) is not Second-Countable}[eg:30.3]
+    Let \( \mathcal{B} \) be any basis for the lower-limit topology.
+    For all \( x \in \mathbb{R} \), we have that the interval 
+    \( [ x, x + 1 ) \) is certainly open in the lower-limit topology.
+    Thus, we have that there exists some \( B_{ x } \in \mathcal{B} \) so
+    that \( x \in B_{ x } \subset [ x, x + 1 ) \).
+    If we have that \( x \neq y \), then \( B_{ x } \neq B_{ y } \);
+    this is because the smallest real number that in \( B_{ x } \) is \( x \),
+    but the smallest number in \( B_{ y } \) is \( y \) -- thus, these sets 
+    cannot be equal.
+    Notice that the function \( f: \mathbb{R} \rightarrow \mathcal{B} \)
+    given by \( x \mapsto B_{ x } \) is an injection, thus \( \mathcal{B} \)
+    must be uncountable (it must have a larger than or equal to cardinality
+    than \( \mathbb{R} \), which is uncountable).
+\end{egBox}
+
+\begin{egBox}{Dense and Separable}[eg:30.3]
+    \( \mathbb{R} \) and \( \mathbb{R}_{ \ell } \) are both separable;
+    for \( \mathbb{R} \), we see that \( \mathbb{Q} \) is a dense subset of 
+    \( \mathbb{R} \).
+    We claim that \( \mathbb{Q} \) is also dense in \( \mathbb{R}_{ \ell } \).
+    If it weren't dense, there is some point some \( x \in \mathbb{R} \) such
+    that \( x \notin \overline{ \mathbb{Q} } \).
+    Thus, there is some open open interval that contains \( x \) that is 
+    disjoint from \( \mathbb{Q} \), however, this cannot be the case (flesh
+    this point out some more).
+\end{egBox}

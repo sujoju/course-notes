@@ -1,0 +1,126 @@
+\begin{egBox}{Compactification}[eg:29.1]
+    Sadly, many reasonable spaces are not compact.
+    However, most reasonable spaces can be compactified!
+    We consider the open interval \( ( 0, 1 ) \) and show intuitively how to 
+    add a \textit{single} point in \( ( 0, 1 ) \) so that it becomes compact!
+
+    \baseSkip
+
+    We can turn \( ( 0, 1 ) \) into a compact subspace of \( \mathbb{R} \) by
+    adding on the endpoints \( 0 \) and \( 1 \).
+    However, it is possible to turn \( ( 0, 1 ) \) into a compact subspace
+    using only one point; notice that \( ( 0, 1 ) \) is homeomorphic to 
+    a circle minus its north pole.
+    If we were to add on the north pole, then we get a full circle, which we
+    know is compact.
+    In this case, the north pole was our distinguished point \( \star \).
+\end{egBox}
+
+\begin{egBox}{Locally Compact}[eg:29.2]
+    \( \mathbb{R}^{ n } \) is locally compact.
+
+    \baseRule
+
+    Let \( K = \{ 1, \frac{ 1 }{ 2 }, \frac{ 1 }{ 3 } , \ldots \} \).
+    We show that there is no compact neighborhood of \( 0 \) in 
+    \( \mathbb{R} \setminus K \) with the standard topology.
+    Let \( A \subset \mathbb{R} \setminus K \) contain an open neighborhood
+    of \( 0 \) in \( \mathbb{R} \setminus K \).
+    Then, we see that \( A \) contains one of the maximal open intervals,
+    but not its endpoints.
+    \( A \) is not closed in \( \mathbb{R} \).
+    The Heine-Borel theorem tells us that \( A \) is not compact in 
+    \( \mathbb{R} \).
+    Hence, we see that \( A \) is not compact in \( R \setminus A \) since 
+    compactness is an inherent property.
+\end{egBox}
+
+\begin{egBox}{Open Disk in \( \mathbb{R}^{ 2 } \)}[eg:29.3]
+    Is a Hausdorff one-point compactification of the open disk
+    \( x^{ 2 } + y^{ 2 } < 1 \) with the standard topology guaranteed to exist?
+    If so, can you surmise what it is?
+
+    \baseSkip
+
+    Notice that the open disk is not compact since it is not closed in 
+    \( \mathbb{R}^{ 2 } \) (Heine-Borel).
+    We start by noting that \( \mathbb{R}^{ 2 } \) under the standard topology
+    is locally compact.
+    Since the open disk is an open subspace of \( \mathbb{R}^{ 2 } \), we see 
+    that the open disk must also be locally compact.
+    Furthermore, we have that the open disk is Hausdorff since 
+    \( \mathbb{R}^{ 2 } \) is Hausdorff.
+    Since the open disk is locally compact and Hausdorff, we have that it must
+    have a Hausdorff one-point compactification.
+
+    \baseSkip
+
+    To surmise what it is, we start with a previous example.
+    For any open interval in \( \mathbb{R} \), we found that its one-point
+    compactification resulted to be a circle; recall that any open interval
+    in \( \mathbb{R} \) is homeomorphic to a circle minus its north pole 
+    (i.e., \( S^{ 1 } \setminus \{ N \} \)).
+    In a similar fashion we see that any open disk in \( \mathbb{R}^{ 2 } \)
+    is homeomorphic to a sphere in \( \mathbb{R}^{ 3 } \) minus its north pole 
+    (i.e. \( S^{ 2 } \setminus \{ N \} \)).
+    Thus, the one-point compactification of any open disk in \( R^{ 2 } \)
+    is a sphere in \( \mathbb{R}^{ 3 } \) (that is, \( S^{ 2 } \)), where the
+    distinguished point is the north pole.
+
+    \baseSkip
+
+    In fact, the one-point compactification of \( \mathbb{R} \) is \( S^{ 1 } \)
+    since we have that \( \mathbb{R} \cong ( 0, 1 ) \).
+\end{egBox}
+
+\begin{egBox}{Compactness implies Local Compactness}[eg:29.4]
+    We first remark that this implication holds for the definition of local 
+    compactness given by Munkres -- not in lecture!
+    To make this implication work with the definition given in lecture, we need our 
+    space to be Hausdorff as well.
+
+    \baseSkip 
+
+    Let's say that \( X \) is a compact topological space. 
+    Our goal is to show that \( X \) is locally compact. 
+    To do so, we just need to show that for any given point \( x \in X \), there 
+    is some compact subspace \( C \) of \( X \) that contains a neighborhood of \( x \).
+    Let \( U \) be any open neighborhood of \( x \) in \( X \). 
+    We can see that \( \mathrm{Cl} \ U \) is closed in \( X \), which results in 
+    \( \mathrm{Cl} \ U \) to be compact in \( X \) as well.
+    If we define \( C = \mathrm{Cl} \ U \), then we see that the condition of local 
+    compactness is met. 
+    Hence \( X \) is locally compact.
+\end{egBox}
+
+\begin{egBox}{Discrete Topology is locally compact Hausdorff}[eg:29.5]
+    Let \( X \) be under the discrete topology.
+    Our goal is to show that \( X \) is locally compact Hausdorff.
+    To show that \( X \) is Hausdorff, we start by letting two distinct points 
+    \( x, y \in X \) be given. 
+    Because we are under the discrete topology, we have that \( \{ x \} \) and 
+    \( \{ y \} \) open in \( X \), and we can see that they are disjoint as well. 
+    Thus, we get that \( X \) is Hausdorff.
+
+    \baseSkip
+
+    Note that \( X \) is only compact under the discrete topology if and only if it is 
+    finite.
+    Let's say that \( X \) is compact under the discrete topology.
+    If \( X \) were not finite, then the open cover consisting of singleton 
+    point sets would have not finite subcover.
+    Now, if \( X \) were given to be finite and under the discrete topology, we see 
+    that any open cover of \( X \) is finite, which tells us that \( X \) is compact.
+
+    \baseSkip
+
+    With this, we can show that \( X \) is locally compact. 
+    To do so, we want to show that for any \( x \in X \), there is some compact 
+    subspace \( C \) of \( X \) that contains a neighborhood of \( x \).
+    Let \( U \) be any finite set that contains \( x \). 
+    We see that \( U \) must be compact in \( X \) by what we found earlier. 
+    Furthermore, we see that \( \{ x \} \subset U \) as \( U \) contains \( x \), 
+    which tells us that \( U \) is a compact subspace of \( X \) that contains a 
+    neighborhood of \( x \).
+    Thus, \( X \) is locally compact. 
+\end{egBox}

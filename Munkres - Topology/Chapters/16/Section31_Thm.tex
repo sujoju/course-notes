@@ -1,0 +1,150 @@
+\begin{thmBox}[Lemma]{31.1}[lem:31.1]
+    Let \( X \) be a topological space. 
+    Let one-point sets in \( X \) be closed -- that is, let \( X \) be 
+    \( T_{ 1 } \).
+
+    \begin{enumerate}[label = (\alph*)]
+        \item \( X \) is regular if and only if given a point \( x \in X \) and 
+            an open neighborhood \( U \) of \( x \), there is a closed 
+            neighborhood \( V \) of \( x \) such that \( V \subset U \) --
+            that is, there is an open neighborhood \( V \) of \( x \) such
+            that \( \overline{ V } \subset U \).
+        \item \( X \) is normal if and only if given a closed set \( A \) and 
+            an open set \( U \) containing \( A \), there is a closed 
+            neighborhood \( V \) of \( A \) such that \( V \subset U \) -- 
+            that is, there is an open set \( V \)
+            containing \( A \) such that \( \overline{ V } \subset U \).
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}
+        \wrapBox{a}
+
+        Suppose that \( X \) is regular.
+        Let \( x \) and the neighborhood \( U \) of \( x \) be given.
+        Let \( B = X \setminus U \); we can see that \( B \) is a closed set
+        of \( X \) that is disjoint from \( x \).
+        Since \( X \) is regular, we see that there exists disjoint open sets
+        \( V \) and \( W \) containing \( x \) and \( B \), respectively.
+        Notice that \( \overline{ V } \) is a closed neighborhood of \( x \) 
+        as \( \overline{ V } \) is closed in \( X \) and contains the open 
+        neighborhood \( V \) of \( x \).
+        Further notice that the set \( \overline{ V } \) is disjoint from
+        \( B \); indeed if any \( y \in B \) is given, then we see that 
+        \( W \) is an open neighborhood of \( y \). 
+        Since \( W \) and \( V \) are disjoint from each other, we find that 
+        \( y \) cannot be in \( \overline{ V } \) by 
+        [\hyperlink{thm:17.5}{Theorem 17.5}].
+        Thus, it must be the case that \( \overline{ V } \subset U \), as 
+        desired.
+
+        \baseSkip
+
+        Notice that \( X \setminus W \) would also work as well; indeed,
+        \( X \setminus W \) is closed and contains the open neighborhood \( V \)
+        of \( x \). Thus, \( X \setminus W \) is a closed neighborhood of 
+        \( x \). 
+        Furthermore, we see that \( X \setminus W \) is contained in \( U \)
+        since \( W \) was an open neighborhood of \( X \setminus U \).
+
+        \baseSkip
+
+        Conversely, suppose that the point \( x \) and some closed set \( B \)
+        not containing \( x \) be given.
+        Our goal is to show that there exists disjoint open sets containing 
+        \( x \) and \( B \), respectively.
+        Let \( U = X \setminus B \); this is an open neighborhood of \( x \) 
+        since \( B \) is closed and disjoint from \( x \).
+        By hypothesis, we have that there is an open neighborhood \( V \) of 
+        \( x \) such that \( \overline{ V } \subset U \); notice that 
+        \( \overline{ V } \) is our closed neighborhood of \( x \).
+        Since \( \overline{ V } = V \cup V' \), it follows that the open sets
+        \( V \) and \( X \setminus \overline{ V } \) are disjoint open sets
+        containing \( x \) and \( B \), respectively.
+        Therefore, we have that \( X \) is regular.
+
+        \baseSkip
+        \wrapBox{b}
+
+        This proof uses the exact same argument; we just need to replace the 
+        point \( x \) with a closed set \( A \) of \( X \) throughout.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{31.2}[thm:31.2]
+    \begin{enumerate}[label = (\alph*)]
+        \item A subspace of a Hausdorff space is Hausdorff; a product of 
+            Hausdorff spaces is Hausdorff.
+        \item A subspace of a regular space is regular; a product of regular
+            spaces is regular.
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{a}
+        This was already proved in [\hyperlink{thm:17.11}{Theorem 17.11}].
+
+        \baseSkip
+        \wrapBox{b}
+
+        Let \( Y \) be a subspace of the regular space \( X \).
+        Since \( X \) is \( T_{ 1 } \), we find that \( Y \) must be \( T_{ 1 } \)
+        as well since singleton point sets of \( Y \) are still closed in \( Y \).
+        Let \( x \) be a point of \( Y \) and let \( B \) be a closed subset of \( Y \) 
+        disjoint from \( x \). 
+        By [\hyperlink{thm:17.4}{Theorem 17.4}], we have that \( \mathrm{Cl} \ B \) in
+        \( Y \) is equal to \( \overline{ B } \cap Y \), where \( \overline{ B } \)
+        denotes the closure of \( B \) in \( X \).
+        Now since \( B \) is closed we see that \( \mathrm{Cl} \ B = B \), which tells 
+        us that 
+        \begin{equation*}
+            B = \overline{ B } \cap Y
+        \end{equation*}
+        Thus, it follows that \( x \notin \overline{ B } \) as \( B \) is disjoint from
+        \( x \).
+        Using the regularity of \( X \), we can choose disjoint open sets \( U \) and 
+        \( V \) of \( X \) containing \( x \) and \( B \), respectively.
+        Then \( U \cap Y \) and \( V \cap Y \) are disjoint open sets in \( Y \)
+        containing \( x \) and \( B \), respectively.
+
+        \baseSkip
+
+        Alternatively, we can prove that \( Y \) is regular using 
+        [\hyperlink{lem:31.1}{Lemma 31.1}]: Let \( Y \) be a subspace of the
+        regular space \( X \); let \( x \in Y \) and an open neighborhood \( U \) of
+        \( x \) in \( Y \) be given.
+        By definition of the subspace topology, we see that \( U \) being open in
+        \( Y \) means that there exists some open set \( V \) in \( X \) such that
+        \( U = V \cap Y \).
+        Since \( X \) is regular, we see that there exists an open neighborhood \( W \)
+        of \( x \) in \( X \) such that \( \mathrm{Cl} \ W \subset V \) 
+        (this is where argument
+        for normality fails since a closed subset of \( Y \) may not be closed in 
+        \( X \)).
+        Thus, we see that \( W \cap Y \) is an open neighborhood of \( x \) in \( Y \) 
+        such that
+        its closure \( \mathrm{Cl} \ W \cap Y \) in \( Y \) is contained in the open 
+        neighborhood \( V \cap Y \) of \( x \) in \( Y \) -- that is, 
+        \( ( \mathrm{Cl} \ W \cap Y ) \subset ( V \cap Y ) \) 
+        Thus, we are done.
+
+        \baseSkip 
+        
+        Let \( X \) and \( Y \) be regular topological spaces.
+        We want to show that \( X \times Y \) is regular.
+        Notice that both \( X \) and \( Y \) being \( T_{ 1 } \) results in
+        \( X \times Y \) to be \( T_{ 1 } \).
+        We now let a point \( ( a, b ) \in X \times Y \) and an open neighborhood \( U \) of \( ( a, b ) \) be given.
+        By definition of open neighborhood, we see that there exists a basic
+        open neighborhood \( V \times W \) of \( ( a, b ) \) that is contained
+        in \( U \).
+        \( X \) being regular tells us that there exists a closed neighborhood
+        \( C \) of \( a \) that is contained in \( V \).
+        \( Y \) being regular tells us that there exists a closed neighborhood
+        \( D \) of \( b \) that is contained in \( W \).
+        We find that \( C \times D \) is a closed neighborhood of \( ( a, b ) \)
+        that is contained in \( U \).
+    \end{proofBox}
+\end{thmBox}

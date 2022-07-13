@@ -1,0 +1,38 @@
+\begin{defBox}{Metrics and Metric Spaces}[def:metric]
+    A \textbf{metric} on a set \( X \) is a function 
+    \( d: X \times X \rightarrow \mathbb{R} \) that satisfies the following 
+    conditions: 
+    \begin{itemize}
+        \item \textbf{Non-negative}:
+            \( d( x, y ) \geq 0 \) for all \( x, y \in X \)
+        \item \textbf{Symmetric}:
+            \( d( x, y ) = d( y, x ) \) for all \( x, y \in X \)
+        \item \textbf{Non-degenerate}: 
+            \( d( x, y ) = 0 \) if and only if \( x = y \)
+        \item \textbf{Triangle Inequality}: 
+            \( d( x, y ) + d( y, z ) \geq d( x, z ) \) for all 
+            \( x, y, z \in X \)
+    \end{itemize} 
+    A set \( X \) equipped with a particular metric is called a 
+    \textbf{metric space}. 
+\end{defBox}
+
+\begin{defBox}{Open Balls}[def:open_balls]
+    Let \( X \) be equipped with a metric \( d \). Given a point \( p \in X \)
+    and a positive, real radius \( r \), we define the \textbf{open ball} 
+    centered at \( p \) with radius \( r \) to be the set of all points whose 
+    distance from \( p \) is less than \( r \). I.e. 
+    \begin{equation*}
+        B_{ r }( p ) 
+        =
+        \{ x \in X \mid d( p, x ) < r \}
+    \end{equation*}
+\end{defBox}
+
+\begin{defBox}{Open Sets}[def:open_sets]
+    Let \( X \) be a metric space. A subset \( U \) of \( X \) is said to be 
+    \textbf{open in} \( X \) if and only if, for each \( x \in U \), there is a 
+    positive, real radius \( r \) so that the open ball centered at \( x \) of 
+    radius \( r \) is entirely contained in \( U \) -- i.e., so 
+    \( B_{ r }( x ) \subseteq U \).
+\end{defBox}

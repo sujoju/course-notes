@@ -1,0 +1,96 @@
+\begin{egBox}{Euclidean Distance}[eg:metric-1]
+    The \textbf{Euclidean Distance} is defined as follows: 
+    If \( X = ( x_{ 1 }, \ldots, x_{ n } ) \) and 
+    \( Y = ( y_{ 1 }, \ldots, y_{ n } ) \) are points in \( \mathbb{R}^{ n } \)
+    then the \textbf{Euclidean distance} between \( X \) and \( Y \) is 
+    \begin{equation*}
+        d( X, Y )
+        =
+        \sqrt{ 
+            ( x_{ 1 } - y_{ 1 } )^{ 2 } 
+            + \ldots + 
+            ( x_{ n } - y_{ n } )^{ 2 }
+        }
+    \end{equation*}
+    \( \mathbb{R}^{ n } \) with the Euclidean distance as its metric is called 
+    the \( n \)-\textbf{dimensional Euclidean Space}.
+\end{egBox}
+
+\begin{egBox}{Discrete Metric}[eg:metric-2]
+    A more extreme metric is the \textbf{discrete metric} and is defined as 
+    follows: 
+    \begin{equation*}
+        d( x, y )
+        =
+        \begin{cases} 
+            0 \quad &x = y
+            \\ 
+            1 \quad &x \neq y
+        \end{cases}
+    \end{equation*}
+\end{egBox}
+
+\begin{egBox}{Open Sets in a Discrete Metric Space}[eg:metric-3]
+    If \( X \) is a discrete metric space (that is, equipped with the 
+    discrete metric), then every subset of \( X \) is open in \( X \).
+
+    \baseSkip
+
+    To show why, let \( U \subseteq X \) be given. Let \( x \in U \) also be 
+    given. Notice that in the discrete metric, balls are given as shown: 
+    \begin{equation*}
+        B_{ r }( x )
+        =
+        \begin{cases} 
+            \{ x \} \quad & 0 < r \leq 1
+            \\
+            U \quad & r > 1
+        \end{cases}
+    \end{equation*}
+    Thus, if we choose \( r \) such that \( 0 < r \leq 1 \), then we see that 
+    \( B_{ r }( x ) = \{ x \} \subseteq U \), which tells us that \( U \) is 
+    open in \( X \).
+\end{egBox}
+
+\begin{egBox}{Trivial Open Sets}[eg:metric-4]
+    For a metric space \( X \), the empty set \( \emptyset \) and the entire set
+    \( X \) are always open sets in \( X \).
+\end{egBox}
+
+\begin{egBox}{Open Balls are Indeed Open}[eg:metric-5]
+    Let \( X \) be a metric space.
+    We have that any open ball in \( X \) is open.
+
+    \baseSkip
+
+    To show why, let's start by having center \( p \in X \) and radius 
+    \( r > 0 \) be given.
+    We want to show that for any \( x \in B_{ r }( p ) \), we are able to find
+    some other radius \( \epsilon > 0 \) such that \( B_{ \epsilon }( x ) 
+    \subset B_{ r }( p ) \). 
+    Let \( d \equiv d( p, x ) \).
+    Our claim is that \( B_{ r - d }( x ) \subset B_{ r }( p ) \).
+
+    \baseSkip 
+
+    To prove the claim, we start by letting \( y \in B_{ r - d }( x ) \).
+    We eventually want to show that \( d( y, p ) < r \), which will guarantee 
+    that \( y \in B_{ r }( p ) \).
+    By the triangle inequality, we see that 
+    \begin{equation*}
+        d ( y, p ) 
+        \leq 
+        \underbrace{ d ( y, x ) }_{ < r - d } + 
+        \underbrace{ d ( x, p ) }_{ d }
+        <
+        r
+    \end{equation*}
+    Which proves what we wanted to show.
+
+    \baseSkip 
+
+    Thus, we have that for any \( y \in B_{ r - d }( x ) \), we get 
+    \( y \in B_{ r }( p ) \).
+    Therefore,  \( B_{ r - d }( x ) \subset B_{ r }( p ) \), which tells us that
+    \( B_{ r }( p ) \) is open.
+\end{egBox}

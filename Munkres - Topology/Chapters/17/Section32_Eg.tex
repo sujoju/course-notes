@@ -1,0 +1,63 @@
+\begin{egBox}{\( \mathbb{R}_{ \ell } \) is normal}[eg:32.1]
+    Let two disjoint closed sets \( A, B \) of \( \mathbb{R}_{ \ell } \) be 
+    given.
+    To show that \( \mathbb{R}_{ \ell } \) is normal, we first need to show 
+    that it is \( T_{ 1 } \); indeed, we have already shown this to be the 
+    case.
+    Now, because \( X \setminus B \) is open and contains \( A \), we have that
+    for all \( a \in A \), there exists \( x_{ a } > a \) so
+    \( [ a, x_{ a } ) \subset X \setminus B \).
+    Let us define the following:
+    \begin{equation*}
+        U
+        =
+        \bigcup_{ a \in A } [ a, x_{ a } ).
+    \end{equation*}
+    which we see is an open neighborhood of \( A \).
+    Similarly, because \( X \setminus A \) is open and contains \( B \), we 
+    have that for all \( b \in B \), there exists \( x_{ b } > b \) so
+    \( [ b, x_{ b } ) \subset X \setminus A \).
+    Let us define the following:
+    \begin{equation*}
+        V
+        =
+        \bigcup_{ b \in B } [ b, x_{ b } ).
+    \end{equation*}
+    which we see is an open neighborhood of \( B \).
+
+    \baseSkip
+
+    We claim that \( U \cap V = \emptyset \).
+    Towards a contradiction, let's assume that \( U \cap B \neq \emptyset \).
+    This mean that 
+    \begin{equation*}
+        [ a, x_{ a } ) \cap [ b, x_{ b } ) \neq \emptyset
+    \end{equation*}
+    WLOG, let's say that \( a < b \).
+    If the intersection is nonempty, then this means that we must have the 
+    following situation
+    \begin{equation*}
+        a < b < x_{ a } < x_{ b }
+        \implies
+        x_{ a } \in [ b, x_{ b } )
+        \implies
+        x_{ a } \in B
+    \end{equation*}
+    Which is a contradiction.
+\end{egBox}
+
+\begin{egBox}{The Sorgenfrey Plane is not normal}[eg:32.2]
+    Recall that the Sorgenfrey Plane was defined to be 
+    \( \mathbb{R}_{ \ell } \times \mathbb{R}_{ \ell } \).
+    Let us look at the line \( L: y = -x \).
+    As a subspace, we see that \( L \) has the discrete topology.
+    We can see that \( L \) is closed in 
+    \( \mathbb{R}_{ \ell } \times \mathbb{R}_{ \ell } \).
+    Furthermore, every subset of \( L \) is closed in \( L \).
+    So, by transitivity, every subset of \( L \) is closed in 
+    \( \mathbb{R}_{ \ell } \times \mathbb{R}_{ \ell } \).
+    Let \( A = \{ \text{points in } L \text{ with rational coordinates} \} \).
+    Let \( B = \{ \text{points in } L \text{ with irrational coordinates} \} \).
+    We can see that both \( A \) and \( B \) are disjoint and closed, but not separable by disjoint open neighborhoods.
+    The technical explanation is given in Munkres.
+\end{egBox}

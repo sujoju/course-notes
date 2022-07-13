@@ -1,0 +1,101 @@
+\begin{defBox}{Finite Product of Sets}[def:15_finite_product]
+    Given a finite list of sets \( X_{ 1 } , \ldots , X_{ r } \), we define
+    their \textbf{product} to consist of all \( r \)-tuples of the form 
+    \( ( x_{ 1 }, x_{ 2 }, \ldots, x_{ r } ) \) where \( x_{ i } \in X_{ i } \)
+    for all \( i \). Notationally:
+    \begin{equation*}
+        \prod_{ i = 1 }^{ r } X_{ i }
+        =
+        X_{ 1 } \times \ldots \times X_{ r }
+        \equiv 
+        \left\{
+            ( x_{ 1 } , \ldots , x_{ r } )
+            \ \middle\vert \ 
+            x_{ 1 } \in X_{ 1 } , \ldots , x_{ r } \in X_{ r }
+        \right\}
+    \end{equation*} 
+\end{defBox}
+
+\begin{defBox}{Rectangular Subset}[def:15_rect_subset]
+    A \textbf{rectangular subset} is a special kind of subset of a product that 
+    has the form:
+    \begin{equation*}
+        A_{ 1 } \times \ldots \times A_{ r } 
+        \subset 
+        X_{ 1 } \times \ldots \times X_{ r }
+        \quad \mathrm{where} \quad 
+        A_{ 1 } \subset X_{ 1 }
+        , \ldots , 
+        A_{ r } \subset X_{ r }
+    \end{equation*}
+\end{defBox}
+
+\begin{defBox}{Product Topology}[def:15_product_top]
+    Let \( X \) and \( Y \) be topological spaces.
+    The \textbf{product topology} on \( X \times Y \) is the topology having as 
+    basis the collection \( \mathcal{B} \) of all sets of the form \( U \times
+    V \), where \( U \) is an open subset \( X \) and \( V \) is an open subset 
+    of \( Y \).
+    I.e., we have that a basic open set in the product topology is none other 
+    than a product of open sets.
+
+    \baseSkip
+    
+    We can extend this definition to more than two topological spaces.
+    Let \( X_{ 1 } , \ldots , X_{ r } \) be a finite list of topological
+    spaces. 
+    The collection of all sets of the form: 
+    \begin{equation*}
+        U_{ 1 } \times \ldots \times U_{ r }
+    \end{equation*}
+    where we have \( U_{ i } \) to be open in \( X_{ i } \) for all \( i \),
+    forms a basis for a topology on \( X_{ 1 } \times \ldots \times X_{ r } \)
+    that we call the product topology.
+\end{defBox}
+
+\begin{defBox}{Projections}[def:15_projections]
+    Let \( \mathrm{proj}_{ 1 } : X \times Y \rightarrow X \) be defined by the 
+    equation
+    \begin{equation*}
+        \mathrm{proj}_{ 1 } ( x, y ) = x
+    \end{equation*}
+    and let \( \mathrm{proj}_{ 2 } : X \times Y \rightarrow Y \) be defined by 
+    the 
+    equation
+    \begin{equation*}
+        \mathrm{proj}_{ 2 } ( x, y ) = y
+    \end{equation*}
+    The maps \( \mathrm{proj}_{ 1 } \) and \( \mathrm{proj}_{ 2 } \) are called 
+    the \textbf{projections} of \( X \times Y \) onto its first and second 
+    factors, respectively.
+
+    \baseSkip 
+
+    We can also extend this to more than two topological spaces.
+    Let \( X_{ 1 } , \ldots , X_{ r } \) be a finite list of topological
+    spaces. 
+    Then the projection of \( X_{ 1 } \times \ldots \times X_{ r } \) onto 
+    its \( i \)th factor is the map 
+    \( \mathrm{proj}_{ i } : X_{ 1 } \times \ldots \times 
+    X_{ r } \rightarrow X_{ i } \) defined by the equation
+    \begin{equation*}
+        \mathrm{proj}_{ i } ( x_{ 1 } , \ldots , x_{ r } ) = x_{ i }
+    \end{equation*}
+\end{defBox}
+
+\begin{defBox}{Sequences in Products}[def:15_sequence_product]
+    If \( X_{ 1 } , \ldots , X_{ r } \) is a product space, then a sequence in
+    this space might be written as: \( ( X^{ 0 }, X^{ 1 }, \ldots ) \), where
+    \begin{equation*}
+        X^{ 0 }
+        =
+        ( x_{ 1 }^{ 0 } , \ldots , x_{ r }^{ 0 } )
+        \quad 
+        X^{ 1 }
+        =
+        ( x_{ 1 }^{ 1 } , \ldots , x_{ r }^{ 1 } )
+        \quad 
+        \ldots
+    \end{equation*}
+    are each elements in \( X_{ 1 } , \ldots , X_{ r } \).
+\end{defBox}

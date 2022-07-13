@@ -1,0 +1,483 @@
+\begin{thmBox}{17.1}[thm:17.1]
+    Let \( X \) be a topological space. 
+    Then the following conditions hold: 
+    \begin{enumerate}
+        \item \( \emptyset \) and \( X \) are closed.
+        \item Arbitrary intersections of closed sets are closed. 
+        \item Finite union of closed sets are closed. 
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}
+        \baseSkip
+
+        \wrapBox{1}
+        \( \emptyset \) and \( X \) are closed because they are the complements 
+        of the open sets \( X \) and \( \emptyset \), respectively.
+
+        \baseSkip
+        \wrapBox{2}
+        Given a collection of closed sets \( \{ A_{ i } \}_{ i \in I } \), where
+        \( I \) is some index set, we want to show that 
+        \( \bigcap_{ i \in I } A_{ i } \) is closed.
+        Equivalently, we want to show that its complement 
+        \( X \setminus \bigcap_{ i \in I } A_{ i } \) is open.
+        We see by DeMorgan's law that 
+        \begin{equation*}
+            X \setminus \bigcap_{ i \in I } A_{ i }
+            =
+            \bigcup_{ i \in I } ( X \setminus A_{ i } )
+        \end{equation*}
+        Since the sets \( X \setminus A_{ i } \) are open by definition, the 
+        right side of this equation represents an arbitrary union of open sets,
+        which we know to be open. 
+        Therefore, we have that arbitrary intersections of closed sets are 
+        closed. 
+
+        \baseSkip
+        \wrapBox{3}
+        Similarly, if we have a finite collection of sets 
+        \( A_{ 1 } , \ldots , A_{ n } \), then we want to show that 
+        \( \bigcup_{ i = 1 }^{ n } A_{ i } \) is closed.
+        Equivalently, we want to show that its complement 
+        \( X \setminus \bigcup_{ i = 1 }^{ n } A_{ i } \) is open.
+        We see by DeMorgan's law again that 
+        \begin{equation*}
+            X \setminus \bigcup_{ i = 1 }^{ n } A_{ i }
+            =
+            \bigcap_{ i = 1 }^{ n } ( X \setminus A_{ i } )
+        \end{equation*}
+        Since the sets \( X \setminus A_{ i } \) are open by definition, the 
+        right side of this equation represents a finite intersection of open 
+        sets, which we know to be open. 
+        Therefore, we have that finite unions of closed sets are 
+        closed. 
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Alternative Characterizations}[thm:17_alt_characterization]
+    Let \( A \) be a subset of a topological space \( X \).
+    \begin{enumerate}[label = (\alph*)]
+        \item A point \( x \in X \) is in the interior of \( A \) if and only 
+            if there is an open neighborhood of \( x \) that is entirely 
+            contained in \( A \).
+        \item A point \( x \in X \) is in the closure of \( A \) if and only 
+            if every open neighborhood of \( x \) has a nonempty intersection 
+            with \( A \).
+        \item A point \( x \in X \) is in the boundary of \( A \) if and only 
+            if every open neighborhood of \( x \) has a nonempty intersection 
+            with \( A \) and with \( X \setminus A \).
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{17.2}[thm:17.2]
+    Let \( Y \) be a subspace of \( X \). Then a set \( A \) is closed in 
+    \( Y \) if and only if it equals the intersection of a closed set of 
+    \( X \) with \( Y \).
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{\( \implies \)}
+        Let's assume that \( A \) is closed in \( Y \). 
+        By definition, it follows that \( Y \setminus A \) is open in \( Y \),
+        which by definition again means that \( Y \setminus A \) must equal 
+        the intersection of an open set \( U \) of \( X \) with \( Y \).
+        Thus, we have that \( Y \setminus A = Y \cap U \). 
+        From here, we see the following:
+        \begin{equation*}
+            Y \setminus ( Y \setminus A ) = Y \setminus ( Y \cap U )
+            \iff 
+            A = Y \cap ( X \setminus U )
+        \end{equation*}
+        Furthermore, it follows that \( X \setminus U \) is closed in \( X \) 
+        as \( X \setminus ( X \setminus U ) = U \) is open in \( X \).
+        Thus, we see that \( A \) equals the intersection of a closed set of 
+        \( X \) with \( Y \).
+
+        \baseSkip
+
+        \wrapBox{\( \impliedby \)}
+        Let's now assume that \( A = Y \cap C \), where \( C \) is closed in 
+        \( X \).
+        It follows by definition that \( X \setminus C \) is open in \( X \),
+        meaning that \( Y \cap ( X \setminus C ) \) is open in \( Y \), which 
+        follows by definition of the subspace topology.
+        This is where we note that 
+        \begin{equation*}
+            Y \setminus A
+            =
+            Y \setminus ( Y \cap C )
+            \iff 
+            Y \setminus A
+            =
+            Y \cap ( X \setminus C )
+        \end{equation*}
+        Furthermore, if follows that \( X \setminus C \) is open in \( X \) 
+        since \( X \setminus ( X \setminus C ) = C \) is closed.
+        Thus, we have that \( Y \setminus A \) is open in \( Y \) by definition
+        of the subspace topology, which implies that \( A \) is closed in 
+        \( Y \) by definition as well.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{17.3}[thm:17.3]
+    Let \( Y \) be a subspace of \( X \). If \( A \) is closed in \( Y \) and 
+    \( Y \) is closed in \( X \), then \( A \) is closed in \( X \).
+
+    \baseRule
+
+    \begin{proofBox}
+        If \( A \) is closed in \( Y \), then we see by [\hyperlink{thm:17.2}
+        {Theorem 17.2}] that there exists some closed set \( C \) of \( X \) 
+        such that \( A = Y \cap C \).
+        Since we know that \( Y \) is closed in \( X \), we have that 
+        \( Y \cap C \) is also closed in \( X \) due to arbitrary intersections
+        of closed sets of \( X \) being closed in \( X \).
+        Thus, we have that \( A \) is closed in \( X \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{17.4}[thm:17.4]
+    Let \( Y \) be a subspace of \( X \), let \( A \) be a subset of \( Y \), 
+    let \( \overline{ A } \) denote the closure of \( A \) in \( X \).
+    Then the closure of \( A \) in \( Y \) equals \( \overline{ A } \cap Y \).
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( B \) denote the closure of \( A \) in \( Y \).
+        We know that the set \( \overline{ A } \) is closed in \( X \), which 
+        means that \( Y \cap \overline{ A } \) is closed in \( Y \) by 
+        [\hyperlink{thm:17.2}{Theorem 17.2}].
+        Because \( A \subset Y \) and \( A \subset \overline{ A } \), we have 
+        that \( A \subset Y \cap \overline{ A } \).
+        We now note that since \( B \) is the closure of \( A \) in \( Y \),
+        it follows by definition that \( B \) equals the intersection of 
+        \textit{all} closed subsets of \( Y \) containing \( A \).
+        Thus, it must be the case that 
+        \( B \subset ( Y \cap \overline{ A } ) \).
+
+        \baseSkip
+
+        On the other hand, we know that \( B \) is closed in \( Y \). 
+        Thus, by [\hyperlink{thm:17.2}{Theorem 17.2}], we have that
+        \( B = Y \cap C \) for some closed set \( C \) of \( X \). 
+        Since \( B \) contains \( A \), it must be the case that \( C \) 
+        contains \( A \) as well.
+        As a result, we have that \( C \) is a closed set of \( X \) 
+        containing \( A \), which means that it is in the collection of closed
+        sets containing \( A \).
+        By definition, \( \overline{ A } \) is the intersection of such a 
+        collection, which means that \( \overline{ A } \subset C \).
+        Therefore, we have that \( ( Y \cap \overline{ A } ) \subset 
+        ( Y \cap C ) = B \).
+
+        \baseSkip 
+
+        Putting everything together gives us that 
+        \( B = Y \cap \overline{ A } \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{17.5}[thm:17.5]
+    Let \( A \) be a subset of the topological space \( X \).
+    \begin{enumerate}[label = (\alph*)]
+        \item Then \( x \in \overline{ A } \) if and only if every open set 
+            \( U \) containing \( x \) intersects \( A \).
+        \item Supposing the topology of \( X \) is given be a basis, then 
+            \( x \in \overline{ A } \) if and only if every basis element 
+            \( B \) containing \( x \) intersects \( A \).
+    \end{enumerate}
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{a}
+        We shall prove this statement via contrapositive -- that is, we are 
+        proving the following: \( x \notin \overline{ A } \) if and only if 
+        there exists an open set \( U \) containing \( x \) that does not 
+        intersect with \( A \).
+
+        \baseSkip
+        
+        (\( \implies \)) If \( x \notin \overline{ A } \), then we have that 
+        \( U = X \setminus \overline{ A } \) is an open set containing \( x \) 
+        that does not intersect \( A \), as desired.
+        
+        \baseSkip
+
+        (\( \impliedby \)) If there exists an open set \( U \) containing 
+        \( x \) which does not intersect \( A \), then we see that 
+        \( X \setminus U \) is a closed set that contains \( A \).
+        By definition of the closure \( \overline{ A } \), we have that 
+        \( \overline{ A } \subset ( X \setminus U ) \).
+        Since \( x \notin X \setminus U \), it follows that \( x \notin 
+        \overline{ A } \).
+
+        \baseSkip
+
+        \wrapBox{b}
+        This statement follows readily from (a).
+
+        \baseSkip
+
+        (\( \implies \)) If every open set containing \( x \) intersects \( A \)
+        , then so does
+        every basis element \( B \) containing \( x \), because \( B \) is 
+        an open set.
+
+        \baseSkip
+
+        (\( \impliedby \)) If every basis element containing \( x \) intersects
+        \( A \), then so does every open set \( U \) containing \( x \), because
+        \( U \) contains a basis element that contains \( x \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{17.6}[thm:17.6]
+    Let \( A \) be a subset of the topological space \( X \), and let 
+    \( A' \) be the set of all limit points of \( A \).
+    Then 
+    \begin{equation*}
+        \overline{ A }
+        =
+        A \cup A'
+    \end{equation*}
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{\( A \cup A' \subset \overline{ A } \)}
+        Let's suppose that \( x \in A \cup A' \).
+        If \( x \in A \), then we see that \( x \in \overline{ A } \) since 
+        \( A \subset \overline{ A } \) by definition.
+        Now if \( x \in A' \), then we see that every neighborhood of \( x \)
+        intersects \( A \) (in a point different from \( x \)).
+        Therefore, by [\hyperlink{thm:17.5}{Theorem 17.5}], we have that 
+        \( x \in \overline{ A } \).
+        Hence, \( A' \subset A \).
+        Putting everything together results in 
+        \( A \cup A' \subset \overline{ A } \).
+
+        \baseSkip
+
+        \wrapBox{\( \overline{ A } \subset ( A \cup A' ) \)}
+        We now suppose \( x \in \overline{ A } \).
+        Our goal is to show that \( x \in A \cup A' \).
+        If \( x \) happens to lie in \( A \), it is trivial that
+        \( x \in A \cup A' \).
+        Let's now suppose that \( x \in \overline{ A } \) and \( x \notin A \).
+        Since \( x \in \overline{ A } \), we know by by [\hyperlink{thm:17.5}
+        {Theorem 17.5}] that every neighborhood \( U \) of \( x \) intersects 
+        \( A \);
+        because \( x \notin A \), we have the set \( U \) must intersect \( A \)
+        at a point different from \( x \).
+        Thus, \( x \in A' \) by definition, and we have 
+        \( x \in A \cup A' \).
+
+        \baseSkip
+
+        Putting everything together results in \( \overline{ A } = A \cup A' \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}[Corollary]{17.7}[cor:17.7]
+    A subset of a topological space is closed if and only if it contains all its limit points. 
+
+    \baseRule
+
+    \begin{proofBox}*
+        (\( \implies \))
+        The set \( A \) is closed if and only if \( A = \overline{ A } \), 
+        meaning that \( A \) contains all its limits points by 
+        [\hyperlink{thm:17.6}{Theorem 17.6}].
+
+        \baseSkip 
+
+        (\( \impliedby \))
+        If \( A \) contains all its limit points, then we see that 
+        \( A' \subset A \). 
+        Thus, we have that \( A \cup A' = A \), which equivalently means that 
+        \( \overline{ A } = A \) by [\hyperlink{thm:17.6}{Theorem 17.6}].
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{17.8}[thm:17.8]
+    Every finite point set in a Hausdorff space \( X \) is closed.
+
+    \baseRule
+
+    \begin{proofBox}
+        Notice that every finite point set can be viewed as the union of 
+        one-point sets -- e.g., \( \{ a, b, c \} = \{ a \} \cup \{ b \} \cup 
+        \{ c \} \). 
+        Thus, it suffices to show that every one-point set \( \{ x_{ 0 } \} \)
+        is closed since every finite point set will then be a finite union 
+        of closed sets, which is still closed.
+
+        \baseSkip
+
+        If \( x \) is a point of \( X \) different from \( x_{ 0 } \), then 
+        \( x \) and \( x_{ 0 } \) have disjoint neighborhoods \( U \) and 
+        \( V \), respectively.
+        Since \( U \) does not intersect \( \{ x_{ 0 } \} \), the point \( x \)
+        cannot belong to the closure of the set \( \{ x_{ 0 } \} \).
+        As a result, the closure of the set \( \{ x_{ 0 } \} \) is 
+        \( \{ x_{ 0 } \} \) itself, so that it is closed.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{17.9}[thm:17.9]
+    Let \( X \) be a space satisfying the \( T_{ 1 } \) axiom; let \( A \) be a 
+    subset of \( X \).
+    Then the point \( x \) is limit point of \( A \) if and only if every
+    neighborhood of \( x \) contains infinitely many points of \( A \).
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{\( \implies \)} 
+        For this direction, we shall prove by contradiction.
+        Suppose that \( x \) is a limit point of \( A \).
+        Suppose as well that some neighborhood \( U \) of \( x \) intersects
+        \( A \) in only finitely many points.
+        Then we have that \( U \) also intersects \( A \setminus \{ x \} \)
+        in finitely many points, which we shall denote as 
+        \( x_{ 1 } , \ldots , x_{ m } \).
+        It follows by the \( T_{ 1 } \) axiom that \( \{ x_{ 1 } , \ldots , 
+        x_{ m } \} \) is closed as it is a finite point set.
+        Thus, the set \( X \setminus \{ x_{ 1 } , \ldots , x_{ m } \} \) is an
+        open set of \( X \).
+        From this, we have that
+        \begin{equation*}
+            U \cap ( X \setminus \{ x_{ 1 } , \ldots , x_{ m } \} )
+        \end{equation*}
+        is a neighborhood of \( x \) that does not intersect with the set 
+        \( A \setminus \{ x \} \); we have essentially constructed a set that 
+        removes all the intersection points of \( A \setminus \{ x \} \) and 
+        \( U \), while maintaining such a set to be open.
+        This contradicts the assumption that \( x \) is a limit point of 
+        \( A \) since we have found a neighborhood of \( x \) that does not 
+        intersect \( A \) in some other point other than \( x \) itself.
+
+        \baseSkip 
+
+        \wrapBox{\( \impliedby \)} 
+        Now, if every neighborhood of \( x \) intersects \( A \) in infinitely 
+        many points, it certainly must intersect \( A \) in some point other 
+        than \( x \) itself.
+        Hence, \( x \) must be a limit point of \( A \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{17.10}[thm:17.10]
+    If \( X \) is a Hausdorff space, then a sequence of points of \( X \) 
+    converges to at most one point of \( X \).
+
+    \baseRule
+
+    \begin{proofBox}
+        Let's suppose that \( ( x_{ n } ) \) is a sequence of points of \( X \)
+        that converges to \( x \). 
+        If we now take any other point \( y \neq x \), then \( X \) being 
+        Hausdorff allows for us to find two disjoint neighborhoods \( U \) and
+        \( V \) of \( x \) and \( y \), respectively. 
+        Since we know that \( U \) contains \( x_{ n } \) for all but finitely
+        many values of \( n \) -- that is, there is a positive integer \( N \) 
+        such that \( x_{ n } \in U \) for all \( n \geq N \) -- we have that 
+        it is impossible for the set \( V \) to also contain \( x_{ n } \) for all but finitely many values of \( n \) since it is disjoint to 
+        \( U \).
+        Thus, \( ( x_{ n } ) \) cannot converge to \( y \).
+        Since \( y \) was arbitrary, we have that \( ( x_{ n } ) \) converges 
+        to at most one point of \( X \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{17.11}[thm:17.11]
+    Every simply ordered set is a Hausdorff space in the order topology.
+    The product of two Hausdorff spaces is a Hausdorff space. 
+    A subspace of a Hausdorff space is a Hausdorff space.
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{Subspace of a Hausdorff Space is Hausdorff}
+        Let \( X \) be a Hausdorff space and \( Y \subset X \) be a subspace of 
+        \( X \).
+        Let \( x, y \in Y \) be two distinct points.
+        Our goal is to show that there exists open neighborhoods of \( x \) and 
+        \( y \), respectively, in \( Y \) such that these neighborhoods are 
+        disjoint.
+
+        \baseSkip
+
+        Since \( x, y \) are also distinct elements in \( X \), we see that \( X \) 
+        being Hausdorff tells us that there exists open neighborhoods 
+        \( U \) and \( V \) of \( x \) and \( y \), respectively,
+        in \( X \) such that \( U \cap V = \emptyset \).
+        With this, \( x \in U \) and \( x \in Y \) tells us 
+        that \( x \in Y \cap U \); similarly, we have that \( y \in Y 
+        \cap V \).
+
+        \baseSkip
+
+        Notice that both \( Y \cap U \) and \( Y \cap V \) are 
+        open in \( Y \) since \( U \) and \( V \) are open in \( X \). 
+        Furthermore, we have that 
+        \begin{equation*}
+            ( Y \cap U ) \cap ( Y \cap V )
+            =
+            \underbrace{ ( Y \cap Y ) }_{ Y } \cap 
+            \underbrace{ ( U \cap V ) }_{ \emptyset }
+            =
+            \emptyset
+        \end{equation*}
+        Putting everything together, we see that \( Y \cap U \) and \( Y \cap V \)
+        are open neighborhoods of \( x \) and \( y \), respectively, in \( Y \) 
+        that are also disjoint.
+        Hence \( Y \) is Hausdorff.
+
+        \baseSkip 
+
+        \wrapBox{Product of Two Hausdorff Spaces is Hausdorff}
+
+        Let \( X \) and \( Y \) be two Hausdorff spaces.
+        Our goal is to show that \( X \times Y \) is Hausdorff.
+        We start by letting \( \mathbf{x}_{ 1 }, \mathbf{x}_{ 2 } \in X \times 
+        Y \)
+        be any two distinct points -- that is, 
+        \( \mathbf{x}_{ 1 } = ( x_{ 1 }, y_{ 1 } ) \) and \( \mathbf{x}_{ 2 }
+        = ( x_{ 2 }, y_{ 2 } ) \) with \( x_{ 1 } \neq x_{ 2 } \) and 
+        \( y_{ 1 } \neq y_{ 2 } \).
+
+        \baseSkip 
+
+        Because \( X \) is Hausdorff, we see that there exists 
+        open neighborhoods \( U_{ 1 }, U_{ 2 } \) of \( x_{ 1 }, x_{ 2 } \) in 
+        \( X \) such that \( U_{ 1 } \cap U_{ 2 } = \emptyset \); similarly, 
+        because \( Y \) is Hausdorff, we see that there exists 
+        open neighborhoods \( V_{ 1 }, V_{ 2 } \) of \( y_{ 1 }, y_{ 2 } \) in 
+        \( Y \) such that \( V_{ 1 } \cap V_{ 2 } = \emptyset \).
+        From this, we get that \( U_{ 1 } \times V_{ 1 } \) and \( U_{ 2 } 
+        \times V_{ 2 } \) are two open neighborhoods of \( \mathbf{x}_{ 1 } \) 
+        and \( \mathbf{x}_{ 2 } \) that are disjoint from each other:
+        \begin{equation*}
+            ( U_{ 1 } \times V_{ 1 } ) \cap ( U_{ 2 } \times V_{ 2 } )
+            =
+            \underbrace{ ( U_{ 1 } \cap U_{ 2 } ) }_{ \emptyset }
+            \times 
+            \underbrace{ ( V_{ 1 } \cap V_{ 2 } ) }_{ \emptyset }
+            =
+            \emptyset
+        \end{equation*}
+        Thus, it follows that \( X \times Y \) is Hausdorff.
+    \end{proofBox}
+\end{thmBox}

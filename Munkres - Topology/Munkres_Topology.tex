@@ -1,0 +1,141 @@
+\documentclass[12pt, oneside]{memoir}
+
+%------------------------------------------------------------------------------
+%	NOTE DETAILS
+%------------------------------------------------------------------------------
+
+\title{MATH 344-1 Notes}
+\author{Jun Sung}
+\date{}
+\newcommand{\className}{MATH 344-1}
+
+%------------------------------------------------------------------------------
+%	FILE IMPORT
+%------------------------------------------------------------------------------
+
+\input{Structure.tex} 
+
+%------------------------------------------------------------------------------
+%	NOTE MARGINS
+%------------------------------------------------------------------------------
+
+\geometry{
+    letterpaper,
+    left = 1.5cm,
+    right = 1.5cm,
+    top = 1.5cm,
+    bottom = 1.5cm,
+    headheight = \baselineskip,
+    headsep = \baselineskip,
+    footskip = \baselineskip
+}
+
+%------------------------------------------------------------------------------
+%	HEADER/SECTION OPTIONS
+%------------------------------------------------------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{\className \ $\mid$ \ Notes}
+\fancyfoot[C]{\thepage}
+
+%------------------------------------------------------------------------------
+%	RENEWED COMMANDS AND SETCOUNTER
+%------------------------------------------------------------------------------
+
+%These renewed commands format the sections (hence subsections and subsubsections) and equations
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+
+\renewcommand{\figurename}{Figure}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+%Following entries that will appear with this depth: part, chapters, sections, subsections, and subsubsections
+\setcounter{tocdepth}{3}
+
+%The setcounter for both equations and sections must occur BEFORE the section
+%\setcounter{equation}{0} 
+%\setcounter{section}{section \#} 
+
+%These renewed commands format how the figures will be labeled
+%Note that the renewing the command for \thefigure must occur BEFORE the figure
+%\renewcommand{\figurename}{Fig.}
+%\renewcommand{\thefigure}{figure \#} \ DEFAULT - \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+
+%This command will fix the overfull hbox in the TOC
+\renewcommand*{\cftdotsep}{1}
+\setpnumwidth{3em}
+\setrmarg{4em}
+
+%------------------------------------------------------------------------------
+%	DOCUMENT
+%------------------------------------------------------------------------------
+
+\begin{document}
+\maketitle
+\newpage 
+
+\tableofcontents
+\newpage
+
+\chapter{Metric Spaces}
+\subimport{Chapters/1/}{MetricSpaces.tex}
+
+\chapter{Topological Spaces}
+\subimport{Chapters/2}{Section12.tex}
+
+\chapter{Basis for a Topology}
+\subimport{Chapters/3}{Section13.tex}
+
+\chapter{Closed Sets and Limit Points}
+\subimport{Chapters/4}{Section17.tex}
+
+\chapter{The Subspace Topology}
+\subimport{Chapters/5}{Section16.tex}
+
+\chapter{The Product Topology}
+\subimport{Chapters/6}{Section15.tex}
+
+\chapter{More Product Topology}
+\subimport{Chapters/7}{Section19.tex}
+
+\chapter{Continuous Functions}
+\subimport{Chapters/8}{Section18.tex}
+
+\chapter{The Quotient Topology}
+\subimport{Chapters/9}{Section22.tex}
+
+\chapter{Connected Spaces}
+\subimport{Chapters/10}{Section23.tex}
+
+\chapter{Connected Subspaces of the Real Line}
+\subimport{Chapters/11}{Section24.tex}
+
+\chapter{Components and Local Connectedness}
+\subimport{Chapters/12}{Section25.tex}
+
+\chapter{Compact Spaces}
+\subimport{Chapters/13}{Section26.tex}
+
+\chapter{Local Compactness}
+\subimport{Chapters/14}{Section29.tex}
+
+\chapter{The Countability Axioms}
+\subimport{Chapters/15}{Section30.tex}
+
+\chapter{The Separation Axioms}
+\subimport{Chapters/16}{Section31.tex}
+
+\chapter{Normal Spaces}
+\subimport{Chapters/17}{Section32.tex}
+
+\chapter{The Urysohn Lemma}
+\subimport{Chapters/18/}{Section33.tex}
+
+\chapter{The Urysohn Metrization Theorem}
+\subimport{Chapters/19/}{Section34.tex}
+
+\chapter{The Tietze Extension Theorem}
+\subimport{Chapters/20/}{Section35.tex}
+
+\end{document}

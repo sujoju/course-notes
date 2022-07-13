@@ -1,0 +1,132 @@
+\begin{remarkBox}{On the Quotient Map}
+    The condition for a quotient map is \textit{stronger} than continuity; for 
+    continuity, we had \( p^{ -1 } ( U ) \) to be open in \( X \) whenever 
+    \( U \) is open in \( Y \), which is only one direction of implication.
+    However, a quotient map requires an equivalence -- that is, both directions
+    of implication.
+
+    \baseRule
+
+    We also note that an equivalent condition for a quotient map is as follows:
+    The map \( p \) is said to be a \textbf{quotient map} provided a subset
+    \( A \) of \( Y \) is closed in \( Y \) if and only if \( p^{ -1 } ( A ) \)
+    is closed in \( X \).
+    The equivalence of these two conditions follows from the fact that 
+    \begin{equation*}
+        f^{ -1 } ( Y \setminus B ) = X \setminus f^{ -1 } ( B )
+    \end{equation*}
+\end{remarkBox}
+
+\begin{remarkBox}{On the Quotient Space \( X^{ * } \)}
+    The topology of \( X^{ * } \) can be described in another way: 
+    A subset \( U \) of \( X^{ * } \) is a collection of equivalence classes,
+    and the set \( p^{ -1 } ( U ) \) is just the union of equivalence classes
+    belonging to \( U \).
+    Thus, the typical open set of \( X^{ * } \) is a collection of equivalence
+    classes whose union is an open set of \( X \).
+    One can see that this does indeed form a topology on \( X^{ * } \).
+
+    \baseSkip
+
+    With this description, we can see that the surjective map 
+    \( \pi: X \rightarrow X^{ * } \), where \( \pi ( x ) = [ x ] \), is 
+    a quotient map, and thus induces a quotient topology on \( X^{ * } \).
+
+    \baseSkip 
+
+    As a result, when \( X \) is a topological space with an equivalence 
+    relation and \( X^{ * } \) is the corresponding set of equivalence classes, 
+    it is implied that the quotient topology on \( X^{ * } \) is induced by the 
+    function \( X \rightarrow X^{ * } \) that sends a point to its equivalence 
+    class;
+    that is, \( X^{ * } \) is induced by the function \( \pi: X \rightarrow 
+    X^{ * } \), where \( \pi ( x ) = [ x ] \).
+
+    \baseRule
+
+    One can think of \( X^{ * } \) as having been obtained by "identifying"
+    each pair of equivalent points. 
+    For this reason, the quotient space \( X^{ * } \) is often called an
+    \textbf{identification space}, or a \textbf{decomposition space}, of 
+    the space \( X \).
+\end{remarkBox}
+
+\begin{remarkBox}{On Equivalent Quotient Spaces}
+    Let \( p: X \rightarrow Y \) be a quotient map.
+    The theorem about equivalent quotient spaces is stating that we can 
+    always produce an equivalence 
+    relation on \( X \) using the quotient map \( p \) -- this equivalence 
+    relation being \( x \sim y \iff p ( x ) = p ( y ) \), which states that
+    two elements in \( X \) are similar if they are both sent to the same point
+    via \( p \).
+    I.e., if \( p \) acts two elements in the same way (that is, sending them
+    to the same point), then these two elements are similar to each other. 
+
+    \baseSkip
+
+    Notice that this equivalence relation partitions \( X \) up into equivalence
+    classes, and we have the set of these equivalence classes \( X^{ * } \)
+    to be a quotient space itself; recall that the the quotient topology on 
+    \( X^{ * } \) is induced by the function \( X \rightarrow X^{ * } \) that 
+    sends a point to its equivalence class -- 
+    that is, \( X^{ * } \) is induced by the function \( \pi: X \rightarrow 
+    X^{ * } \), where \( \pi ( x ) = [ x ] \).
+
+    \baseSkip 
+
+    Not only that, but we showed that such an equivalence relation 
+    results in the quotient space \( Y \) induced by \( p \) to be homeomorphic
+    to \( X^{ * } \) -- i.e., \( Y \) and \( X^{ * } \) are equivalent spaces!
+    Thus, we can always think of any quotient space as being a set of 
+    equivalent classes instead, which is what Munkres does for his definition 
+    of quotient spaces.
+
+    \baseRule 
+
+    Munkres offers the following definition for a quotient space:
+    Let \( X \) be a topological space, and let \( X^{ * } \) be a partition of
+    \( X \) into disjoint subsets whose union is \( X \).
+    Let \( p: X \rightarrow X^{ * } \) be the surjective map that carries each
+    point of \( X \) to the element of \( X^{ * } \) containing it.
+    In the quotient topology induced by \( p \), the space \( X^{ * } \) is 
+    called a \textbf{quotient space} of \( X \).
+
+    \baseSkip
+
+    From this definition, he then states that given \( X^{ * } \), there is an
+    equivalence relation on \( X \) of which the elements of \( X^{ * } \) are
+    the equivalence classes.
+\end{remarkBox}
+
+\begin{remarkBox}{Quotient Maps}
+    The composite of two quotient maps is a quotient map; this fact follows 
+    from the following equation:
+    \begin{equation*}
+        p^{ -1 } ( q^{ -1 } ( U ) )
+        =
+        ( q \circ p )^{ -1 } ( U )
+    \end{equation*}
+
+    \baseRule
+
+    On the other hand the product of two quotient maps need not be a quotient
+    map.
+    This also is true for subspaces: if \( p: X \rightarrow Y \) is a quotient
+    map and \( A \) is a subspace of \( X \), then the map \( q: A \rightarrow 
+    p ( A ) \) obtained by restricting \( p \) need not be a quotient map.
+    However, there are special conditions that makes \( q \) a quotient map --
+    c.g. [\hyperlink{thm:22.1}{Theorem 22.1}]
+
+    \baseRule
+
+    Finally, if \( X \) is Hausdorff, then there is no reason that the quotient
+    space \( X^{ * } \) needs to be Hausdorff.
+    However, there is a simple condition for \( X^{ * } \) to satisfy the 
+    \( T_{ 1 } \) axiom; one simply requires that each element of the 
+    partition \( X^{ * } \) be a closed subset of \( X \).
+\end{remarkBox}
+
+\begin{remarkBox}{Proofs and Examples}
+    The proofs for the theorems/corollary as well as more examples can be found
+    in \S 22 of Munkres.
+\end{remarkBox}

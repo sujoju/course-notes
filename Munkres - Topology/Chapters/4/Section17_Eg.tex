@@ -1,0 +1,247 @@
+\begin{egBox}{Some Examples of Closed Sets}[eg:17.1]
+    The subset \( [ a, b ] \) of \( \mathbb{R} \) is closed because its 
+    complement 
+    \begin{equation*}
+        \mathbb{R} \setminus [ a, b ]
+        =
+        ( - \infty, a ) \cup ( b, +\infty )
+    \end{equation*}
+    is open. 
+    Similarly, we see that \( [ a, +\infty ) \) is closed because its 
+    complement \( ( - \infty, a ) \) is open.
+    Notice that \( [ a, b ) \) of \( \mathbb{R} \) is neither open nor 
+    closed.
+
+    \baseRule 
+
+    In the place \( \mathbb{R}^{ 2 } \), the set 
+    \begin{equation*}
+        \{ x \times y \mid x \geq 0 \text{ and } y \geq 0 \}
+    \end{equation*}
+    is closed because its complement is the union of the two sets 
+    \begin{equation*}
+        ( -\infty, 0 ) \times \mathbb{R}
+        \quad \mathrm{and} \quad
+        \mathbb{R} \times ( - \infty, 0 )
+    \end{equation*}
+    each of which is a product of open sets of \( \mathbb{R} \) and is 
+    therefore open in \( \mathbb{R}^{ 2 } \).
+
+    \baseRule
+
+    In the finite complement topology on a set \( X \), the closed sets consists
+    of \( X \) itself and all finite subsets of \( X \).
+
+    \baseRule
+
+    In the discrete topology on the set \( X \), every set is open. 
+    Thus it follows that every set is closed as well.
+\end{egBox}
+
+\begin{egBox}{Trivial Clopen Sets}[eg:17.2]
+    Given any topological space \( X \), we know from [\hyperlink{thm:17-1}{Theorem 17.1}] that \( \emptyset \) and \( X \) are clopen. 
+    We call these the \textbf{trivial clopen subsets}.
+\end{egBox}
+
+\begin{egBox}{On the Interior and Closure of a Set}[eg:17.3]
+    Let's say that we are given a subset \( A \) of a topological space \( X \).
+    It is clear to see that \( \mathrm{Int} \ A \) is an open set (an arbitrary
+    union of open sets is still open).
+    It is also clear to see that \( \overline{ A } \) is a closed set (an 
+    arbitrary intersection of closed sets is still closed).
+
+    \baseSkip
+
+    Furthermore, we see by definition that 
+    \begin{equation*}
+        \mathrm{Int} \ A \subset A \subset \overline{ A }
+    \end{equation*}
+    If \( A \) is open, then we see that \( A = \mathrm{Int} \ A \).
+    Indeed, 
+    \( A \) being open means that it is in the union of all open sets contained 
+    in \( A \) (note that \( A \) contains itself).
+    Thus, the union of all open sets contained in \( A \) must equal \( A \)
+    -- the union of any subsets of \( A \) cannot be larger than \( A \) itself!
+    
+    \baseSkip 
+    
+    Similarly, if \( A \) is closed, then we see that \( A = \overline{ A } \).
+    Indeed, \( A \) being closed means that it is in the intersection of all 
+    closed sets containing \( A \).
+    Thus, the intersection of all closed sets containing \( A \) must equal 
+    \( A \) -- the intersection of a collection of sets cannot be larger than 
+    each of the individual sets!
+\end{egBox}
+
+\begin{egBox}{The Boundary of a Set is Closed in \( X \)}[eg:17.4]
+    Let \( A \) be a subset of a topological space \( X \).
+    We want to show that \( \partial A \) is closed in \( X \).
+    To do so, we note that
+    \begin{equation*}
+        \partial A 
+        =
+        \overline{ A } \setminus \mathrm{Int} \ A
+        =
+        \overline{ A } \cap ( X \setminus \mathrm{Int} \ A )
+    \end{equation*}
+    Further notice that \( X \setminus \mathrm{Int} \ A \) is closed since 
+    \( X \setminus ( X \setminus \mathrm{Int} \ A ) = \mathrm{Int} \ A \) is 
+    open.
+    Since arbitrary intersections of closed sets are still closed, we see that 
+    \( \partial A \) is closed as well.
+\end{egBox}
+
+\begin{egBox}{Some Examples of Closures of Sets}[eg:17.5]
+    Let \( X = \mathbb{R} \). 
+    If \( A = ( 0, 1 ] \), then \( \overline{ A } = [ 0, 1 ] \).
+    This follows from seeing that every neighborhood of \( 0 \) intersects 
+    \( A \), while every point outside \( [ 0, 1 ] \) has a neighborhood
+    disjoint from \( A \). Similar arguments apply to the following subsets
+    of \( X \).
+
+    \baseRule
+
+    If \( B = \{ \frac{ 1 }{ n } \mid n \in \mathbb{Z}_{ + } \} \), then 
+    we have that \( \overline{ B } = \{ 0 \} \cup B \).
+    
+    \baseRule
+
+    If \( C = \{ 0 \} \cup ( 1, 2 ) \), then \( \overline{ C } = \{ 0 \} \cup 
+    [ 1, 2 ] \).
+
+    \baseRule
+
+    If \( \mathbb{Q} \) is the set of rational numbers, then \( \overline{ Q }
+    = \mathbb{R} \).
+
+    \baseRule
+
+    If \( \mathbb{Z}_{ + } \) is the set of positive integers, then
+    \( \overline{ Z }_{ + } = \mathbb{Z}_{ + } \).
+
+    \baseRule
+
+    If \( \mathbb{R}_{ + } \) is the set of positive reals, then closure of 
+    \( \mathbb{R}_{ + } \) is the set \( \mathbb{R}_{ + } \cup \{ 0 \} \).
+
+    \baseRule
+
+    Consider the subspace \( Y = ( 0, 1 ] \) of the real line \( \mathbb{R} \).
+    The set \( A = ( 0, \frac{ 1 }{ 2 } ) \) is a subset of \( Y \).
+    Its closure in \( \mathbb{R} \) is the set \( [ 0, \frac{ 1 }{ 2 } ] \), and
+    its closure in \( Y \) is the set \( [ 0, \frac{ 1 }{ 2 } ] \cap Y =
+    ( 0, \frac{ 1 }{ 2 } ] \).
+\end{egBox}
+
+\begin{egBox}{Examples of Limit Points}[eg:17.6]
+    Consider the real line \( \mathbb{R} \).
+    If \( A = ( 0, 1 ] \), then the point \( 0 \) is a limit point of \( A \)
+    and so is the point \( \frac{ 1 }{ 2 } \) -- in fact, every point of the 
+    interval \( [ 0, 1 ] \) is a limit point of \( A \), but no other points of \( \mathbb{R} \) is a limit point of \( A \).
+
+    \baseRule
+
+    If \( B = \{ \frac{ 1 }{ n } \mid n \in \mathbb{Z}_{ + } \} \), then 
+    \( 0 \) is the only limit point of \( B \).
+    Every other point \( x \) of \( \mathbb{R} \) has a neighborhood that either
+    does not intersect \( B \) at all (in particular, for \( x \notin B \) and 
+    \( x \neq 0 \)), or it intersects \( B \) only in the points \( x \) itself
+    (in particular, for \( x \in B \) and \( x \neq 0 \)).
+
+    \baseRule
+
+    If \( C = \{ 0 \} \cup ( 1, 2 ) \), then the limit points of \( C \) are the
+    points of the interval \( [ 1, 2 ] \).
+
+    \baseRule
+
+    If \( \mathbb{Q} \) is the set of rational numbers, every point of 
+    \( \mathbb{R} \) is a limit point of \( \mathbb{Q} \) -- this follows from 
+    \( \mathbb{Q} \) being dense in \( \mathbb{R} \).
+
+    \baseRule
+
+    If \( \mathbb{Z}_{ + } \) is the set of positive integers, no point of
+    \( \mathbb{R} \) is a limit point of \( \mathbb{Z}_{ + } \).
+
+    \baseRule
+
+    If \( \mathbb{R}_{ + } \) is the set of positive reals, then every point of 
+    \( \{ 0 \} \cup \mathbb{R}_{ + } \) is a limit point of 
+    \( \mathbb{R}_{ + } \).
+\end{egBox}
+
+\begin{egBox}{\( T_{ 1 } \)-Spaces}[eg:17.7]
+    We have that \( \mathbb{R} \) with the cofinite topology is a \( T_{ 1 } \)-
+    space.
+    This is because in the cofinite topology, sets whose complements are finite
+    are defined to be open -- meaning that set that are finite are closed in 
+    the cofinite topology.
+    Hence, \( \mathbb{R} \) with the cofinite topology is a \( T_{ 1 } \)-space.
+
+    \baseRule
+
+    \( \mathbb{R} \) with the trivial topology (where the only open subsets
+    are \( \emptyset \) and \( \mathbb{R} \) itself) is not a \( T_{ 1 } \)-
+    space.
+    This is because we have that \( \emptyset \) and \( \mathbb{R} \) are the 
+    only closed sets in the trivial topology. 
+    Thus, singleton sets (and thus, finite point sets) are not closed.
+
+    \baseRule
+
+    \( \mathbb{R} \) with the lower limit topology is \( T_{ 1 } \).
+    Because the lower limit topology is finer than the standard topology, we 
+    have that every subset of \( \mathbb{R} \) that is closed in the standard
+    topology is also closed in the lower limit topology.
+    Since singleton sets are closed in the standard topology, they are also
+    closed in the lower limit topology as well.
+    Hence \( T_{ 1 } \).
+\end{egBox}
+
+\begin{egBox}{Hausdorff Spaces}[eg:17.8]
+    Given a metric space \( X \) with the metric topology, we have that \( X \)
+    is Hausdorff.
+    To show why, we need to show that for all distinct points \( x, y \in X \),
+    there exists an open neighborhood \( U \) and \( V \) of \( x \) and \( y \)
+    ,respectively, so that \( U \cap V \emptyset \).
+    Let us define \( d \equiv d( x, y ) \).
+    It can be shown easily that \( B_{ \frac{ d }{ 2 } } ( x ) \cap 
+    B_{ \frac{ d }{ 2 } } ( y ) = \emptyset \), which tells us that \( X \)
+    is Hausdorff.
+
+    \baseRule
+
+    If we now consider \( \mathbb{R} \) with the cofinite topology, then we have
+    that it is not Hausdorff.
+    The claim is that every pair of cofinite sets intersects nonemptily.
+    To show why, let \( F \) and \( G \) be finite sets, which means that 
+    \( \mathbb{R} \setminus F \) and \( \mathbb{R} \setminus G \) are cofinite.
+    DeMorgan's law tells us that 
+    \begin{equation*}
+        ( \mathbb{R} \setminus F ) \cap ( \mathbb{R} \setminus G )
+        =
+        \mathbb{R} \setminus ( F \cup G )
+    \end{equation*}
+    Notice that \( F \cup G \) is still finite, meaning that 
+    \( \mathbb{R} \setminus ( F \cup G ) \neq \emptyset \).
+    Thus, \( \mathbb{R} \) with the cofinite topology is not Hausdorff.
+\end{egBox}
+
+\begin{egBox}{Converging Sequences}[eg:17.9]
+    In Hausdorff spaces, we have shown in [\hyperlink{thm:17.10}{Theorem 17.10}]
+    that all sequences converge to at most one point in that space.
+    However, for arbitrary topological spaces, it is entirely possible that 
+    a single sequence converges to multiple points.
+
+    \baseSkip
+
+    Take \( X = \mathbb{R} \) with the trivial topology and the sequence 
+    \( ( 1, 1, 1, \ldots ) \).
+    We have that the sequences converges to \( 1 \), but also to \( 2 \) --
+    in fact, the sequences converges to any point in \( \mathbb{R} \)!
+    This is because the only open neighborhood that contains each element in the
+    sequence (that is, \( 1 \)) is \( \mathbb{R} \).
+    Thus, it follows by the definition of [\hyperlink{def:17:converge}
+    {convergence}] that our sequence converges to any point in \( \mathbb{R} \).
+\end{egBox}

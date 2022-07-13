@@ -1,0 +1,141 @@
+\begin{thmBox}{24.1}[thm:24.1]
+    If \( L \) is a linear continuum in the order topology, then \( L \) is 
+    connected, and so are the intervals and rays in \( L \).
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}[Corollary]{24.2}[cor:24.2]
+    The real line \( \mathbb{R} \) is connected and so are intervals and rays 
+    in \( \mathbb{R} \).
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{24.3 (Intermediate Value Theorem)}[thm:24.3]
+    Let \( f: X \rightarrow Y \) be a continuous map, where \( X \) is a 
+    connected space and \( Y \) is an ordered set in the order topology.
+    If \( a \) and \( b \) are two points of \( X \) and it \( r \) is a point
+    of \( Y \) lying between \( f ( a ) \) and \( f ( b ) \), then
+    there exists a point \( c \) of \( X \) such that \( f ( c ) = r \)
+
+    \baseSkip 
+
+    Note that the intermediate value theorem of calculus is the special case of
+    this theorem that occurs when we take \( X \) to be a closed interval in 
+    \( \mathbb{R} \) and \( Y \) to be \( \mathbb{R} \).
+
+    \baseRule
+
+    \begin{proofBox}
+
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Path Connected Implies Connected}[thm:24.5]
+    A path-connected space \( X \) is connected.
+
+    \baseRule
+
+    \begin{proofBox}
+        Towards a contradiction, let's assume that \( X \) is not connected.
+        This means that there exists a separation of \( X \).
+        Let \( A \) and \( B \) form this separation.
+        Now, let \( f: [ a, b ] \rightarrow X \) be any path in \( X \).
+        We know from [\hyperlink{thm:23.5}{Theorem 23.5}] that the image of a
+        connected space under a continuous map is connected -- that is,
+        we have that \( f ( [ a, b ] ) \) is connected.
+        By [\hyperlink{lem:23.2}{Lemma 23.2}], we get that \( f ( [ a, b ] ) \)
+        must be entirely contained in either \( A \) or \( B \).
+        Thus, we have that there is no path in \( X \) joining a point of 
+        \( A \) to a point of \( B \), which is a contradiction to our 
+        assumption that \( X \) is path-connected.
+
+        \baseRule
+
+        Another way to prove this theorem is as follows:
+        Suppose that there is a non-trivial clopen subset \( A \) of \( X \).
+        We shall pick \( p \in A \) and \( q \in X \setminus A \).
+        Since we know that \( X \) is path-connected, we see that there exists
+        a path \( \gamma: [ a, b ] \rightarrow X \) such that 
+        \( \gamma ( a ) = p \) and \( \gamma ( b ) = q \).
+        We can see that \( \gamma^{ -1 } ( A ) \) is clopen in \( [ a, b ] \):
+        since \( \gamma \) is continuous and \( A \) is clopen (hence, open), 
+        we see that \( \gamma^{ -1 } ( A ) \) is open as well; also, since
+        \( \gamma \) is continuous and \( A \) is clopen (hence, closed), we 
+        see that \( \gamma^{ -1 } ( A ) \) is closed as well by 
+        [\hyperlink{thm:18.2}{Theorem 18.2}].
+        Furthermore, we see that \( \gamma^{ -1 } ( A ) \) is non-trivial
+        since \( A \) is non-trivial. 
+        
+        \baseSkip
+
+        Thus, we have that \( \gamma^{ -1 } ( A ) \) is a non-trivial clopen
+        subset of \( [ a, b ] \).
+        However this contradicts the connectedness of \( [ a, b ] \)
+        Thus, \( X \) must be connected.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Image of Path-Connected Space is Path-Connected}[thm:24.6]
+    Let \( f: X \rightarrow Y \) be continuous.
+    Equip \( f ( X ) \subset Y \) with the subspace topology.
+    If \( X \) is path-connected, then \( f ( X ) \) is path-connected.
+
+    \baseRule
+
+    \begin{proofBox}
+        Suppose that we have a pair of points \( x, y \in f ( X ) \).
+        We want to show that there exists a continuous path connecting these
+        two points.
+        Since, \( x, y \in f ( X ) \), it follows that there exists some 
+        \( x', y' \in X \) such that \( x = f ( x' ) \) and \( y = f ( y' ) \).
+        Because \( X \) is path-connected, we have that there is a continuous
+        map \( \gamma: [ a, b ] \rightarrow X \) such that 
+        \( \gamma ( a ) = x' \) and \( \gamma ( b ) = y' \).
+
+        \baseSkip
+
+        It is here that we notice that \( f \circ \gamma \) is continuous 
+        (since the composition of two continuous functions is still continuous)
+        such that 
+        \begin{equation*}
+            ( f \circ \gamma ) ( a ) = x
+            \quad \mathrm{and} \quad 
+            ( f \circ \gamma ) ( b ) = y
+        \end{equation*}
+        which tells us that \( f \circ \gamma \) is a continuous path on 
+        \( f ( X ) \) connecting the two points \( x \) and \( y \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}[Corollary]{}[cor:24.7]
+    Connectedness and path-connectedness are 
+    [\hyperlink{18_homeomorphism_invariant}{hoemomorphism invariants}].
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( X \) be homeomorphic to \( Y \) and \( X \) be connected.
+        We want to show that \( Y \) must be connected as well.
+        Since \( X \) and \( Y \) are homeomorphic, there exists a 
+        homeomorphism \( f: X \rightarrow Y \).
+        Since \( f \) is bijective (namely, surjective), we see that 
+        \( f ( X ) = Y \).
+        Since \( X \) is connected and \( f \) is continuous, we see that 
+        \( f ( X ) = Y \) must be connected as well.
+
+        \baseSkip
+
+        The argument for path-connectedness can be made by replacing the word 
+        "connected" above with "path-connected" instead.
+    \end{proofBox}
+\end{thmBox}

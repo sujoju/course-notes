@@ -1,0 +1,45 @@
+\begin{remarkBox}{Inverse Images and Products}
+    Let \( \{ X_{ i } \}_{ i \in I } \) be an indexed set of topological spaces
+    and \( X = \prod_{ i \in I } X_{ i } \).
+    For any collection of subsets \( \{ U_{ i } \}_{ i \in I } \) in \( X \),
+    we have
+    \begin{equation*}
+        \begin{aligned}
+            \bigcap_{ i \in I } \mathrm{proj}_{ i }^{ -1 } ( U_{ i } )
+            &=
+            \{ \mathbf{x} \in X \mid \mathrm{proj}_{ i } ( \mathbf{x} ) \in 
+            U_{ i } \text{ for all } i \in I \}
+            \\
+            &=
+            \{ \mathbf{x} \in X \mid x_{ i } \in U_{ i } \text{ for all } 
+            i \in I \}
+            =
+            \prod_{ i \in I } U_{ i }
+        \end{aligned}
+    \end{equation*}
+\end{remarkBox}
+
+\begin{remarkBox}{On [\hyperlink{thm:19.1}{Theorem 19.1}]}
+    For finite products, we see that both the box and product topologies are
+    exactly the same.
+    Also, we have that the [\hyperlink{15_box_top}{Box Topology}] is by 
+    definition \textbf{at least as fine} as the product topology.
+\end{remarkBox}
+
+\begin{remarkBox}{Convention}
+    Whenever we consider the product \( X = \prod_{ i \in I } X_{ i } \), we 
+    shall assume it is given the product topology unless we specifically 
+    state otherwise.
+\end{remarkBox}
+
+\begin{remarkBox}{Topologies on Arbitrary Products}
+    On an arbitrary product, the natural candidate for a basis (i.e., the basis
+    for the box topology) yields a topology that is sadly not suitable when discussing convergence of sequences.
+
+    \baseSkip
+
+    We instead have an alternative topology (i.e., the product topology for 
+    arbitrary products) that is designed so convergence 
+    works as expected; it can be naturally derived to avoid "infinitely
+    shrinking" products of open sets.
+\end{remarkBox}

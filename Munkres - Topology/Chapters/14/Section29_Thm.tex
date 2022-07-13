@@ -1,0 +1,388 @@
+\begin{thmBox}{29.1}[thm:29.1]
+    Let \( X \) be a space. 
+    Then \( X \) is locally compact Hausdorff if and only if there exists a 
+    space \( Y \) satisfying the following conditions:
+
+    \begin{enumerate}
+        \item \( X \) is a subspace of \( Y \)
+        \item The set \( Y \setminus X \) consists of a single point
+        \item \( Y \) is a compact Hausdorff space.
+    \end{enumerate}
+
+    If \( Y \) and \( Y' \) are two spaces satisfying these conditions, then 
+    there is a homeomorphism of \( Y \) with \( Y' \) that equals the identity
+    map on \( X \).
+
+    \baseRule
+
+    \begin{proofBox}
+        The full details can be seen in pages \( 183-184 \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{29.2}[thm:29.2]
+    Let \( X \) be a Hausdorff space.
+    Then \( X \) is locally compact if and only if given \( x \in X \), and 
+    given a neighborhood \( U \) of \( x \), there is a neighborhood 
+    \( V \) of \( x \) such that \( \mathrm{Cl} \ V \) is compact and
+    \( \mathrm{Cl} \ V \subset U \).
+
+    \baseRule
+
+    \begin{proofBox}*
+        \wrapBox{\( \implies \)}
+
+        Let \( X \) be locally compact.
+        Let \( x \in X \) and a neighborhood \( U \) of \( x \) in \( X \) be given.
+        We want to show that there is a neighborhood \( V \) of \( x \) such that 
+        \( \mathrm{Cl} \ V \) is compact and \( \mathrm{Cl} \ V \subset U \).
+        
+        \baseSkip 
+
+        Since we have that \( X \) is locally compact Hausdorff, it follows 
+        from [\hyperlink{thm:29.1}{Theorem 29.1}] that there exists a Hausdorff 
+        one-point compactification \( Y \) of \( X \).
+        We shall define \( C \) to be the set \( Y \setminus U \); it follows 
+        immediately that \( C \) is closed in \( Y \).
+        By [\hyperlink{thm:26.2}{Theorem 26.2}], it follows that \( C \) is compact 
+        in \( Y \) as well. 
+        We know from [\hyperlink{lem:26.4}{Lemma 26.4}] that there exists disjoint open 
+        sets \( V \) and \( W \) such that they contain \( x \) and \( C \), 
+        respectively. 
+
+        \baseSkip 
+
+        With this, we see that the closure \( \mathrm{Cl} \ V \) of \( V \) in \( Y \)
+        is compact (as it is closed in \( Y \)).
+        Furthermore, we see that \( \mathrm{Cl} \ V \) is disjoint from \( W \).
+        To show why, let's say that \( w \in W \) is given.
+        Because \( W \) is an open neighborhood of \( w \) that does not intersect 
+        \( V \), we see that \( w \) cannot be a limit point of \( V \). 
+        Hence, we find that no point \( w \in W \) can be a limit point of \( V \),
+        which tells us that \( W \cap \mathrm{Cl} \ V = \emptyset \).
+        From this, it immediately follows that \( \mathrm{Cl} \ V \) and \( C \) 
+        are disjoint from each other as \( C \subset W \). 
+        Thus, we have that for each \( x \in \mathrm{Cl} \ V \), it follows that 
+        \( x \notin C \), which implies that \( x \in U \).
+        Thus, \( \mathrm{Cl} \ V \subset U \) as intended. 
+
+        \baseSkip 
+        \wrapBox{\( \impliedby \)}
+
+        Conversely, let's say that \( x \in X \) and an open neighborhood \( U \) of 
+        \( x \) is given.
+        Furthermore, we are also given that there exists a neighborhood \( V \) of 
+        \( x \) such that \( \mathrm{Cl} \ V \) is compact and 
+        \( \mathrm{Cl} \ V \subset U \).
+        If we define \( C = \mathrm{Cl} \ V \), then we see that it is a compact 
+        set containing a neighborhood of \( x \). 
+        Since this is true for all \( x \in X \), we see that \( X \) is locally 
+        compact. 
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}[Corollary]{29.3}[cor:29.3]
+    Let \( X \) be locally compact Hausdorff; let \( A \) be a subspace of 
+    \( X \). If \( A \) is closed in \( X \) or open in \( X \), then 
+    \( A \) is locally compact.
+
+    \baseRule
+
+    \begin{proofBox}
+        Suppose that \( A \) is closed in \( X \).
+        We want to show that for any \( x \in A \), we can find some compact subspace 
+        of \( A \) that contains a neighborhood of \( x \) in \( A \).
+        Since \( X \) is locally compact, we see that there exists some compact
+        subspace \( C \) of \( X \) that contains some neighborhood \( U \) of \( x \)
+        in \( X \).
+        Under the subspace topology, we can see that \( C \cap A \) is closed in \( C \)
+        since we are given that \( A \) is closed in \( X \). 
+        Hence, it follows that \( C \cap A \) must also be compact as \( C \) is 
+        compact.
+        Furthermore, we can see that \( C \cap A \) contains the open neighborhood
+        \( U \cap A \) of \( x \) in \( A \).
+        Thus, we have that \( C \cap A \) is a compact subspace of \( A \) that 
+        contains a neighborhood of \( x \) in \( A \), which tells us that 
+        \( A \) is locally compact. 
+        Notice that we have not used the Hausdorffness condition here. 
+
+        \baseSkip
+
+        Suppose now that \( A \) is open in \( X \). 
+        Given \( x \in A \), we apply [\hyperlink{thm:29.2}{Theorem 29.2}] to choose 
+        a neighborhood \( V \) of \( x \) in \( X \) such that \( \mathrm{Cl} \ V \) is 
+        compact and \( \mathrm{Cl} \ V \subset A \). 
+        With this, we see that \( C = \mathrm{Cl} \ V \) is a compact subspace of
+        \( A \) containing the neighborhood \( V \) of \( x \) in \( A \). 
+        Thus, \( A \) is locally compact.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}[Corollary]{29.4}[cor:29.4]
+    A space \( X \) is homeomorphic to an open subspace of a compact Hausdorff 
+    space if and only if \( X \) is locally compact Hausdorff.
+
+    \baseRule
+
+    \begin{proofBox}
+        This follows from [\hyperlink{thm:29.1}{Theorem 29.1}] and 
+        [\hyperlink{cor:29.3}{Corollary 29.3}]
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Hausdorff One-Point Compactification}[thm:29.3]
+    Let \( X \) be a non-compact topological space having \textit{Hausdorff}
+    one-point compactifications \( Y_{ 1 } \) and \( Y_{ 2 } \) with 
+    distinguished points \( \star_{ 1 } \in Y_{ 1 } \) and \( \star_{ 2 } \in
+    Y_{ 2 } \).
+
+    \baseSkip
+
+    Then \( Y_{ 1 } \) is homeomorphic to \( Y_{ 2 } \).
+
+    \baseRule
+
+    \begin{proofBox}
+        We start by noting that because \( Y_{ 1 } \) and \( Y_{ 2 } \) are 
+        one-point compactifications of \( X \) with distinguished points 
+        \( \star_{ 1 } \) and \( \star_{ 2 } \), respectively, it follows that
+        \begin{equation*}
+            Y_{ 1 } \setminus \{ \star_{ 1 } \} 
+            \cong 
+            X
+            \quad \mathrm{and} \quad 
+            Y_{ 2 } \setminus \{ \star_{ 2 } \} 
+            \cong 
+            X
+        \end{equation*}
+        Since \( \cong \) is an equivalence relation, we have that it must be 
+        transitive. 
+        Thus, we see that 
+        \begin{equation*}
+            Y_{ 1 } \setminus \{ \star_{ 1 } \}
+            \cong 
+            Y_{ 2 } \setminus \{ \star_{ 2 } \}
+        \end{equation*}
+        which tells us that there exists a homeomorphism 
+        \( 
+            f: Y_{ 1 } \setminus \{ \star_{ 1 } \} \rightarrow 
+            Y_{ 2 } \setminus \{ \star_{ 2 } \} 
+        \)
+        between them.
+
+        \baseSkip
+
+        Let us construct another function \( g: Y_{ 1 } \rightarrow Y_{ 2 } \),
+        where
+        \begin{equation*}
+            g ( \star_{ 1 } ) = \star_{ 2 }
+            \quad \mathrm{and} \quad 
+            g ( x ) = f ( x )
+            \quad 
+            \forall x \in Y_{ 1 } \text{ s.t. } x \neq \star_{ 1 }
+        \end{equation*} 
+        Our claim is that \( g \) is a homeomorphism.
+        Indeed, it is clear to see that \( g \) is bijective since we have 
+        constructed it to be so (note that \( f \) is bijective).
+        Our goal is to show that both \( g \) and \( g^{ -1 } \) are continuous.
+        However, it suffices to only show that \( g \) is continuous since
+        its domain is compact and codomain is Hausdorff
+        [\hyperlink{thm:26.6}{Theorem 26.6}].
+        
+        \baseSkip
+
+        Let \( C \subset Y_{ 2 } \) be closed.
+        Our goal is to show that \( g^{ -1 } ( C ) \) is closed.
+        Because \( Y_{ 2 } \) is compact, \( C \) being closed in \( Y_{ 2 } \) means 
+        that it must be compact in \( Y_{ 2 } \) as well.
+        We shall now look at two cases:
+
+        \baseSkip
+        \wrapBox{Case 1: \( \star_{ 2 } \notin C \)}
+
+        In this case, we see that \( C \subset Y_{ 2 } \setminus \{ \star_{ 2 } \} \).
+        By the [\hyperlink{thm:26.1}{variation of Lemma 26.1}], we have that \( C \) is 
+        compact in \( Y_{ 2 } \setminus \{ \star_{ 2 } \} \) as well.
+        Furthermore, we see that \( g^{ -1 } ( C ) = f^{ -1 } ( C ) \).
+        Because 
+        \( 
+            f^{ -1 }: 
+            Y_{ 2 } \setminus \{ \star_{ 2 } \} 
+            \rightarrow 
+            Y_{ 1 } \setminus \{ \star_{ 1 } \} 
+        \) 
+        is continuous and \( C \) is compact in 
+        \( Y_{ 2 } \setminus \{ \star_{ 2 } \} \), we find that \( f^{ -1 } ( C ) \) is 
+        compact in \( Y_{ 1 } \setminus \{ \star_{ 1 } \} \).
+        Thus, we get that \( f^{ -1 } ( C ) \) is compact in the larger 
+        space \( Y_{ 1 } \) by the [\hyperlink{thm:26.1}{variation of Lemma 26.1}].
+        Now since \( Y_{ 1 } \) is Hausdorff, it follows that \( f^{ -1 } ( C ) \) 
+        is closed.
+        I.e., we see that \( g^{ -1 } ( C ) \) is closed.
+
+        \baseSkip
+        \wrapBox{Case 2: \( \star_{ 2 } \in C \)}
+
+        In this case, we see that \( Y_{ 2 } \setminus C \) is contained in 
+        \( Y_{ 2 } \setminus \{ \star_{ 2 } \} \).
+        Furthermore, we have that it is open in \( Y_{ 2 } \) since \( C \) is closed in \( Y_{ 2 } \), meaning that it is also open in 
+        \( Y_{ 2 } \setminus \{ \star_{ 2 } \} \) under the subspace topology.
+        Because \( f: Y_{ 1 } \setminus \{ \star_{ 1 } \} \rightarrow 
+        Y_{ 2 } \setminus \{ \star_{ 2 } \} \) is continuous, we have that 
+        \( f^{ -1 } ( Y_{ 2 } \setminus C ) \) is open in 
+        \( Y_{ 1 } \setminus \{ \star_{ 1 } \} \).
+        Since \( Y_{ 1 } \) is Hausdorff (hence \( T_{ 1 } \)), we see that 
+        all singleton sets are closed.
+        Thus, \( Y_{ 1 } \setminus \{ \star_{ 1 } \} \) is open, and by the 
+        transitivity of openness, we see that 
+        \( f^{ -1 } ( Y_{ 2 } \setminus C ) \) is open in \( Y_{ 1 } \).
+        Now because \( Y_{ 2 } \setminus C \) does not contain 
+        \( \star_{ 2 } \), we have that \( g^{ -1 } ( Y_{ 2 } \setminus C ) \)
+        is equal to \( f^{ -1 } ( Y_{ 2 } \setminus C ) \).
+        Notice that 
+        \begin{equation*}
+            \begin{aligned}
+                f^{ -1 } ( Y_{ 2 } \setminus C )
+                &=
+                g^{ -1 } ( Y_{ 2 } \setminus C )
+                \\
+                &=
+                \{ x \in Y_{ 1 } \setminus \{ \star_{ 1 } \} \mid g ( x ) \in 
+                Y_{ 2 } \setminus C \}
+                \\
+                &=
+                \{ x \in Y_{ 1 } \setminus \{ \star_{ 1 } \} \mid g ( x ) 
+                \notin C \}
+                \\
+                &=
+                \{ 
+                    x \in Y_{ 1 } \setminus \{ \star_{ 1 } \} 
+                    \mid x \notin g^{ -1 } ( C ) 
+                \}
+                \\
+                &=
+                Y_{ 1 } \setminus g^{ -1 } ( C )
+            \end{aligned}
+        \end{equation*}
+        Notice that \( C \) includes \( \star_{ 2 } \), meaning that 
+        \( g^{ -1 } ( C ) \) contains \( \star_{ 1 } \).
+        Now, because \( f^{ -1 } ( Y_{ 2 } \setminus C ) \) is open in 
+        \( Y_{ 1 } \), it follows that \( g^{ -1 } ( C ) \) must be closed in 
+        \( Y_{ 1 } \).
+
+        \baseSkip
+
+        In either case, we see that \( g \) is continuous, which results in \( g \) to
+        be a homeomorphism between \( Y_{ 1 } \) and \( Y_{ 2 } \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Variation of [\hyperlink{cor:29.3}{Corollary 29.3}]}[thm:29.4]
+    Let \( X \) be locally compact and \( U \) be an open subspace of 
+    \( X \).
+    Then \( U \) is locally compact.
+
+    \baseSkip 
+
+    If \( X \) is also Hausdorff, then any closed subspaces of \( X \) are locally 
+    compact.
+
+    \baseRule
+
+    \begin{proofBox}
+        Let \( U \) be an open subspace of \( X \).
+        Let \( p \in U \) be given.
+        Let \( V \) be an open neighborhood of \( p \) in \( U \).
+        We want to show that there exists a compact neighborhood of \( p \)
+        that is contained in \( V \).
+        Because \( U \) is open in \( X \), we find that \( V \) is also
+        open in \( X \) by the transitivity of openness.
+        Because \( X \) is locally compact, we see that there exists a compact
+        neighborhood \( K \) of \( p \) in \( X \) that is contained in 
+        \( V \).
+
+        \baseSkip
+
+        Let \( X \) be also Hausdorff; let \( U \) now be a closed subspace of \( X \).
+        We have by [\hyperlink{thm:29.2}{Theorem 29.2}] that the definition of 
+        local compactness given by Munkres is equivalent to the definition given in 
+        lecture. 
+        Thus, we are able to utilize [\hyperlink{cor:29.3}{cor:29.3}] to get that 
+        \( U \) is also locally compact. 
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}[Lemma]{Variation of [\hyperlink{thm:29.2}{Theorem 29.2}]}[lem:29.5]
+    Let \( X \) be a compact Hausdorff topological space.
+    Let \( A \) be a closed subset of \( X \) and \( U \) be an open 
+    neighborhood of \( A \). 
+    Prove that there exists an open neighborhood \( V \) of \( A \) such that 
+    \( \mathrm{Cl} \ V \subset U \).
+
+
+    \baseRule
+
+    \begin{proofBox}
+        Since both \( A \) and \( X \setminus U \) are closed and \( X \) is 
+        compact, it follows that they are both compact.
+        Furthermore, it is clear to see that \( A \) and \( X \setminus U \) 
+        are disjoint since \( U \) contains \( A \).
+        Using the [\hyperlink{thm:26.4}{Extension of Lemma 26.4}], 
+        we find that there exists disjoint open sets 
+        \( V \) and \( W \) such that they contain \( A \) and 
+        \( X \setminus U \), respectively.
+    
+        \baseSkip
+    
+        Our goal is to show that \( \mathrm{Cl} \ V \subset U \). 
+        Let \( x \in \mathrm{Cl} \ V \) be given; we want to show that 
+        \( x \in U \).
+        Towards a contradiction, let's suppose that \( x \in X \setminus U \).
+        It follows that \( W \) is then some open neighborhood of \( x \) in 
+        \( X \).
+        Because \( x \in \mathrm{Cl} \ V \), we see that 
+        \( W \cap V \neq \emptyset \).
+        However, we reach a contradiction since \( W \) and \( V \) are disjoint.
+        Hence, it must be the case that \( x \in U \).
+        Since this was true for any arbitrary \( x \in \mathrm{Cl} \ V \), it 
+        follows that \( \mathrm{Cl} \ V \subset U \).
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Another Variation of [\hyperlink{cor:29.3}{Corollary 29.3}]}[thm:29.5]
+    Let \( X \) be a compact Hausdorff space.
+    Then every open (and closed) subspace of \( X \) is locally compact and Hausdorff.
+
+    \baseRule
+
+    \begin{proofBox}
+        We have shown previously that Hausdorffness translates to subspaces in 
+        general [\hyperlink{thm:17.11}{Theorem 17.11}].
+        We have also shown that local compactness translates to open (and closed) 
+        subspaces [\hyperlink{Variation of Corollary 29.3}{thm:29.4}].
+        Thus, it suffices to show that \( X \) is locally compact (\( X \) is already Hausdorff)
+
+        \baseSkip
+
+        We start off by letting \( p \in X \) and an open neighborhood 
+        \( U \) of \( p \) be given.
+        By [\hyperlink{lem:29.5}{Variation of Lemma 29.3}], we see that there exists an open 
+        neighborhood \( V \) of \( p \) so that \( \mathrm{Cl} \ V \subset U \).
+        Now because \( \mathrm{Cl} \ V \) is closed in \( X \), it follows that
+        \( \mathrm{Cl} \ V \) is compact since \( X \) is compact.
+        Thus, we have that \( \mathrm{Cl} \ V \) is a compact neighborhood 
+        of \( p \) in \( U \).
+        Hence, we have that \( X \) is locally compact.
+    \end{proofBox}
+\end{thmBox}
+
+\begin{thmBox}{Existence of One-Point Compactifications}[thm:29.6]
+    If a space \( X \) is locally compact and Hausdorff, then there exists a 
+    one-point compactification of \( X \).
+
+    \baseRule
+
+    \begin{proofBox}
+        This is a direct result of [\hyperlink{thm:29.1}{Theorem 29.1}]
+    \end{proofBox}
+\end{thmBox}

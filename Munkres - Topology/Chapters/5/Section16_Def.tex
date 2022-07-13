@@ -1,0 +1,39 @@
+\begin{defBox}{Subspace Topology}[def:16_subspace_top]
+    Let \( X \) be a topological space with topology \( \mathcal{T} \). If 
+    \( Y \) is a subset of \( X \), the collection 
+    \begin{equation*}
+        \mathcal{T}_{ Y }
+        =
+        \{ Y \cap U \mid U \in \mathcal{T} \}
+    \end{equation*}
+    is a topology on \( Y \), call the \textbf{subspace topology}.
+    
+    \baseSkip
+
+    With this topology, \( Y \) is called a \textbf{subspace} of \( X \);
+    its open sets consist of all intersection of open sets of \( X \) with 
+    \( Y \).
+\end{defBox}
+
+\begin{defBox}{Open Sets in Subspace}[def:16_subspace_open_sets]
+    If \( Y \) is a subspace of \( X \), we say that a set \( U \) is 
+    \textbf{open in} \( Y \) (or open \textit{relative} to \( Y \)) if it
+    belongs to the topology of \( Y \);
+    this implies in particular that it is a subset of \( Y \).
+    We say that \( U \) is \textbf{open in} \( X \) if it belongs to the 
+    topology of \( X \).
+\end{defBox}
+
+\begin{defBox}{Closed Sets in a Subspace}[def:17_subspace_closed_sets]
+    If \( Y \) is a subspace of \( X \), we say that a set \( A \) 
+    \textbf{closed in} \( Y \) if \( A \) is a subset of \( Y \) and if \( A \)
+    is closed in the subspace topology of \( Y \) -- that is, if 
+    \( Y \setminus A \) is open in \( Y \).
+\end{defBox}
+
+\begin{defBox}{Convex Sets}[def:16_convex_sets]
+    Given an \textit{ordered} set \( X \), let us say that a subset \( Y \) of 
+    \( X \) is \textbf{convex} in \( X \) if for each pair of points \( a < b \)
+    of \( Y \), the entire interval \( a, b \) of points of \( X \) lies in 
+    \( Y \).
+\end{defBox}
